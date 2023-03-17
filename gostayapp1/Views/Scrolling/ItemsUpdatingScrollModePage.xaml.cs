@@ -1,0 +1,17 @@
+﻿using gostayapp1.Controls;
+
+namespace gostayapp1.Views
+{
+    public partial class ItemsUpdatingScrollModePage : ContentPage
+    {
+        public ItemsUpdatingScrollModePage()
+        {
+            InitializeComponent();
+        }
+
+        void OnItemsUpdatingScrollModeChanged(object sender, EventArgs e)
+        {
+            carouselView.ItemsUpdatingScrollMode = (ItemsUpdatingScrollMode)(sender as EnumPicker).SelectedItem;
+        }
+    }
+}
