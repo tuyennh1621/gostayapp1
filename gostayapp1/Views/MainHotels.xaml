@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="gostayapp1.Views.MainHotels"
+             xmlns:controls="clr-namespace:gostayapp1.Controls"
+             xmlns:data="clr-namespace:gostayapp1.Data"
+             xmlns:views="clr-namespace:gostayapp1.Views">
+    <Shell.SearchHandler>
+        <controls:AnimalSearchHandler Placeholder="Nhập từ khóa tìm kiếm"
+                                      ShowsResults="true"
+                                      ItemTemplate="{StaticResource AnimalSearchTemplate}"
+                                      Animals="{x:Static data:CatData.Cats}"
+                                      SelectedItemNavigationTarget="{x:Type views:CatDetailPage}" />
+    </Shell.SearchHandler>
+    <ScrollView>
+        <VerticalStackLayout>
+            <StackLayout 
+                    x:Name="SearchFilter"
+                    Background="#f5f5f5">
+                <Frame CornerRadius="5" BackgroundColor="Transparent">
+                    <StackLayout Margin="0">
+                        <StackLayout Background="{DynamicResource White}" Padding="10">
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="SearchCollapse"/>
+                            </StackLayout.GestureRecognizers>
+                            <Label Text="Địa điểm" 
+                                       TextColor="#666"
+                                       Margin="0,0,0,-10"/>
+                            <Entry Placeholder="Thành phố, khách sạn, điểm đến...">
+                                <Entry.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="SearchCollapse"/>
+                                </Entry.GestureRecognizers>
+                            </Entry>
+                        </StackLayout>
+                        <Grid Background="{DynamicResource White}" Padding="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition Height="35"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Label 
+                                    Text="Ngày đến" TextColor="#666" Grid.Column="0" Grid.Row="0"/>
+                            <Label Text="Ngày về" TextColor="#666" Grid.Column="1" Grid.Row="0"/>
+                            <DatePicker
+                                        MinimumDate="{Binding MinDate}"
+                                        MaximumDate="{Binding MaxDate}"
+                                        Date="{Binding SelectedDate}"
+                                        Grid.Column="0" Grid.Row="1"/>
+                            <DatePicker 
+                                        MinimumDate="{Binding MinDate}"
+                                        MaximumDate="{Binding MaxDate}"
+                                        Date="{Binding SelectedDate}"
+                                        Grid.Column="1" Grid.Row="1"/>
+                        </Grid>
+
+                        <Grid Margin="0,0,0,10" Background="{DynamicResource White}" Padding="10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="100" />
+                            </Grid.ColumnDefinitions>
+                            <StackLayout  Grid.Column="0">
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="SelectRoom"/>
+                                </StackLayout.GestureRecognizers>
+                                <Label Text="Số phòng, số khách" 
+                                       TextColor="#666"
+                                       Margin="0,0,0,-10"/>
+                                <Entry Placeholder="1 phòng, 2 người lớn, 0 trẻ em">
+                                    <Entry.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="SelectRoom"/>
+                                    </Entry.GestureRecognizers>
+                                </Entry>
+                            </StackLayout>
+                            <Button  
+                                    Grid.Column="1"
+                                    WidthRequest="50"
+                                    HeightRequest="50"
+                                    FontSize="16"
+                                    Text="&#xf002;"
+                                    TextColor="#fff"
+                                    FontFamily="FontSolid"
+                                    HorizontalOptions="End"/>
+                        </Grid>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+
+            <StackLayout Padding="15" x:Name="Sale">
+                <Grid Margin="0,0,0,20">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <Label 
+                            Text="Flash Sale"
+                            FontSize="26"
+                            FontAttributes="Bold, Italic"
+                            TextTransform="Uppercase"
+                            Grid.Column="0" />
+                    <Frame                       
+                        Background="{StaticResource Primary}"
+                        Grid.Column="1"
+                        Padding="10"
+                        CornerRadius="5">
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Spacing="5">
+                            <Label 
+                            TextColor="{StaticResource White}"
+                            Text="29D" />
+                            <Label 
+                            TextColor="{StaticResource White}"
+                            Text=":" />
+                            <Label 
+                            TextColor="{StaticResource White}"                           
+                            Text="24H" />
+                            <Label 
+                            TextColor="{StaticResource White}"
+                            Text=":" />
+                            <Label
+                            TextColor="{StaticResource White}"                            
+                            Text="58M" />
+                            <Label 
+                            TextColor="{StaticResource White}"
+                            Text=":" />
+                            <Label
+                            TextColor="{StaticResource White}"                            
+                            Text="00S" />
+                        </StackLayout>
+                    </Frame>
+                </Grid>
+                <CarouselView HeightRequest="300" ItemsSource="{x:Static data:CatData.Cats}" ItemTemplate="{StaticResource AnimalTemplate}" IndicatorView="indicatorView">
+                </CarouselView>
+                <IndicatorView x:Name="indicatorView"
+                   IndicatorColor="LightGray"
+                   SelectedIndicatorColor="{DynamicResource Primary}"
+                   HorizontalOptions="Center"/>
+            </StackLayout>
+
+        </VerticalStackLayout>
+
+    </ScrollView>
+</ContentPage>
