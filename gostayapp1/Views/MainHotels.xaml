@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="gostayapp1.Views.MainHotels"
@@ -9,7 +9,7 @@
         <controls:AnimalSearchHandler Placeholder="Nhập từ khóa tìm kiếm"
                                       ShowsResults="true"
                                       ItemTemplate="{StaticResource AnimalSearchTemplate}"
-                                      Animals="{x:Static data:CatData.Cats}"
+                                      Animals="{x:Static data:HotelData.Hotels}"
                                       SelectedItemNavigationTarget="{x:Type views:CatDetailPage}" />
     </Shell.SearchHandler>
     <ScrollView>
@@ -130,7 +130,7 @@
                         </StackLayout>
                     </Frame>
                 </Grid>
-                <CarouselView HeightRequest="300" ItemsSource="{x:Static data:CatData.Cats}" ItemTemplate="{StaticResource AnimalTemplate}" IndicatorView="indicatorView">
+                <CarouselView HeightRequest="300" ItemsSource="{x:Static data:HotelData.Hotels}" ItemTemplate="{StaticResource HotelTemplate}" IndicatorView="indicatorView">
                 </CarouselView>
                 <IndicatorView x:Name="indicatorView"
                    IndicatorColor="LightGray"

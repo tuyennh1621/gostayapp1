@@ -101,6 +101,7 @@
                       Title="Đơn hàng"
                       Icon="icon/clipboard.png"
                       ContentTemplate="{DataTemplate views:BearsPage}"/>
+        
     </FlyoutItem>
 
     <ShellContent Route="about"
