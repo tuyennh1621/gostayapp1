@@ -14,7 +14,7 @@ namespace gostayapp1.Data
             {
                 Name = "Khách sạn Diamond Bay Nha Trang",
                 Rating = "\uf005;\uf005;\uf005;\uf005;\uf005;",
-                Location = "TP Nha Trang - Khánh Hòa",
+                Location = "TP Nha Trang - Khánh Hòa, Việt Nam",
                 ActualPrice = "1.286.000đ",
                 OriginalPrice = "1.006.000đ",
                 ImageUrl = "https://cdn.realtech.com.vn/cdn-cgi/image/fit=cover,width=550,height=550,quality=80//uploads/hotel/1428/125202241029AM000.jpg",

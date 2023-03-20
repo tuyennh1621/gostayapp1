@@ -36,5 +36,5 @@
                     ItemsSource="{x:Static data:BearData.Bears}"
                     ItemTemplate="{StaticResource AnimalTemplate}"
                     SelectionMode="Single"
-                    SelectionChanged="OnCollectionViewSelectionChanged" />      
+                    SelectionChanged="OnCollectionViewSelectionChanged"/>      
 </ContentPage>

@@ -1,4 +1,5 @@
 using gostayapp1;
+using gostayapp1.Models;
 using System.Windows.Input;
 
 namespace gostayapp1.Views;
@@ -25,5 +26,12 @@ public partial class MainHotels : ContentPage
     {
         await Navigation.PushAsync(new SelectRoom());
     }
+
+    async void OnCollectionViewSelectionChanged(object sender, SelectionChangedEventArgs e)
+    {
+        string catName = (e.CurrentSelection.FirstOrDefault() as Animal).Name;
+        await Shell.Current.GoToAsync($"catdetails?name={catName}");
+    }
+
 
 }

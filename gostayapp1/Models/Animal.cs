@@ -20,6 +20,12 @@
         public string ActualPrice1 { get; set; }
         public string OriginalPrice1 { get; set; }
         public string ImageUrl1 { get; set; }
+
+
+        public string Procode { get; set; }
+        public string Prodes { get; set; }
+        public string Prodate { get; set; }
+
         public override string ToString()
         {
             return Name;
