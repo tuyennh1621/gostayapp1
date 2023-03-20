@@ -1,4 +1,4 @@
-﻿<?xml version = "1.0" encoding = "UTF-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:gostayapp1"
@@ -24,22 +24,81 @@
                 <Grid Padding="10"
                       RowDefinitions="Auto,Auto"
                       ColumnDefinitions="Auto,Auto">
-                    <Image Grid.RowSpan="2"
-                           Source="{Binding ImageUrl}"
-                           Aspect="AspectFill"
-                           HeightRequest="60"
-                           WidthRequest="60" />
-                    <Label Grid.Column="1"
-                           Text="{Binding Name}"
-                           FontAttributes="Bold" />
-                    <Label Grid.Row="1"
-                           Grid.Column="1"
-                           Text="{Binding Location}"
-                           FontAttributes="Italic"
-                           VerticalOptions="End" />
+                    <Image Grid.Row="0" Grid.RowSpan="2" Source="{Binding ImageUrl}" HorizontalOptions="FillAndExpand" Aspect="AspectFill" WidthRequest="100" HeightRequest="100"/>
+                    <Label Grid.Column="1" Grid.Row="0" Text="{Binding Name}" FontAttributes="Bold" />
+                    <Label Grid.Column="1" Grid.Row="2" Text="{Binding Location}" FontAttributes="Italic" VerticalOptions="End"/>
                 </Grid>
             </DataTemplate>
-
+            <DataTemplate x:Key="HotelTemplate">
+                <Grid HorizontalOptions="FillAndExpand" ColumnSpacing="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <StackLayout Grid.Column="0">
+                        <Frame Padding="0" CornerRadius="5">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Border Grid.Row="0"
+                                                    Background="{DynamicResource Primary}"
+                                                    ZIndex="1"
+                                                    StrokeShape="RoundRectangle 5,5,5,5"
+                                                    StrokeThickness="0"
+                                                    HorizontalOptions="StartAndExpand"
+                                                    VerticalOptions="StartAndExpand"
+                                                    Padding="8,5,8,3"
+                                                    Margin="10"
+                                                    HeightRequest="30">
+                                    <Label
+                                                        Text="-25%"
+                                                        TextColor="{DynamicResource White}"/>
+                                </Border>
+                                <Image Grid.Row="0" Grid.RowSpan="2" Source="{Binding ImageUrl}" HorizontalOptions="FillAndExpand" Aspect="AspectFill" HeightRequest="160"/>
+                            </Grid>
+                        </Frame>
+                        <StackLayout >
+                            <StackLayout>
+                                <Label Text="{Binding Name}" FontAttributes="Bold"/>
+                                <Label Text="{Binding Rating}" FontFamily="FontSolid" FontSize="12" TextColor="{StaticResource OrangeWarning}"/>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label FontSize="12" Text="&#xf3c5;" TextColor="#666" FontFamily="FontSolid" />
+                                    <Label FontSize="12" TextColor="#666" Text="{Binding Location}"/>
+                                </StackLayout>
+                                <Label Margin="0,-5,0,0" Text="{Binding ActualPrice}" FontSize="16" TextColor="#666"
+                                   FontAttributes="None" TextDecorations="Strikethrough"/>
+                                <Label Margin="0,-5,0,0"  Text="{Binding OriginalPrice}" FontSize="18" FontAttributes="Bold" TextColor="{StaticResource Primary}"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout Grid.Column="1">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Border Grid.Row="0" Background="{DynamicResource Primary}" ZIndex="1" StrokeShape="RoundRectangle 5,5,5,5" StrokeThickness="0"
+                                        HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand" Padding="8,5,8,3" Margin="10" HeightRequest="30">
+                                <Label Text="-25%" TextColor="{DynamicResource White}"/>
+                            </Border>
+                            <Image Grid.Row="0" Grid.RowSpan="2" Source="{Binding ImageUrl1}" HorizontalOptions="FillAndExpand" Aspect="AspectFill" HeightRequest="160"/>
+                        </Grid>
+                        <StackLayout>
+                            <Label Text="{Binding Name1}" FontAttributes="Bold"/>
+                            <Label Text="{Binding Rating1}" FontFamily="FontSolid" FontSize="12" TextColor="{StaticResource OrangeWarning}"/>
+                            <StackLayout Orientation="Horizontal">
+                                <Label FontSize="12" Text="&#xf3c5;" TextColor="#666" FontFamily="FontSolid" />
+                                <Label FontSize="12" TextColor="#666" Text="{Binding Location1}"/>
+                            </StackLayout>
+                            <Label Margin="0,-5,0,0" Text="{Binding ActualPrice1}" FontSize="16" TextColor="#666"
+                                   FontAttributes="None" TextDecorations="Strikethrough"/>
+                            <Label Margin="0,-5,0,0"  Text="{Binding OriginalPrice1}" FontSize="18" FontAttributes="Bold" TextColor="{StaticResource Primary}"/>
+                        </StackLayout>
+                    </StackLayout>
+                </Grid>
+            </DataTemplate>
             <DataTemplate x:Key="AnimalSearchTemplate">
                 <Grid Padding="10"
                       ColumnDefinitions="0.15*,0.85*">

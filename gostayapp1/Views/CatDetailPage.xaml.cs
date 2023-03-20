@@ -23,7 +23,7 @@ namespace gostayapp1.Views
         {
             try
             {
-                Animal animal = CatData.Cats.FirstOrDefault(a => a.Name == name);
+                Animal animal = HotelData.Hotels.FirstOrDefault(a => a.Name == name);
                 BindingContext = animal;
             }
             catch (Exception)

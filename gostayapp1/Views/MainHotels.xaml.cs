@@ -1,3 +1,6 @@
+using gostayapp1;
+using System.Windows.Input;
+
 namespace gostayapp1.Views;
 
 public partial class MainHotels : ContentPage
@@ -12,6 +15,7 @@ public partial class MainHotels : ContentPage
             Date = new DateTime(2018, 6, 21)
         };
     }
+
     private async void SearchCollapse(object sender, TappedEventArgs e)
     {
         await Navigation.PushAsync(new SearchCollapse());
