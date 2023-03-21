@@ -33,5 +33,10 @@ public partial class MainHotels : ContentPage
         await Shell.Current.GoToAsync($"catdetails?name={catName}");
     }
 
+    private async void OnCounterClicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new Welcome());
+    }
+
 
 }
