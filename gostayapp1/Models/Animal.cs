@@ -21,6 +21,7 @@
         public string OriginalPrice1 { get; set; }
         public string ImageUrl1 { get; set; }
 
+        public string Protitle { get; set; }
 
         public string Procode { get; set; }
         public string Prodes { get; set; }

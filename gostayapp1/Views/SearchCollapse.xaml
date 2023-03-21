@@ -25,16 +25,16 @@
     </ContentPage.Resources>
 
     <Shell.SearchHandler>
-        <controls:AnimalSearchHandler Placeholder="Enter search term"
+        <controls:AnimalSearchHandler Placeholder="Nhập từ khóa tìm kiếm"
                                       ShowsResults="true"
                                       ItemTemplate="{StaticResource AnimalSearchTemplate}"
-                                      Animals="{x:Static data:HotelData.Hotels}"
-                                      SelectedItemNavigationTarget="{x:Type views:CatDetailPage}" />
+                                      Animals="{x:Static data:SearchHotelData.Hotels}"
+                                      SelectedItemNavigationTarget="{x:Type views:CatDetailPage}"/>
     </Shell.SearchHandler>
 
     <CollectionView Margin="20"
-                    ItemsSource="{x:Static data:HotelData.Hotels}"
-                    ItemTemplate="{StaticResource AnimalTemplate}"
+                    ItemsSource="{x:Static data:SearchHotelData.Hotels}"
+                    ItemTemplate="{StaticResource AnimalSearchTemplate}"
                     SelectionMode="Single"
                     SelectionChanged="OnCollectionViewSelectionChanged" >
     </CollectionView>

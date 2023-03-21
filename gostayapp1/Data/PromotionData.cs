@@ -17,12 +17,11 @@ namespace gostayapp1.Data
 
             Promotions.Add(new Animal
             {
-                Procode = "Khách sạn Diamond Bay Nha Trang",
-                Prodes= "Khách sạn giảm giá đến 300k",
+                Protitle = "Nhập mã",
+                Procode = "HOTEL50",
+                Prodes = "Khách sạn giảm giá đến 300k",
                 Prodate= "Hạn sử dụng: 10/03/2023",
             });
-
-
         }
     }
 }
