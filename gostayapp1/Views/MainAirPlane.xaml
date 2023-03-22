@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="gostayapp1.Views.MainAirPlane"
+             xmlns:controls="clr-namespace:gostayapp1.Controls"
+             xmlns:data="clr-namespace:gostayapp1.Data"
+             xmlns:viewModels="clr-namespace:gostayapp1.ViewModels" 
+             xmlns:views="clr-namespace:gostayapp1.Views"
+             Title="Danh sách chuyến bay">
+    <ScrollView>
+        <VerticalStackLayout>
+            <StackLayout Background="#f5f5f5">
+                <Frame CornerRadius="5" BackgroundColor="Transparent" Padding="15" >
+                    <StackLayout Margin="0">
+                        <StackLayout Background="{DynamicResource White}" Padding="10,5,10,5">
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="SearchPlane"/>
+                            </StackLayout.GestureRecognizers>
+                            <Label Text="Địa điểm" TextColor="#666" Margin="0,0,0,-10"/>
+                            <Entry Placeholder="Thành phố, khách sạn, điểm đến...">
+                                <Entry.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="SearchPlane"/>
+                                </Entry.GestureRecognizers>
+                            </Entry>
+                        </StackLayout>
+                        <Grid RowDefinitions="*,35" ColumnDefinitions="*,*" 
+                              Background="{DynamicResource White}" Padding="10,5,10,5">
+                            <Label Text="Ngày đến" TextColor="#666" Grid.Column="0" Grid.Row="0"/>
+                            <Label Text="Ngày về" TextColor="#666" Grid.Column="1" Grid.Row="0"/>
+                            <DatePicker Margin="0,-15,0,0"
+                                        MinimumDate="{Binding MinDate}"
+                                        MaximumDate="{Binding MaxDate}"
+                                        Date="{Binding SelectedDate}"
+                                        Grid.Column="0" Grid.Row="1"/>
+                            <DatePicker Margin="0,-15,0,0"
+                                        MinimumDate="{Binding MinDate}"
+                                        MaximumDate="{Binding MaxDate}"
+                                        Date="{Binding SelectedDate}"
+                                        Grid.Column="1" Grid.Row="1"/>
+                        </Grid>
+                        <Grid ColumnDefinitions="*,100"  Background="{DynamicResource White}" Padding="10,5,10,5">
+                            <StackLayout  Grid.Column="0">
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="SelectGuest"/>
+                                </StackLayout.GestureRecognizers>
+                                <Label Text="Số phòng, số khách" 
+                                       TextColor="#666"
+                                       Margin="0,0,0,-10"/>
+                                <Entry Placeholder="1 phòng, 2 người lớn, 0 trẻ em">
+                                    <Entry.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="SelectGuest"/>
+                                    </Entry.GestureRecognizers>
+                                </Entry>
+                            </StackLayout>
+                            <Button Grid.Column="1" WidthRequest="50" HeightRequest="50" FontSize="16" Text="&#xf002;"
+                                    TextColor="#fff" FontFamily="FontSolid" HorizontalOptions="End"
+                                    Clicked="PlaneListing"/>
+                        </Grid>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+            <VerticalStackLayout>
+                <Grid Margin="15" RowDefinitions="*,Auto">
+                    <Label Grid.Row="0" Text="Khám phá" FontSize="18" FontAttributes="Bold"/>
+                    <Label Grid.Row="1" Text="Những chuyến bay giá tốt nhất trong tháng khởi hành từ Hà Nội" FontSize="12" TextColor="{StaticResource Gray600}" FontAttributes="None"/>
+                </Grid>
+                <CollectionView Margin="15,0,15,15"
+                    ItemsSource="{x:Static data:MyPlaneData.Planes}"
+                    ItemTemplate="{StaticResource SearchAirplaneTemplate}"
+                    SelectionMode="Single"
+                    SelectionChanged="OnCollectionViewSelectionChanged" />
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

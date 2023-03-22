@@ -416,4 +416,16 @@
         <Setter Property="TextColor" Value="{StaticResource Primary}" ></Setter>
     </Style>
 
+    <Style x:Key="lblogin" TargetType="Label">
+        <!--login-->
+        <Setter Property="Margin">0,7,0,0</Setter>
+        <Setter Property="FontSize">12</Setter>
+    </Style>
+
+    <Style x:Key="lbPrice" TargetType="Label">
+        <!--login-->
+        <Setter Property="Margin">0,7,0,0</Setter>
+        <Setter Property="FontSize">12</Setter>
+    </Style>
+
 </ResourceDictionary>

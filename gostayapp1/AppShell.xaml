@@ -68,9 +68,9 @@
 
     <FlyoutItem Route="animals"
                 FlyoutDisplayOptions="AsMultipleItems">
-        <Tab Title="Domestic"
+        <Tab Title="Trang Chủ"
              Route="domestic"
-             Icon="paw.png">
+             Icon="house_96.png">
             <ShellContent Route="cats"
                           Style="{StaticResource DomesticShell}"
                           Title="Khách sạn"
@@ -78,11 +78,11 @@
             <ShellContent Route="dogs"
                           Style="{StaticResource DomesticShell}"
                           Title="Vé máy bay"
-                          ContentTemplate="{DataTemplate views:DogsPage}" />
+                          ContentTemplate="{DataTemplate views:MainAirPlane}" />
             <ShellContent Route="dogs"
                           Style="{StaticResource DomesticShell}"
                           Title="Tour du lịch"
-                          ContentTemplate="{DataTemplate views:CatsPage}" />
+                          ContentTemplate="{DataTemplate views:BearsPage}" />
         </Tab>
 
         <ShellContent Route="monkeys"
@@ -101,7 +101,12 @@
                       Title="Đơn hàng"
                       Icon="icon/clipboard.png"
                       ContentTemplate="{DataTemplate views:BearsPage}"/>
-        
+        <ShellContent Route="bears"
+                      Style="{StaticResource DomesticShell}"
+                      Title="Tài khoản"
+                      Icon="icon/user.png"
+                      ContentTemplate="{DataTemplate views:Login}"/>
+
     </FlyoutItem>
 
     <ShellContent Route="about"

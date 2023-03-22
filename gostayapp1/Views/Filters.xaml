@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="gostayapp1.Views.Filters"
+             xmlns:views="clr-namespace:gostayapp1.Views"
+             xmlns:data="clr-namespace:gostayapp1.Data"
+             Title="Filters">
+    <ScrollView>
+        <VerticalStackLayout Padding="15" Spacing="15">
+            <StackLayout Grid.Row="0" Orientation="Horizontal">
+                <Label FontAttributes="Bold" FontSize="16" Text="Bộ lọc"/>
+                <Label Grid.Column="1" HorizontalOptions="EndAndExpand" TextColor="{StaticResource Blue100}" FontSize="12" Text="Xóa tất cả bộ lọc"/>
+            </StackLayout>
+            <Label Grid.Row="1" Background="{DynamicResource Gray100}" HeightRequest="1"/>
+            <StackLayout Grid.Row="2">
+                <Label FontAttributes="Bold" FontSize="14" Text="Khoảng giá"/>
+                <Label x:Name="lbPrice" FontSize="14" Text="0đ - 5.000.000+ đ" TextColor="{DynamicResource Gray600}" />
+                <Slider x:Name="sldPrice" ValueChanged="Slider_ValueChanged" HorizontalOptions="FillAndExpand" HeightRequest="5" Minimum="0" Maximum="20"/>
+            </StackLayout>
+            <Label FontAttributes="Bold" FontSize="14" Text="Hãng bay"/>
+            <CollectionView Margin="0" ItemsSource="{x:Static data:MyPlaneData.Planes}" ItemTemplate="{StaticResource MyPlane}" SelectionMode="None"/>
+            <Label FontAttributes="Bold" FontSize="14" Text="Thời gian cất cánh"/>
+            <Grid ColumnDefinitions="Auto,Auto" RowDefinitions="20,20,20,20" RowSpacing="10">
+                <CheckBox Grid.Column="0" Grid.Row="0"/>
+                <Label Grid.Column="1" Grid.Row="0" VerticalOptions="Center" Text="Sáng sớm (0:00 - 06:00)" TextColor="{DynamicResource Gray600}"/>
+                <CheckBox Grid.Column="0" Grid.Row="1"/>
+                <Label Grid.Column="1" Grid.Row="1" VerticalOptions="Center" Text="Buổi sáng (06:00 - 12:00)" TextColor="{DynamicResource Gray600}"/>
+                <CheckBox Grid.Column="0" Grid.Row="2"/>
+                <Label Grid.Column="1" Grid.Row="2" VerticalOptions="Center" Text="Buổi chiều (12:00 - 18:00)" TextColor="{DynamicResource Gray600}"/>
+                <CheckBox Grid.Column="0" Grid.Row="3"/>
+                <Label Grid.Column="1" Grid.Row="3" VerticalOptions="Center" Text="Buổi tối (18:00 - 24:00)" TextColor="{DynamicResource Gray600}"/>
+            </Grid>
+            <Label FontAttributes="Bold" FontSize="14" Text="Hạng vé"/>
+            <Grid ColumnDefinitions="Auto,Auto" RowDefinitions="20,20,20,20" RowSpacing="10">
+                <CheckBox Grid.Column="0" Grid.Row="0"/>
+                <Label Grid.Column="1" Grid.Row="0" VerticalOptions="Center" Text="Phổ thông" TextColor="{DynamicResource Gray600}"/>
+                <CheckBox Grid.Column="0" Grid.Row="1"/>
+                <Label Grid.Column="1" Grid.Row="1" VerticalOptions="Center" Text="Phổ thông đặc biệt" TextColor="{DynamicResource Gray600}"/>
+                <CheckBox Grid.Column="0" Grid.Row="2"/>
+                <Label Grid.Column="1" Grid.Row="2" VerticalOptions="Center" Text="Phổ thông tiết kiệm" TextColor="{DynamicResource Gray600}"/>
+                <CheckBox Grid.Column="0" Grid.Row="3"/>
+                <Label Grid.Column="1" Grid.Row="3" VerticalOptions="Center" Text="Thương gia" TextColor="{DynamicResource Gray600}"/>
+            </Grid>
+            <Label FontAttributes="Bold" FontSize="14" Text="Điểm dừng"/>
+            <Grid ColumnDefinitions="Auto,Auto" RowDefinitions="20,20" RowSpacing="10">
+                <CheckBox Grid.Column="0" Grid.Row="0"/>
+                <Label Grid.Column="1" Grid.Row="0" VerticalOptions="Center" Text="Bay thẳng" TextColor="{DynamicResource Gray600}"/>
+                <CheckBox Grid.Column="0" Grid.Row="1"/>
+                <Label Grid.Column="1" Grid.Row="1" VerticalOptions="Center" Text="Nối chuyến" TextColor="{DynamicResource Gray600}"/>
+            </Grid>
+            <Button FontSize="14" Text="Lọc" Clicked="PlaneListing"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

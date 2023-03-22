@@ -97,7 +97,7 @@
                                     <Label Margin="10,10,0,20" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2" Text="{Binding Prodate}" TextColor="{DynamicResource Gray600}"/>
                                 </Grid>
                             </Border>
-                        </StackLayout>
+                </StackLayout>
             </DataTemplate>
             <DataTemplate x:Key="TopHotelTemplate">
                 <Grid Grid.ColumnDefinitions="*,*"  HorizontalOptions="FillAndExpand" ColumnSpacing="10">
@@ -143,7 +143,77 @@
                     </StackLayout>
                 </Grid>
             </DataTemplate>
-
+            <DataTemplate x:Key="SearchAirplaneTemplate">
+                <Border Background="{DynamicResource White}" Padding="15,10,15,10" Margin="0,0,0,10" StrokeThickness="1" StrokeShape="RoundRectangle 10" >
+                    <VerticalStackLayout Spacing="5">
+                        <!--<VerticalStackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="ListingPlane"/>
+                                </VerticalStackLayout.GestureRecognizers>-->
+                        <StackLayout Orientation="Horizontal">
+                            <Frame WidthRequest="40" HeightRequest="40" CornerRadius="50" BorderColor="{DynamicResource Gray100}">
+                                <Image Source="{Binding ImageUrl}" WidthRequest="30" HeightRequest="30"/>
+                            </Frame>
+                            <Label Text="{Binding Name}" FontSize="16" FontAttributes="Bold" Margin="10"/>
+                        </StackLayout>
+                        <Label Background="{DynamicResource Gray100}" HeightRequest="1"/>
+                        <StackLayout Orientation="Horizontal" Spacing="10">
+                            <Label Text="{Binding Departure}" FontSize="16" FontAttributes="Bold"/>
+                            <Label Margin="0,3,0,0" FontSize="16" Text="&#xf178;" TextColor="{DynamicResource Black}" FontAttributes="Bold" FontFamily="FontSolid"/>
+                            <Label Text="{Binding Arrivals}" FontSize="16" FontAttributes="Bold"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" Spacing="10">
+                            <Label Margin="0,3,0,0" FontSize="14" Text="&#xf5b0;" TextColor="{DynamicResource Gray600}" FontFamily="FontSolid"/>
+                            <Label Text="Khởi hành:" FontSize="14"/>
+                            <Label Text="{Binding PlaneDate}" FontSize="14" TextColor="{DynamicResource Gray600}"/>
+                        </StackLayout>
+                        <VerticalStackLayout HorizontalOptions="End">
+                            <Label HorizontalTextAlignment="End" Text="{Binding ActualPrice}" FontSize="14" TextColor="#666" FontAttributes="None" TextDecorations="Strikethrough"/>
+                            <Label HorizontalTextAlignment="End" Text="{Binding OriginalPrice}" FontSize="18" FontAttributes="Bold" TextColor="{StaticResource Primary}"/>
+                            <Label HorizontalTextAlignment="End" Text="{Binding PriceAfterTax}" FontSize="12" TextColor="#666" FontAttributes="None"/>
+                        </VerticalStackLayout>
+                    </VerticalStackLayout>
+                </Border>
+            </DataTemplate>
+            <DataTemplate x:Key="ListingPlaneData">
+                <Frame BorderColor="{DynamicResource Gray100}"
+                       Padding="15" Margin="0,10,0,5">
+                        <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto" ColumnDefinitions="Auto,*,Auto,Auto">
+                        <Label Grid.Column="0" Grid.Row="0" Text="{Binding HourDeparture}" FontSize="16"/>
+                        <Label Grid.Column="0" Grid.Row="1" Text="{Binding CodePlaneDeparture}" FontSize="12" TextColor="{DynamicResource Gray600}"/>
+                        <Label Grid.Column="0" Grid.Row="2" Text="{Binding FlightTime}" FontSize="12" TextColor="Gray"/>
+                        <Label Grid.Column="1" Grid.Row="1" Text=" &#xf178;" FontFamily="FontSolid"/>
+                        <Label Grid.Column="2" Grid.Row="0" Text="{Binding HourArrivals}" FontSize="16"/>
+                        <Label Grid.Column="2" Grid.Row="1" Text="{Binding CodePlaneArrivals}" FontSize="12" TextColor="{DynamicResource Gray600}"/>
+                            <Border HorizontalOptions="End" Grid.Column="3" Grid.Row="0" Grid.RowSpan="3" StrokeShape="RoundRectangle 50" WidthRequest="50" HeightRequest="50">
+                                <Image Source="{Binding ImageUrl}" HeightRequest="30" WidthRequest="30"/>
+                            </Border>
+                            <Label Margin="0,10,0,0" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="4" HeightRequest="1" Background="{DynamicResource Gray100}"/>
+                            <Label Margin="0,10,0,0" Grid.Column="0" Grid.Row="4"
+                                   Text="{Binding ActualPrice}" FontSize="13" TextColor="#666" TextDecorations="Strikethrough"/>
+                            <Label Grid.Column="0" Grid.Row="5"
+                                   Text="{Binding OriginalPrice}" FontSize="16" TextColor="{DynamicResource Primary}" FontAttributes="Bold"/>
+                            <Button Margin="0,10,0,0" Grid.Column="3" Grid.Row="4" Grid.RowSpan="2" Grid.ColumnSpan="2"
+                                    Text="Chọn vé" Padding="10,0,10,0" BorderColor="{DynamicResource Primary}" TextColor="White" VerticalOptions="Center" HeightRequest="40">
+                            </Button>
+                        </Grid>
+                </Frame>
+            </DataTemplate>
+            <DataTemplate x:Key="MyPlane">
+                <Grid ColumnDefinitions="Auto,Auto,*" Padding="0,5,0,5">
+                    <Frame Grid.Column="0" CornerRadius="50" BorderColor="{DynamicResource Gray100}" WidthRequest="30" HeightRequest="30">
+                        <Image Source="{Binding ImageUrl}" WidthRequest="25" HeightRequest="25"/>
+                    </Frame>
+                    <Label Grid.Column="1"  Text="{Binding Name}" FontSize="14" VerticalOptions="Center" TextColor="{DynamicResource Gray600}"/>
+                    <CheckBox Grid.Column="2" HorizontalOptions="EndAndExpand"/>
+                </Grid>
+            </DataTemplate>
+            <DataTemplate x:Key="SearchPlaneTemplate">
+                <StackLayout>
+                    <Label Grid.Column="1" Text="{Binding Name}" FontSize="14" VerticalOptions="Center" TextColor="{DynamicResource Black}" FontAttributes="Bold"/>
+                    <Label Grid.Column="1" Text="{Binding Location}" FontSize="14" VerticalOptions="Center" TextColor="{DynamicResource Gray600}" FontAttributes="Italic"/>
+                    <Label Margin="0,5,0,5" Background="{DynamicResource Gray100}" HeightRequest="1"/>
+                </StackLayout>
+            </DataTemplate>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

@@ -1,4 +1,6 @@
-﻿namespace gostayapp1;
+﻿using Microsoft.Maui.Controls;
+
+namespace gostayapp1;
 
 public partial class App : Application
 {

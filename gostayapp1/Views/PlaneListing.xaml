@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="gostayapp1.Views.PlaneListing"
+             xmlns:data="clr-namespace:gostayapp1.Data"
+             xmlns:views="clr-namespace:gostayapp1.Views"
+             Title="Danh sách chuyến bay">
+    <ScrollView>
+        <VerticalStackLayout>
+            <Grid ColumnDefinitions="*,Auto" Margin="15,15,15,0">
+                <Label Text="36 Chuyến bay đến Đà Nẵng" HorizontalOptions="Start" VerticalOptions="Center" FontSize="16" FontAttributes="Bold"/>
+                <Button Grid.Column="1" Text="Bộ Lọc" Margin="-10,-4,0,0" Background="{DynamicResource White}"
+                    BorderColor="{DynamicResource Gray100}" BorderWidth="1" TextColor="#212529" VerticalOptions="Center"
+                    ImageSource="icon/settings2.png" Clicked="Filters">
+                </Button>
+            </Grid>
+            <CollectionView Margin="15,0,15,15"
+                    ItemsSource="{x:Static data:MyPlaneData.Planes}"
+                    ItemTemplate="{StaticResource ListingPlaneData}"
+                    SelectionMode="Single"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

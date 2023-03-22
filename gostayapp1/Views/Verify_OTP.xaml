@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="gostayapp1.Views.Verify_OTP"
+             Title="Verify_OTP">
+    <StackLayout Spacing="20" Margin="20,0,20,0">
+        <!--<StackLayout  HorizontalOptions="FillAndExpand" HeightRequest="1" Background="{StaticResource Gray100}">
+        </StackLayout>-->
+        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+            <Entry x:Name="Entry1"  Keyboard="Numeric" TextChanged="Entry1_TextChanged" MaxLength="1" 
+                   Completed="Entry1_Completed" HeightRequest="50" FontSize="18" FontAttributes="Bold"/>
+            <Entry x:Name="Entry2" Keyboard="Numeric" TextChanged="Entry2_TextChanged" MaxLength="1"
+                   Completed="Entry2_Completed" HeightRequest="50" FontSize="18" FontAttributes="Bold"/>
+            <Entry x:Name="Entry3" Keyboard="Numeric" TextChanged="Entry3_TextChanged" MaxLength="1" HeightRequest="50" FontSize="18" FontAttributes="Bold"/>
+            <Entry x:Name="Entry4" Keyboard="Numeric" TextChanged="Entry4_TextChanged" MaxLength="1" HeightRequest="50" FontSize="18" FontAttributes="Bold"/>
+            <Entry x:Name="Entry5" Keyboard="Numeric" TextChanged="Entry5_TextChanged" MaxLength="1" HeightRequest="50" FontSize="18" FontAttributes="Bold"/>
+            <Entry x:Name="Entry6" Keyboard="Numeric" TextChanged="Entry6_TextChanged" MaxLength="1" HeightRequest="50" FontSize="18" FontAttributes="Bold"/>
+        </StackLayout>
+        <Button
+            ImageSource="trend.png"
+            Text="Tiếp tục"
+            x:Name="btnTieptucPhone"
+            HeightRequest="50"
+            FontSize="14"
+            Clicked="btnTieptucPhone_Clicked"
+            IsEnabled="False"
+            BackgroundColor="{StaticResource Gray500}">
+        </Button>
+        <Label
+            Text=" Hoặc đăng nhập bằng"
+            FontSize="14"
+            HorizontalOptions="CenterAndExpand" />
+        <Button
+            ImageSource="goo.png"
+            Text="Google"
+            HeightRequest="50"
+            FontSize="14"
+            BackgroundColor="#dc3545">
+        </Button>
+        <Button
+            ImageSource="face.png"
+            Text="Facebook"
+            HeightRequest="50"
+            FontSize="14"
+            BackgroundColor="#3b5998">
+        </Button>
+    </StackLayout>
+</ContentPage>
