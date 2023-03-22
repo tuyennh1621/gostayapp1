@@ -78,6 +78,7 @@
 	  <None Remove="Resources\Images\icon\pape.png" />
 	  <None Remove="Resources\Images\icon\send.png" />
 	  <None Remove="Resources\Images\icon\setting.png" />
+	  <None Remove="Resources\Images\icon\settings2.png" />
 	  <None Remove="Resources\Images\icon\star.png" />
 	  <None Remove="Resources\Images\icon\star_empty.png" />
 	  <None Remove="Resources\Images\icon\trend.png" />
@@ -122,6 +123,7 @@
 	  <MauiImage Include="Resources\Images\icon\pape.png" />
 	  <MauiImage Include="Resources\Images\icon\send.png" />
 	  <MauiImage Include="Resources\Images\icon\setting.png" />
+	  <MauiImage Include="Resources\Images\icon\settings2.png" />
 	  <MauiImage Include="Resources\Images\icon\star.png" />
 	  <MauiImage Include="Resources\Images\icon\star_empty.png" />
 	  <MauiImage Include="Resources\Images\icon\trend.png" />
@@ -211,6 +213,12 @@
 	  <MauiXaml Update="Views\EmptyView\EmptyViewWithViewsFilteredPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\Filters.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\HotelList.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\Indicators\HorizontalLayoutWithIndicatorsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -247,6 +255,12 @@
 	  <MauiXaml Update="Views\Layout\VerticalTextLayoutPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\Login.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\MainAirPlane.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\MainHotels.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -257,6 +271,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\MonkeysPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\PlaneListing.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\PullToRefresh\HorizontalPullToRefreshPage.xaml">
@@ -283,6 +300,12 @@
 	  <MauiXaml Update="Views\SearchCollapse.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\SearchPlane.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\SelectGuest.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\SelectRoom.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -296,6 +319,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\Swipe\HorizontalSwipeItemsPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Verify_OTP.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

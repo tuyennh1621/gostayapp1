@@ -4,7 +4,7 @@
              xmlns:sys="clr-namespace:System;assembly=netstandard"
              x:Class="gostayapp1.Controls.FlyoutFooter">
     <StackLayout>
-        <Label Text="Xaminals"
+        <Label Text="goStay"
                TextColor="GhostWhite"
                FontAttributes="Bold"
                HorizontalOptions="Center" />

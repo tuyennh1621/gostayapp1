@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="gostayapp1.Views.Login"
+             Title="Đăng nhập hoặc đăng ký">
+    <StackLayout Orientation="Vertical" Spacing="20"
+                 Margin="20,0,20,0">
+        <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="1" Background="{StaticResource Gray100}">
+        </StackLayout>
+        <Entry x:Name="entry" Keyboard="Numeric" Placeholder="Nhập số điện thoại" />
+        <Button
+            Clicked="Button_Clicked"
+            ImageSource="phone.png"
+            Text="Đăng nhập bằng số điện thoại"
+            HeightRequest="50"
+            FontSize="14"
+            BackgroundColor="{StaticResource Gray500}" >
+        </Button>
+        <Label
+            Text=" Hoặc đăng nhập bằng"
+            FontSize="14"
+            HorizontalOptions="CenterAndExpand" />
+        <Button
+            ImageSource="goo.png"
+            Text="Google"
+            HeightRequest="50"
+            FontSize="14"
+            BackgroundColor="#dc3545">
+        </Button>
+        <Button
+            ImageSource="face.png"
+            Text="Facebook"
+            HeightRequest="50"
+            FontSize="14"
+            BackgroundColor="#3b5998">
+        </Button>
+    </StackLayout>
+</ContentPage>

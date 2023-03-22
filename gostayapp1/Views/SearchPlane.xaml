@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="gostayapp1.Views.SearchPlane"  
+             xmlns:data="clr-namespace:gostayapp1.Data"
+             Title="Đặt vé máy bay dễ dàng">
+        <ScrollView VerticalOptions="FillAndExpand" Padding="15">
+            <VerticalStackLayout Spacing="10">
+                <Label Text="Sân bay nội địa phổ biến" FontAttributes="Bold" FontSize="18"/>
+            <CollectionView
+                        ItemsSource="{x:Static data:SearchPlaneData.Planes}"
+                        ItemTemplate="{StaticResource SearchPlaneTemplate}"
+                        SelectionMode="Multiple"
+                        SelectionChanged="OnCollectionViewSelectionChanged"/>
+        </VerticalStackLayout>
+        </ScrollView>
+</ContentPage>
