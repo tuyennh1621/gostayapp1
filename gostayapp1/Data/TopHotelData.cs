@@ -22,7 +22,7 @@ namespace gostayapp1.Data
                 Location = "TP Quy Nhơn - Bình Định",
                 ActualPrice = "1.286.000đ",
                 OriginalPrice = "1.006.000đ",
-                ImageUrl = "https://cdn.realtech.com.vn/cdn-cgi/image/fit=cover,width=550,height=550,quality=80//uploads/hotel/1249/1123202274206AM000.jpg",
+                ImageUrl = "https://cdn.realtech.com.vn/cdn-cgi/image/fit=cover,width=800,height=600,quality=80/https://cdn.realtech.com.vn/uploads/hotel/1956/16202320314AM001.png",
 
                 Name1 = "Khách Sạn Maximilan Đà Nẵng",
                 Rating1 = "\uf005;\uf005;\uf005;\uf005;",

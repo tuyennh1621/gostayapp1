@@ -68,4 +68,71 @@
         public string Title { get; set; }
         public string image { get; set; }
     }
+
+    public class Images
+    {
+        public string ImageUrl { get; set; }
+        public string ImageUrl1 { get; set; }
+        public string ImageUrl2 { get; set; }
+
+
+
+    }
+
+    public class Rooms
+    {
+        public string ImageUrl { get; set; }
+        public string Name { get; set; }
+        public string Title { get; set; }
+        public string People { get; set; }
+        public string Square { get; set; }
+        public string RoomDerection { get; set; }
+        public string ActualPrice { get; set; }
+        public string OriginalPrice { get; set; }
+        public string TotalPrice { get; set; }
+
+        public override string ToString()
+        {
+            return Name;
+        }
+    }
+
+        public class Room
+    {
+        public string Name { get; set; }
+        public string People { get; set; }
+        public string Square { get; set; }
+        public string RoomDerection { get; set; }
+        public string ActualPrice { get; set; }
+        public string OriginalPrice { get; set; }
+        public string TotalPrice { get; set; }
+        public override string ToString()
+        {
+            return Name;
+        }
+    }
+
+    public class RoomImage
+    {
+        public string ImageUrl { get; set; }
+
+
+    }
+
+
+
+    public class Comment
+    {
+        public string Name { get; set; }
+        public string DateTime { get; set; }
+        public string Guest { get; set; }
+        public string Details { get; set; }
+        public string ImageUrl { get; set; }
+        public string CommentD { get; set; }
+        public override string ToString()
+        {
+            return Name;
+        }
+    }
+
 }

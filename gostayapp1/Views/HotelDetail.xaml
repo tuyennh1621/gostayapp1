@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="gostayapp1.Views.HotelDetail"
+             xmlns:views="clr-namespace:gostayapp1.Views"
+             xmlns:data="clr-namespace:gostayapp1.Data"
+             Title="HotelDetail">
+    <ScrollView>
+        <VerticalStackLayout>
+            <VerticalStackLayout Margin="0,0,0,10">
+                <CarouselView IndicatorView="indicatorView" ItemsSource="{x:Static data:HotelImageData2.Hotels}" ItemTemplate="{StaticResource CarouselTemplate}">
+                </CarouselView>
+                <IndicatorView x:Name="indicatorView" IndicatorColor="LightGray" SelectedIndicatorColor="{DynamicResource Primary}" HorizontalOptions="Center" Margin="0,-15,0,0"/>
+            </VerticalStackLayout>
+            <CollectionView 
+                ItemsSource="{x:Static data:HotelInfoData.Hotels}" ItemTemplate="{StaticResource HotelDetailTemplate}">
+            </CollectionView>
+            <Label HeightRequest="5" Background="{StaticResource Gray100}"/>
+            <StackLayout Margin="15">
+                <Label  
+                        Text="Ưu điểm của khách sạn" 
+                        FontSize="18"
+                        FontAttributes="Bold"/>
+                <Grid Margin="0,8,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="50"/>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0" Grid.Column="0"
+                                HorizontalTextAlignment="Center"
+                                Text="&#xf594;" 
+                                FontSize="20"
+                                TextColor="{StaticResource Primary}" 
+                                FontFamily="FontSolid"/>
+                    <Label Grid.Row="1" Grid.Column="0" 
+                                HorizontalTextAlignment="Center"
+                                Text="Trung tâm thành phố"
+                                FontSize="12"/>
+                    <Label  Grid.Row="0" Grid.Column="1"
+                                HorizontalTextAlignment="Center"
+                                Text="&#xe555;" 
+                                FontSize="20"
+                                TextColor="{StaticResource Primary}" 
+                                FontFamily="FontSolid"/>
+                    <Label Grid.Row="1" Grid.Column="1"
+                                HorizontalTextAlignment="Center"
+                                Text="Trung tâm thành phố"
+                                FontSize="12"/>
+                    <Label Grid.Row="0" Grid.Column="2" 
+                                HorizontalTextAlignment="Center"
+                                Text="&#xf756;" 
+                                FontSize="20"
+                                TextColor="{StaticResource Primary}" 
+                                FontFamily="FontSolid"/>
+                    <Label Grid.Row="1" Grid.Column="2" 
+                                HorizontalTextAlignment="Center"
+                                Text="Nhận phòng [24 giờ]"
+                                FontSize="12"/>
+                    <Label Grid.Row="0" Grid.Column="3" 
+                           HorizontalTextAlignment="Center"
+                                Text="&#xf2cc;" 
+                                FontSize="20"
+                                TextColor="{StaticResource Primary}" 
+                                FontFamily="FontSolid"/>
+                    <Label Grid.Row="1" Grid.Column="3" 
+                                 HorizontalTextAlignment="Center"
+                                 Text="Tiện nghi phòng tuyệt vời"
+                                 FontSize="12"/>
+                </Grid>
+
+            </StackLayout>
+            <Label HeightRequest="5" Background="{StaticResource Gray100}" />
+            <StackLayout Orientation="Vertical" Margin="15"  >
+                <Grid ColumnSpacing="20" ColumnDefinitions="Auto,Auto,Auto,Auto,Auto" RowDefinitions="*,*">
+                    <Label Grid.Row="0" Grid.Column="0"
+                               Text="Nhận phòng"
+                               TextColor="{StaticResource Gray500}"
+                               FontSize="12"/>
+                    <DatePicker Grid.Row="1" Grid.Column="0" Margin="0,-15,0,0"
+                                        MinimumDate="{Binding MinDate}"
+                                        MaximumDate="{Binding MaxDate}"
+                                        Date="{Binding SelectedDate}"
+                                        TextColor="{DynamicResource Primary}"/>
+                    <Grid Grid.Row="0" Grid.Column="1" Grid.RowSpan="2">
+                        <Ellipse
+                                Fill="{StaticResource White}" 
+                                Stroke="{StaticResource Gray500}" 
+                                StrokeThickness="2"
+                                WidthRequest="30"
+                                HeightRequest="30"/>
+                        <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Spacing="2">
+                            <Label Text="3" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                            <Label 
+                                    VerticalOptions="Center"
+                                    Text="&#xf186;" 
+                                    FontSize="14"
+                                    FontFamily="FontSolid"/>
+                        </StackLayout>
+                    </Grid>
+                    <Label Grid.Row="0" Grid.Column="2" 
+                            Text="Trả phòng"
+                            TextColor="{StaticResource Gray500}"
+                            FontSize="12"/>
+                    <DatePicker Grid.Row="1" Grid.Column="2" Margin="0,-15,0,0"
+                                        MinimumDate="{Binding MinDate}"
+                                        MaximumDate="{Binding MaxDate}"
+                                        Date="{Binding SelectedDate}"
+                                TextColor="{DynamicResource Primary}"
+                                        />
+                    <Label Grid.Row="0" Grid.Column="3"
+                                Text="Phòng"
+                                TextColor="{StaticResource Gray500}"
+                                FontSize="12"/>
+                    <Border Grid.Row="1" Grid.Column="3" HeightRequest="30" Margin="0,-10,0,0">
+                        <Label FontSize="12" Text="1" TextColor="{StaticResource Primary}" HorizontalOptions="Center" VerticalOptions="Center">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="SelectRoom"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </Border>
+                    <Label Grid.Row="0" Grid.Column="4"
+                            Text="Khách"
+                            TextColor="{StaticResource Gray500}"
+                            FontSize="12"/>
+                    <Border Grid.Row="1" Grid.Column="4" HeightRequest="30" Margin="0,-10,0,0">
+                        <Label FontSize="12" Text="1" TextColor="{StaticResource Primary}" HorizontalOptions="Center" VerticalOptions="Center">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="SelectRoom"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </Border>
+                </Grid>
+            </StackLayout>
+            <Border Margin="15" StrokeShape="RoundRectangle 5">
+                <VerticalStackLayout Margin="0,0,0,20">
+                    <CollectionView ItemsSource="{x:Static data:HotelRoomData.sourceRooms}" ItemTemplate="{StaticResource RoomDataTemplate}">
+                    </CollectionView>
+                </VerticalStackLayout>
+            </Border>
+            
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
