@@ -19,7 +19,7 @@ public partial class AppShell : Shell
     {
         Routes.Add("monkeydetails", typeof(MonkeyDetailPage));
         Routes.Add("beardetails", typeof(BearDetailPage));
-        Routes.Add("catdetails", typeof(CatDetailPage));
+        Routes.Add("catdetails", typeof(HotelDetail));
         Routes.Add("dogdetails", typeof(DogDetailPage));
         Routes.Add("elephantdetails", typeof(ElephantDetailPage));
 

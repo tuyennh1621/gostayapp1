@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="gostayapp1.Views.FiltersHotel"
+             xmlns:views="clr-namespace:gostayapp1.Views"
+             xmlns:data="clr-namespace:gostayapp1.Data"
+             Title="Bộ lọc">
+    <ScrollView>
+        <VerticalStackLayout Padding="15" Spacing="15">
+            <StackLayout Grid.Row="0" Orientation="Horizontal">
+                <Label FontAttributes="Bold" FontSize="16" Text="Bộ lọc"/>
+                <Label Grid.Column="1" HorizontalOptions="EndAndExpand" TextColor="{StaticResource Blue100}" FontSize="12" Text="Xóa tất cả bộ lọc"/>
+            </StackLayout>
+            <Label Grid.Row="1" Background="{DynamicResource Gray100}" HeightRequest="1"/>
+            <StackLayout Grid.Row="2">
+                <Label FontAttributes="Bold" FontSize="14" Text="Khoảng giá (1 đêm)"/>
+                <Label x:Name="lbPrice" FontSize="14" Text="0đ - 5.000.000+ đ" TextColor="{DynamicResource Gray600}" />
+                <Slider x:Name="sldPrice" ValueChanged="Slider_ValueChanged" HorizontalOptions="FillAndExpand" HeightRequest="5" Minimum="0" Maximum="20"/>
+            </StackLayout>
+            <Label FontAttributes="Bold" FontSize="14" Text="Hạng khách sạn"/>
+            <Grid ColumnDefinitions="Auto,Auto" RowDefinitions="20,20,20,20,20" RowSpacing="10">
+                <CheckBox Grid.Column="0" Grid.Row="0"/>
+                <Label Grid.Column="1" Grid.Row="0" VerticalOptions="Center" Text="&#xf005; &#xf005; &#xf005; &#xf005; &#xf005;" TextColor="{DynamicResource OrangeWarning}" FontFamily="FontSolid"/>
+                <CheckBox Grid.Column="0" Grid.Row="1"/>
+                <Label Grid.Column="1" Grid.Row="1" VerticalOptions="Center" Text="&#xf005; &#xf005; &#xf005; &#xf005;" TextColor="{DynamicResource OrangeWarning}" FontFamily="FontSolid"/>
+                <CheckBox Grid.Column="0" Grid.Row="2"/>
+                <Label Grid.Column="1" Grid.Row="2" VerticalOptions="Center" Text="&#xf005; &#xf005; &#xf005;" TextColor="{DynamicResource OrangeWarning}" FontFamily="FontSolid"/>
+                <CheckBox Grid.Column="0" Grid.Row="3"/>
+                <Label Grid.Column="1" Grid.Row="3" VerticalOptions="Center" Text="&#xf005; &#xf005;" TextColor="{DynamicResource OrangeWarning}" FontFamily="FontSolid"/>
+                <CheckBox Grid.Column="0" Grid.Row="4"/>
+                <Label Grid.Column="1" Grid.Row="4" VerticalOptions="Center" Text="&#xf005;" TextColor="{DynamicResource OrangeWarning}" FontFamily="FontSolid"/>
+            </Grid>
+            <Label FontAttributes="Bold" FontSize="14" Text="Theo khu vực"/>
+            <Grid ColumnDefinitions="Auto,Auto" RowDefinitions="20,20,20,20,20" RowSpacing="10">
+                <CheckBox Grid.Column="0" Grid.Row="0"/>
+                <Label Grid.Column="1" Grid.Row="0" VerticalOptions="Center" Text="Quận Liên Chiểu" TextColor="{DynamicResource Gray600}"/>
+                <CheckBox Grid.Column="0" Grid.Row="1"/>
+                <Label Grid.Column="1" Grid.Row="1" VerticalOptions="Center" Text="Quận Sơn Trà" TextColor="{DynamicResource Gray600}"/>
+                <CheckBox Grid.Column="0" Grid.Row="2"/>
+                <Label Grid.Column="1" Grid.Row="2" VerticalOptions="Center" Text="Quận Ngũ Hành Sơn" TextColor="{DynamicResource Gray600}"/>
+                <CheckBox Grid.Column="0" Grid.Row="3"/>
+                <Label Grid.Column="1" Grid.Row="3" VerticalOptions="Center" Text="Quận Cẩm Lệ" TextColor="{DynamicResource Gray600}"/>
+                <CheckBox Grid.Column="0" Grid.Row="4"/>
+                <Label Grid.Column="1" Grid.Row="4" VerticalOptions="Center" Text="Quận Hải Châu" TextColor="{DynamicResource Gray600}"/>
+            </Grid>
+            <Label FontAttributes="Bold" FontSize="14" Text="Người dùng đánh giá"/>
+            <Grid ColumnDefinitions="Auto,Auto" RowDefinitions="20,20,20" RowSpacing="10">
+                <CheckBox Grid.Column="0" Grid.Row="0"/>
+                <Label Grid.Column="1" Grid.Row="0" VerticalOptions="Center" Text="Tuyệt vời (9.0+)" TextColor="{DynamicResource Gray600}"/>
+                <CheckBox Grid.Column="0" Grid.Row="1"/>
+                <Label Grid.Column="1" Grid.Row="1" VerticalOptions="Center" Text="Rất tốt (8.0+)" TextColor="{DynamicResource Gray600}"/>
+                <CheckBox Grid.Column="0" Grid.Row="2"/>
+                <Label Grid.Column="1" Grid.Row="2" VerticalOptions="Center" Text="Tốt (7.0+)" TextColor="{DynamicResource Gray600}"/>
+            </Grid>
+            <Button FontSize="14" Text="Lọc" Clicked="HotelListing"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

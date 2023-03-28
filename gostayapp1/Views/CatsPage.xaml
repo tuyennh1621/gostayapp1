@@ -29,7 +29,7 @@
                                       ShowsResults="true"
                                       ItemTemplate="{StaticResource AnimalSearchTemplate}"
                                       Animals="{x:Static data:BearData.Bears}"
-                                      SelectedItemNavigationTarget="{x:Type views:CatDetailPage}" />
+                                      SelectedItemNavigationTarget="{x:Type views:HotelDetail}" />
     </Shell.SearchHandler>
     
     <CollectionView Margin="20"

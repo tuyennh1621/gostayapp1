@@ -2,6 +2,7 @@
 <Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:gostayapp1"
+             xmlns:data="clr-namespace:gostayapp1.Data"
              x:Class="gostayapp1.App">
     <Application.Resources>
         <ResourceDictionary>
@@ -38,7 +39,7 @@
                                     <Label Text="-25%" TextColor="{DynamicResource White}"/>
                                 </Border>
                                 <Image Grid.Row="0" Grid.RowSpan="2" Source="{Binding ImageUrl}" HorizontalOptions="FillAndExpand" Aspect="AspectFill" HeightRequest="140"/>
-                            </Grid>
+                        </Grid>
                         <Grid 
                                 ColumnDefinitions="10,*"
                                 RowDefinitions="Auto,Auto,Auto,Auto,Auto">
@@ -69,7 +70,6 @@
                                    FontAttributes="None" TextDecorations="Strikethrough"/>
                             <Label Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,-5,0,0"  Text="{Binding OriginalPrice1}" FontSize="18" FontAttributes="Bold" TextColor="{StaticResource Primary}"/>
                         </Grid>
-
                     </StackLayout>
                 </Grid>
             </DataTemplate>
@@ -212,6 +212,365 @@
                     <Label Grid.Column="1" Text="{Binding Name}" FontSize="14" VerticalOptions="Center" TextColor="{DynamicResource Black}" FontAttributes="Bold"/>
                     <Label Grid.Column="1" Text="{Binding Location}" FontSize="14" VerticalOptions="Center" TextColor="{DynamicResource Gray600}" FontAttributes="Italic"/>
                     <Label Margin="0,5,0,5" Background="{DynamicResource Gray100}" HeightRequest="1"/>
+                </StackLayout>
+            </DataTemplate>
+            <DataTemplate x:Key="HotelListing">
+                <Grid Padding="15,5,15,5" ColumnSpacing="10" ColumnDefinitions="Auto,*">
+                        <Image Grid.Column="0"
+                               HorizontalOptions="FillAndExpand"
+                               Aspect="AspectFill" HeightRequest="110">
+                            <Image.Source>
+                                <UriImageSource Uri="{Binding ImageUrl}" CacheValidity="10:00:00:00" />
+                            </Image.Source>
+                        </Image>
+                        <StackLayout Grid.Column="1" Orientation="Vertical">
+                            <Label Text="{Binding HotelName}" VerticalOptions="FillAndExpand" FontAttributes="Bold" FontSize="14"/>
+                            <Label Text="{Binding Rating}" FontFamily="FontSolid" FontSize="12" TextColor="{StaticResource OrangeWarning}"/>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Margin="0,2,5,0" FontSize="12" Text="&#xf3c5;" TextColor="#666" FontFamily="FontSolid"/>
+                                <Label FontSize="12" TextColor="#666" Text="{Binding QuanHuyen}"/>
+                            </StackLayout>
+                            <Label Text="{Binding ActualPrice}" FontSize="16" TextColor="#666" FontAttributes="None" TextDecorations="Strikethrough"/>
+                            <Label Text="{Binding OriginalPrice}" FontSize="18" FontAttributes="Bold" TextColor="{StaticResource Primary}"/>
+                        </StackLayout>
+                    </Grid>
+            </DataTemplate>
+            <DataTemplate x:Key="HotelDetailTemplate">
+                <VerticalStackLayout>
+                    <Grid Margin="15" ColumnDefinitions="*,Auto">
+                        <StackLayout Grid.Column="0" HeightRequest="40">
+                            <Label 
+                                            Text="{Binding Name}"
+                                            FontSize="18"
+                                            FontAttributes="Bold"/>
+                        </StackLayout>
+                        <StackLayout HorizontalOptions="EndAndExpand" Grid.Column="1">
+                            <Border 
+                                            StrokeShape="RoundRectangle 3,3,3,3"
+                                            Stroke="{StaticResource OrangeWarning}"
+                                            Padding="17,0,0,0"
+                                            HeightRequest="25"
+                                            WidthRequest="50"
+                                            BackgroundColor="{StaticResource OrangeWarning}">
+                                <StackLayout Orientation="Horizontal"
+                                                 WidthRequest="50"
+                                                 Padding="0,5,0,0">
+                                    <Label
+                                                    Text="&#xf0e9;" 
+                                                    FontSize="12"
+                                                    TextColor="{StaticResource White}" 
+                                                    FontFamily="FontSolid" ></Label>
+                                    <Label
+                                                    FontAttributes="Bold"
+                                                    Margin="0,-1,0,0"
+                                                    Text="9.6" 
+                                                    FontSize="11"
+                                                    TextColor="{StaticResource White}"></Label>
+                                </StackLayout>
+                            </Border>
+                        </StackLayout>
+                    </Grid>
+                    <Grid Margin="15,0,15,0" RowSpacing="10" ColumnSpacing="5" RowDefinitions="Auto,Auto,Auto" ColumnDefinitions="*,*">
+                        <Label Grid.Row="0" Grid.Column="0" Margin="0,2,5,5"
+                           FontSize="12"
+                           Text="{Binding Rating}"
+                           TextColor="{StaticResource OrangeWarning}"
+                           FontFamily="FontSolid"/>
+                        <Label     Grid.Column="0" Grid.Row="1"
+                                 Text="&#xf3c5;" 
+                                 FontSize="15"
+                                 TextColor="{StaticResource Primary}" 
+                                 FontFamily="FontSolid" />
+                        <Label   Grid.Row="1" Grid.ColumnSpan="2"
+                                 Margin="20,0,0,0"
+                                 HorizontalOptions="Start"
+                                 TextColor="{StaticResource Primary}"
+                                 FontSize="12"
+                                 Text="{Binding Location}"/>
+                        <StackLayout  Grid.Row="2" Grid.ColumnSpan="2" Orientation="Vertical" Spacing="10" Margin="0,0,0,15" >
+                            <Image Source="hotel/img2.png" HorizontalOptions="Center"/>
+                            <Label 
+                               FontAttributes="Bold"
+                               Text="Các địa danh nổi tiếng"
+                               FontSize="18"
+                               TextColor="{StaticResource Black}"/>
+                            <StackLayout Orientation="Horizontal" Padding="0,0,5,0" >
+                                <Label 
+                                Text="Biển Mỹ Khê"
+                                FontSize="12"
+                                />
+                                <Label
+                                HorizontalOptions="EndAndExpand"
+                                Text="0.5km"
+                                FontSize="12"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" Padding="0,0,5,0">
+                                <Label 
+                                Text="Cầu Rồng"
+                                FontSize="12"
+                                />
+                                <Label
+                                HorizontalOptions="EndAndExpand"
+                                Text="0.7km"
+                                FontSize="12"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                <Label
+                                TextColor="{DynamicResource Blue100Accent}"
+                                Text="Xem thêm"
+                                FontSize="12"/>
+                                <Label 
+                                Padding="4,4,0,0"
+                                   Text="&#xf054;"
+                                   FontSize="12"
+                                   FontFamily="FontSolid" 
+                                   TextColor="{DynamicResource Blue100Accent}"/>
+                            </StackLayout>
+
+                        </StackLayout>
+                    </Grid>
+                </VerticalStackLayout>
+            </DataTemplate>
+            <DataTemplate x:Key="CarouselTemplate">
+                <Image HorizontalOptions="FillAndExpand" Aspect="AspectFill" HeightRequest="250">
+                    <Image.Source>
+                        <UriImageSource Uri="{Binding ImageUrl}" CacheValidity="10:00:00:00" />
+                    </Image.Source>
+                </Image>
+            </DataTemplate>
+            <DataTemplate x:Key="RoomImageTemplate">
+                <Image HorizontalOptions="FillAndExpand" Aspect="AspectFill" HeightRequest="250">
+                    <Image.Source>
+                        <UriImageSource Uri="{Binding ImageUrl}" CacheValidity="10:00:00:00" />
+                    </Image.Source>
+                </Image>
+            </DataTemplate>
+            <DataTemplate x:Key="RoomDataTemplate">
+                <VerticalStackLayout>
+                    <CarouselView HeightRequest="150" ItemsSource="{x:Static data:HotelRoomData.sourceRooms}" ItemTemplate="{StaticResource RoomImageTemplate}">
+                    </CarouselView>
+                    <IndicatorView x:Name="indicatorView2" IndicatorColor="LightGray" SelectedIndicatorColor="{DynamicResource Primary}" HorizontalOptions="Center" Margin="0,10,0,0"/>
+                    <Grid RowDefinitions="Auto,Auto,2,Auto,2,Auto,Auto,2,Auto">
+                        <Label Grid.Row="0"
+                                                   Margin="12,0,0,0"
+                                                   Text="{Binding Title}"
+                                                   TextColor="{StaticResource Black}"
+                                                   FontAttributes="Bold" />
+                        <Grid Grid.Row="1" Padding="12,0,12,0" ColumnDefinitions="Auto,Auto,Auto,Auto,Auto">
+                            <Label Grid.Column="0"     
+                                                 Text="&#xf183;"
+                                                 FontSize="15"
+                                                 TextColor="{StaticResource Gray600}" 
+                                                 FontFamily="FontSolid" ></Label>
+                            <Label Grid.Column="1"
+                                                Text="{Binding People}"
+                                                TextColor="{StaticResource Gray500}"
+                                                FontSize="12"/>
+                            <Label Grid.Column="2"
+                                                 Padding="0,3,0,0"
+                                                 Text="&#xf05a;" 
+                                                 FontSize="12"
+                                                 TextColor="{StaticResource Gray600}" 
+                                                 FontFamily="FontSolid" ></Label>
+                            <StackLayout Grid.Column="3" Orientation="Horizontal" Margin="6,0,0,0">
+                                <Label
+                                                         Padding="3,3,0,0"
+                                                         Text="&#xf5cb;" 
+                                                         FontSize="12"
+                                                         TextColor="{StaticResource Gray600}" 
+                                                         FontFamily="FontSolid"/>
+                                <Label
+                                                        Padding="4,0,0,0"
+                                                        Text="{Binding Square}"
+                                                        TextColor="{StaticResource Gray500}"
+                                                        FontSize="12"/>
+                            </StackLayout>
+                            <StackLayout Grid.Column="4" Orientation="Horizontal" HorizontalOptions="EndAndExpand">
+                                <Label
+                                                         Padding="5,3,0,0"
+                                                         Text="&#xf14c;" 
+                                                         FontSize="12"
+                                                         TextColor="{StaticResource Gray600}" 
+                                                         FontFamily="FontSolid"/>
+                                <Label
+                                                            Padding="4,0,0,0"
+                                                            Text="{Binding RoomDerection}"
+                                                            TextColor="{StaticResource Gray500}"
+                                                            FontSize="12"/>
+                            </StackLayout>
+                        </Grid>
+                        <Label Grid.Row="2" Margin="10" HeightRequest="1" Background="{StaticResource Gray100}"></Label>
+                        <StackLayout Grid.Row="3" Orientation="Vertical" Padding="12,0,0,0">
+                            <StackLayout Orientation="Horizontal">
+                                <Label
+                                                       Padding="5,3,0,0"
+                                                       Text="&#xf00c;" 
+                                                       FontSize="12"
+                                                       TextColor="{StaticResource Primary}" 
+                                                       FontFamily="FontSolid" ></Label>
+                                <Label
+                                                        Padding="6,0,0,0"
+                                                        Text="Hoàn huỷ một phần"
+                                                        TextColor="{StaticResource Gray500}"
+                                                        FontSize="12"></Label>
+                                <Label
+                                                     Padding="5,3,0,0"
+                                                     Text="&#xf05a;" 
+                                                     FontSize="12"
+                                                     TextColor="{StaticResource Gray600}" 
+                                                     FontFamily="FontSolid" ></Label>
+
+                            </StackLayout>
+                            <StackLayout  Orientation="Horizontal">
+                                <Label
+                                               Padding="5,3,0,0"
+                                               Text="&#xf00c;" 
+                                               FontSize="12"
+                                               TextColor="{StaticResource Primary}" 
+                                               FontFamily="FontSolid" ></Label>
+                                <Label
+                                                Padding="6,0,0,0"
+                                                Text="Bữa sáng miễn phí"
+                                                TextColor="{StaticResource Gray500}"
+                                                FontSize="12"></Label>
+
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal">
+
+                                <Label
+                                               Padding="5,3,0,0"
+                                               Text="&#xf00c;" 
+                                               FontSize="12"
+                                               TextColor="{StaticResource Primary}" 
+                                               FontFamily="FontSolid" ></Label>
+                                <Label
+                                                    Padding="6,0,0,0"
+                                                    Text="Xem phụ thu người lớn, trẻ em"
+                                                    TextColor="{StaticResource Gray500}"
+                                                    FontSize="12"></Label>
+                                <Label
+                                                         Padding="5,3,0,0"
+                                                         Text="&#xf05a;" 
+                                                         FontSize="12"
+                                                         TextColor="{StaticResource Gray600}" 
+                                                         FontFamily="FontSolid" ></Label>
+                            </StackLayout>
+
+                            <StackLayout Orientation="Horizontal" Padding="0,5,0,0">
+                                <Label
+                                                        TextColor="{DynamicResource Blue100Accent}"
+                                                        Text="Xem thêm"
+                                                        FontSize="12"/>
+                                <Label  
+                               
+                                                        Padding="4,4,0,0"
+                                                        Text="&#xf054;"
+                                                        FontSize="12"
+                                                        FontFamily="FontSolid" 
+                                                        TextColor="#005dea"/>
+                            </StackLayout>
+                        </StackLayout>
+                        <Label Margin="10" Grid.Row="4" HeightRequest="1" Background="{StaticResource Gray100}"/>
+                        <StackLayout Grid.Row="5" Orientation="Vertical" Padding="12,0,12,0">
+                            <StackLayout Orientation="Vertical">
+                                <StackLayout Orientation="Horizontal" >
+                                    <Label TextDecorations="Strikethrough" 
+                                                           Text="{Binding ActualPrice}"
+                                                           TextColor="{StaticResource Gray500}"
+                                                           FontSize="14"
+                                                           Padding="2,9,8,0"/>
+                                    <Grid HeightRequest="22" WidthRequest="48" Margin="0,5,0,0">
+                                        <Rectangle 
+                                                               StrokeDashArray="1.0 1.0"  RadiusX="4"
+                                                               Stroke="{StaticResource Primary}"  
+                                                               StrokeThickness="1.5" >
+                                        </Rectangle>
+                                        <Label 
+                                                                VerticalOptions="Center" HorizontalOptions="Center" 
+                                                                HorizontalTextAlignment="Center" Margin="8,0,8,0" 
+                                                                VerticalTextAlignment="Center" TextColor="Purple">-51%</Label>
+                                    </Grid>
+                                </StackLayout>
+                                <Label 
+                                                       Text="{Binding OriginalPrice}"
+                                                       TextColor="{StaticResource Primary}"
+                                                       FontSize="18"/>
+                            </StackLayout>
+                        </StackLayout>
+                        <StackLayout Grid.Row="6" Padding="15,5,15,5" Orientation="Horizontal">
+                            <Border Padding="10" StrokeThickness="1" StrokeShape="RoundRectangle 5" Stroke="{DynamicResource Gray600}" HeightRequest="40">
+                                <Picker Title="Số phòng"
+                                                    TitleColor="{StaticResource Black}"
+                                                    FontSize="14"
+                                                    WidthRequest="82"
+                                                    HeightRequest="40"
+                                                    TextColor="{StaticResource Primary}"
+                                                    FontAttributes="Bold">
+                                    <Picker.Items>
+                                        <x:String>1 Phòng</x:String>
+                                        <x:String>2 Phòng</x:String>
+                                        <x:String>3 Phòng</x:String>
+                                    </Picker.Items>
+                                </Picker>
+                            </Border>
+                            <Label 
+                                                     Margin="0,10,0,0"
+                                                     HorizontalOptions="EndAndExpand"
+                                                     Text="Chỉ còn lại 2 phòng! Đặt ngay kẻo lỡ"
+                                                     FontSize="12"
+                                                     TextColor="{DynamicResource Primary}"/>
+                        </StackLayout>
+                        <Label Margin="10" Grid.Row="7" HeightRequest="1" Background="{StaticResource Gray100}"/>
+                        <Grid Grid.Row="8" ColumnDefinitions="Auto,*" RowDefinitions="*,Auto" Padding="12,0,12,15" >
+                            <Label Grid.Column="0" Text="Tổng tiền:"
+                                                       TextColor="{StaticResource Black}"
+                                                       FontSize="14"/>
+                            <Label Grid.Column="1"
+                                                   Text="{Binding TotalPrice}"
+                                                   TextColor="{DynamicResource Primary}"
+                                                   FontSize="14"
+                                                   FontAttributes="Bold"></Label>
+                            <Button Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2"
+                                                        FontSize="16"
+                                                        Text="Đặt phòng ngay"
+                                                        TextColor="#fff"
+                                                        ImageSource="trend.png">
+                            </Button>
+                        </Grid>
+                    </Grid>
+                </VerticalStackLayout>
+            </DataTemplate>
+            <DataTemplate x:Key="CommentGuest">
+                <StackLayout Orientation="Vertical" Margin="0,10,0,0">
+                    <Grid ColumnDefinitions="Auto,*,Auto"  RowDefinitions="*,*,*,Auto" ColumnSpacing="10">
+                        <Image HorizontalOptions="Center"  Grid.Column="0" Grid.Row="0" Source="{Binding ImageUrl}" WidthRequest="30"/>
+                        <StackLayout  Orientation="Vertical"  Grid.Column="1" Grid.Row="0" >
+                            <Label Text="Nguyễn Thành An 2" Style="{StaticResource lbdetailUsername}" />
+                            <StackLayout Orientation="Horizontal" Spacing="8" Padding="0,0,0,12" >
+                                <Label FontSize="11" TextColor="{StaticResource Primary}" Text="&#xf303;"
+                                       FontFamily="FontSolid"/>
+                                <Label Text="13/04/2022" FontSize="11" />
+                                <Label TextColor="{StaticResource Primary}" Text="&#xe554;"
+                                       FontSize="11" FontFamily="FontSolid"/>
+                                <Label Text="Cặp đôi" FontSize="11" />
+                            </StackLayout>
+                        </StackLayout>
+                        <Border Grid.Column="2" Grid.Row="0" StrokeThickness="0" StrokeShape="RoundRectangle 5" 
+                                BackgroundColor="{StaticResource OrangeWarning}" HeightRequest="30">
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center" Padding="5">
+                                <Label Text="&#xf0e9;" FontSize="12" TextColor="{StaticResource White}" FontFamily="FontSolid" ></Label>
+                                <Label FontAttributes="Bold" Text="{Binding CommentD}" FontSize="11" TextColor="{StaticResource White}"></Label>
+                            </StackLayout>
+                        </Border>
+                        <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" TextColor="{StaticResource Gray500}"
+                               Text="{Binding Details}" FontSize="12"/>
+                        <StackLayout Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Orientation="Horizontal" Spacing="5">
+                            <Label TextColor="{StaticResource Primary}" FontSize="11" Text="&#xf164;" FontFamily="FontSolid"/>
+                            <Label TextColor="{StaticResource Gray500}" Padding="0,-2,0,0"
+                                   FontSize="11" Text="Đánh giá này có hữu ích với bạn không?"/>
+                        </StackLayout>
+                        <Label Grid.Row="3" Grid.ColumnSpan="3" HeightRequest="1" Background="{StaticResource Gray100}"/>
+                    </Grid>
                 </StackLayout>
             </DataTemplate>
         </ResourceDictionary>

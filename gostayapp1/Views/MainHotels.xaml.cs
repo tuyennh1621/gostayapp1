@@ -27,16 +27,18 @@ public partial class MainHotels : ContentPage
         await Navigation.PushAsync(new SelectRoom());
     }
 
-    async void OnCollectionViewSelectionChanged(object sender, SelectionChangedEventArgs e)
-    {
-        string catName = (e.CurrentSelection.FirstOrDefault() as Animal).Name;
-        await Shell.Current.GoToAsync($"catdetails?name={catName}");
-    }
+    //async void OnCollectionViewSelectionChanged(object sender, SelectionChangedEventArgs e)
+    //{
+    //    string catName = (e.CurrentSelection.FirstOrDefault() as Animal).Name;
+    //    await Shell.Current.GoToAsync($"catdetails?name={catName}");
+    //}
 
     private async void OnCounterClicked(object sender, EventArgs e)
     {
         await Navigation.PushAsync(new Welcome());
     }
-
-
+    private async void HotelListing(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new HotelListing());
+    }
 }

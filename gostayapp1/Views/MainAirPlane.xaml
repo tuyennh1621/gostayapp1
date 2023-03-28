@@ -68,7 +68,7 @@
                     ItemsSource="{x:Static data:MyPlaneData.Planes}"
                     ItemTemplate="{StaticResource SearchAirplaneTemplate}"
                     SelectionMode="Single"
-                    SelectionChanged="OnCollectionViewSelectionChanged" />
+                    SelectionChanged="OnCollectionViewSelectionChanged"/>
             </VerticalStackLayout>
         </VerticalStackLayout>
     </ScrollView>

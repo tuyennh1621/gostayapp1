@@ -17,7 +17,8 @@
             <CollectionView Margin="15,0,15,15"
                     ItemsSource="{x:Static data:MyPlaneData.Planes}"
                     ItemTemplate="{StaticResource ListingPlaneData}"
-                    SelectionMode="Single"/>
+                    SelectionMode="Single"
+                    SelectionChanged="OnCollectionViewSelectionChanged"/>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
