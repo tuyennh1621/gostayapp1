@@ -50,4 +50,51 @@ namespace gostayapp1.Data
             });
         }
     }
+    public static class HotelNearYourData
+    {
+        public static IList<NearYour> Hotels { get; private set; }
+
+        static HotelNearYourData()
+        {
+            Hotels = new List<NearYour>();
+
+            Hotels.Add(new NearYour
+            {
+                Location = "Gần tôi",
+                ImageUrl = "icon/location1.png",
+            });
+            Hotels.Add(new NearYour
+            {
+                Location = "Đà Nẵng",
+                ImageUrl = "https://gostay.realtech.com.vn/assets/images/location/da-nang.jpg",
+            });
+            Hotels.Add(new NearYour
+            {
+                Location = "Nha Trang",
+                ImageUrl = "https://gostay.realtech.com.vn/assets/images/location/nha-trang.jpg",
+            });
+            Hotels.Add(new NearYour
+            {
+                Location = "Huế",
+                ImageUrl = "https://gostay.realtech.com.vn/assets/images/location/hue.jpg",
+            });
+            Hotels.Add(new NearYour
+            {
+                Location = "Đà Nẵng",
+                ImageUrl = "https://gostay.realtech.com.vn/assets/images/location/da-nang.jpg",
+            });
+            Hotels.Add(new NearYour
+            {
+                Location = "Nha Trang",
+                ImageUrl = "https://gostay.realtech.com.vn/assets/images/location/nha-trang.jpg",
+            });
+            Hotels.Add(new NearYour
+            {
+                Location = "Huế",
+                ImageUrl = "https://gostay.realtech.com.vn/assets/images/location/hue.jpg",
+            });
+
+        }
+    }
+
 }

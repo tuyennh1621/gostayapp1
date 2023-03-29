@@ -10,4 +10,13 @@ public partial class HotelDetail : ContentPage
     {
         await Navigation.PushAsync(new SelectRoom());
     }
+    private async void Rating(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new Rating());
+    }
+    private async void HotelBooking(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new HotelBooking());
+    }
+
 }

@@ -52,12 +52,7 @@
         public string FlightTime { get; set; }
         public string Location { get; set; }
 
-
-
-
-
-
-        public override string ToString()
+      public override string ToString()
         {
             return Name;
         }
@@ -117,6 +112,12 @@
         public string ImageUrl { get; set; }
 
 
+    }
+
+    public class NearYour
+    {
+        public string ImageUrl { get; set; }
+        public string Location { get; set; }
     }
 
 

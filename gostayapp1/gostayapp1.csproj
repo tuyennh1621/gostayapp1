@@ -72,6 +72,7 @@
 	  <None Remove="Resources\Images\icon\but.png" />
 	  <None Remove="Resources\Images\icon\clipboard.png" />
 	  <None Remove="Resources\Images\icon\discover.png" />
+	  <None Remove="Resources\Images\icon\location1.png" />
 	  <None Remove="Resources\Images\icon\noon.png" />
 	  <None Remove="Resources\Images\icon\offer.png" />
 	  <None Remove="Resources\Images\icon\open.png" />
@@ -117,6 +118,7 @@
 	  <MauiImage Include="Resources\Images\icon\but.png" />
 	  <MauiImage Include="Resources\Images\icon\clipboard.png" />
 	  <MauiImage Include="Resources\Images\icon\discover.png" />
+	  <MauiImage Include="Resources\Images\icon\location1.png" />
 	  <MauiImage Include="Resources\Images\icon\noon.png" />
 	  <MauiImage Include="Resources\Images\icon\offer.png" />
 	  <MauiImage Include="Resources\Images\icon\open.png" />
@@ -153,6 +155,9 @@
 	<ItemGroup>
 	  <Compile Update="Views\FiltersHotel.xaml.cs">
 	    <DependentUpon>FiltersHotel.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\MainTours.xaml.cs">
+	    <DependentUpon>MainTours.xaml</DependentUpon>
 	  </Compile>
 	  <Compile Update="Welcome.xaml.cs">
 	    <DependentUpon>Welcome.xaml</DependentUpon>
@@ -226,6 +231,12 @@
 	  <MauiXaml Update="Views\Filters.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\HotelBookingPayment.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\HotelBookingSuccess.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\HotelDetail.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -272,6 +283,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\MainAirPlane.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\MainTours.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\MainHotels.xaml">
