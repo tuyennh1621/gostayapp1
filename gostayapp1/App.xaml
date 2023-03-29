@@ -573,6 +573,14 @@
                     </Grid>
                 </StackLayout>
             </DataTemplate>
+            <DataTemplate x:Key="HotelNearYourData">
+                <StackLayout Margin="15,20,0,0">
+                        <Frame HeightRequest="80" WidthRequest="80" CornerRadius="50">
+                            <Image Source="{Binding ImageUrl}" Aspect="AspectFill" WidthRequest="80" HeightRequest="80"/>
+                        </Frame>
+                        <Label Text="{Binding Location}" HorizontalOptions="Center" FontSize="14"/>
+                    </StackLayout>
+            </DataTemplate>
         </ResourceDictionary>
     </Application.Resources>
 </Application>
