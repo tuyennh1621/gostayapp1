@@ -31,7 +31,7 @@
                  Increment="1"
                  ValueChanged="OnStepper2"/>
             </StackLayout>
-            <Button Grid.Row="3" Grid.ColumnSpan="3" x:Name="CounterBtn3" Text="Xác nhận đặt vé"
+            <Button Grid.Row="3" Grid.ColumnSpan="3" x:Name="CounterBtn3" Text="Xác nhận"
                 Background="{DynamicResource Primary}" BorderColor="White" TextColor="{DynamicResource White}"
                 SemanticProperties.Hint="Counts the number of times you click" Clicked="OnCounterClicked5"/>
         </Grid>

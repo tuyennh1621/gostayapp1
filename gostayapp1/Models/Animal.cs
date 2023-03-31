@@ -120,6 +120,24 @@
         public string Location { get; set; }
     }
 
+    public class TourDt
+    {
+        public string ImageUrl { get; set; }
+        public string Location { get; set; }
+        public string Details { get; set; }
+        public string Name { get; set; }
+        public string Date { get; set; }
+        public string OriginalPrice { get; set; }
+        public string ActualPrice { get; set; }
+        public string Discount { get; set; }
+
+        public override string ToString()
+        {
+            return Name;
+        }
+   }
+
+
 
 
     public class Comment
@@ -135,5 +153,17 @@
             return Name;
         }
     }
+
+    public class Promotion
+    {
+        public string Name { get; set; }
+        public string DateTime { get; set; }
+        public string ImageUrl { get; set; }
+        public override string ToString()
+        {
+            return Name;
+        }
+    }
+
 
 }

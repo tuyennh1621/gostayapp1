@@ -33,7 +33,6 @@ namespace gostayapp1.Data
     {
     }
 
-
     public class PagingList<T>
     {
         public PagingList()
@@ -127,7 +126,6 @@ namespace gostayapp1.Data
         public int? IdTinhThanh { get; set; }
 
     }
-
 
     public class HotelList
     {

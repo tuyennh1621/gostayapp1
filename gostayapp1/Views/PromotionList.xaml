@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="gostayapp1.Views.PromotionList"
+             xmlns:data="clr-namespace:gostayapp1.Data"
+             xmlns:controls="clr-namespace:gostayapp1.Controls"
+             xmlns:views="clr-namespace:gostayapp1.Views"
+             Title="Chương trình ưu đãi">
+    <CollectionView ItemsSource="{x:Static data:PromotionListData.Promotions}" ItemTemplate="{DynamicResource PromotionListTemplate}" Margin="15">
+    </CollectionView>
+
+</ContentPage>

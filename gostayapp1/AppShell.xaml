@@ -56,7 +56,6 @@
                     Value="#96d1ff" />
         </Style>
     </Shell.Resources>
-
     <Shell.FlyoutHeader>
         <controls:FlyoutHeader />
     </Shell.FlyoutHeader>
@@ -73,7 +72,7 @@
             <ShellContent Route="cats"
                           Style="{StaticResource DomesticShell}"
                           Title="Khách sạn"
-                          ContentTemplate="{DataTemplate views:MainHotels}" />
+                          ContentTemplate="{DataTemplate views:HotelBooking}" />
             <ShellContent Route="dogs"
                           Style="{StaticResource DomesticShell}"
                           Title="Vé máy bay"
@@ -83,12 +82,11 @@
                           Title="Tour du lịch"
                           ContentTemplate="{DataTemplate views:MainTours}" />
         </Tab>
-
         <ShellContent Route="monkeys"
-                      Style="{StaticResource MonkeysShell}"
+                      Style="{StaticResource DomesticShell}"
                       Title="Ưu đãi"
                       Icon="icon/offer.png"
-                      ContentTemplate="{DataTemplate views:MonkeysPage}" />
+                      ContentTemplate="{DataTemplate views:PromotionList}" />
         <ShellContent Route="elephants"
                       Style="{StaticResource ElephantsShell}"
                       Title="Khám phá"
@@ -105,18 +103,14 @@
                       Title="Tài khoản"
                       Icon="icon/user.png"
                       ContentTemplate="{DataTemplate views:Login}"/>
-
     </FlyoutItem>
-
     <ShellContent Route="about"
                   Style="{StaticResource AboutShell}"
                   Title="About"
                   Icon="info.png"
                   ContentTemplate="{DataTemplate views:AboutPage}" />
-
     <MenuItem Text="Help"
               IconImageSource="help.png"
               Command="{Binding HelpCommand}"
               CommandParameter="https://docs.microsoft.com/dotnet/maui/fundamentals/shell" />
-
 </Shell>

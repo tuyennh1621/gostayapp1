@@ -22,11 +22,14 @@ public partial class MainTours : ContentPage
     //    await Navigation.PushAsync(new SearchCollapse());
     //}
 
-    //private async void SelectRoom(object sender, TappedEventArgs e)
-    //{
-    //    await Navigation.PushAsync(new SelectRoom());
-    //}
-
+    private async void SelectGuest(object sender, TappedEventArgs e)
+    {
+        await Navigation.PushAsync(new SelectGuest());
+    }
+    private async void SearchTours(object sender, TappedEventArgs e)
+    {
+        await Navigation.PushAsync(new SearchTours());
+    }
     //async void OnCollectionViewSelectionChanged(object sender, SelectionChangedEventArgs e)
     //{
     //    string catName = (e.CurrentSelection.FirstOrDefault() as Animal).Name;
