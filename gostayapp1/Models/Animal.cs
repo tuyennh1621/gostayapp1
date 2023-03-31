@@ -159,6 +159,15 @@
         public string Name { get; set; }
         public string DateTime { get; set; }
         public string ImageUrl { get; set; }
+        public string Discount { get; set; }
+        public string Code { get; set; }
+        public string ImageUrl1 { get; set; }
+        public string Discount1 { get; set; }
+        public string Name1 { get; set; }
+
+
+
+
         public override string ToString()
         {
             return Name;
