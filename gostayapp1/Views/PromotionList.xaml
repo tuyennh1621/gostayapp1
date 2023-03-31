@@ -6,7 +6,14 @@
              xmlns:controls="clr-namespace:gostayapp1.Controls"
              xmlns:views="clr-namespace:gostayapp1.Views"
              Title="Chương trình ưu đãi">
-    <CollectionView ItemsSource="{x:Static data:PromotionListData.Promotions}" ItemTemplate="{DynamicResource PromotionListTemplate}" Margin="15">
-    </CollectionView>
+    <ScrollView>
+        <VerticalStackLayout>
+            <CollectionView ItemsSource="{x:Static data:PromotionListData.Promotions}" ItemTemplate="{DynamicResource PromotionListTemplate}" Margin="15">
+            </CollectionView>
+            <Label Text="Mã giảm giá của bạn" FontAttributes="Bold" FontSize="18" Margin="15,0,0,0"/>
+            <CollectionView ItemsSource="{x:Static data:DiscountData.Promotions}" ItemTemplate="{DynamicResource DiscountTemplate}" Margin="15">
+            </CollectionView>
+        </VerticalStackLayout>
+    </ScrollView>
 
 </ContentPage>

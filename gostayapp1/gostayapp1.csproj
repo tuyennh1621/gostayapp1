@@ -314,6 +314,9 @@
 	  <MauiXaml Update="Views\PromotionList.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\PromotionTourDetail.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\PullToRefresh\HorizontalPullToRefreshPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

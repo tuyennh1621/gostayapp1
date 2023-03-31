@@ -57,6 +57,75 @@ namespace gostayapp1.Data
                 Name = "Rộn ràng Du lịch mùa lễ hội - Khách sạn giảm đến 200K",
                 DateTime = "22/09/2022",
             });
+            Promotions.Add(new Promotion
+            {
+                ImageUrl = "https://gostay.realtech.com.vn/assets/images/promotion/banner-vietjet.jpg",
+                Name = "Rộn ràng Du lịch mùa lễ hội - Khách sạn giảm đến 200K",
+                DateTime = "22/09/2022",
+            });
+            Promotions.Add(new Promotion
+            {
+                ImageUrl = "https://gostay.realtech.com.vn/assets/images/promotion/vietnamairline.jpg",
+                Name = "Rộn ràng Du lịch mùa lễ hội - Khách sạn giảm đến 200K",
+                DateTime = "22/09/2022",
+            });
+        }
+    }
+
+    class DiscountData
+    {
+        public static IList<Promotion> Promotions { get; private set; }
+
+        static DiscountData()
+        {
+            Promotions = new List<Promotion>();
+
+            Promotions.Add(new Promotion
+            {
+                ImageUrl = "https://i.pinimg.com/originals/46/87/ec/4687ecccef953e56503adf3f31be2326.jpg",
+                Discount = "20%",
+                DateTime = "22/09/2022",
+                Code = "Hotel10",
+            });
+            Promotions.Add(new Promotion
+            {
+                ImageUrl = "https://i.pinimg.com/originals/46/87/ec/4687ecccef953e56503adf3f31be2326.jpg",
+                Discount = "30%",
+                DateTime = "22/09/2022",
+                Code = "Tour30",
+            });
+        }
+    }
+
+    class ProDetailtour
+    {
+        public static IList<Promotion> Promotions { get; private set; }
+
+        static ProDetailtour()
+        {
+            Promotions = new List<Promotion>();
+
+            Promotions.Add(new Promotion
+            {
+                ImageUrl = "https://gostay.realtech.com.vn/assets/images/location/moc-chau.jpg",
+                Discount = "Giá chỉ từ 825k / 1 đêm",
+                Name = "Mộc Châu",
+
+                ImageUrl1 = "https://gostay.realtech.com.vn/assets/images/location/da-lat.jpg",
+                Discount1 = "Giá chỉ từ 625k / 1 đêm",
+                Name1 = "Đà Lạt",
+
+            });
+            Promotions.Add(new Promotion
+            {   
+                ImageUrl1 = "https://gostay.realtech.com.vn/assets/images/location/da-lat.jpg",
+                Discount1 = "Giá chỉ từ 625k / 1 đêm",
+                Name1 = "Đà Lạt",
+
+                ImageUrl = "https://gostay.realtech.com.vn/assets/images/location/moc-chau.jpg",
+                Discount = "Giá chỉ từ 825k / 1 đêm",
+                Name = "Mộc Châu",
+            });
         }
     }
 }
