@@ -12,17 +12,20 @@
             <StackLayout Background="#f5f5f5">
                 <Frame CornerRadius="5" BackgroundColor="Transparent" Padding="15" >
                     <StackLayout Margin="0">
-                        <StackLayout Background="{DynamicResource White}" Padding="10,5,10,5">
-                            <StackLayout.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="SearchPlane"/>
-                            </StackLayout.GestureRecognizers>
-                            <Label Text="Từ" TextColor="#666" Margin="0,0,0,-10"/>
-                            <Entry Placeholder="SGN(Tân Sơn Nhất)">
+                        <Grid RowDefinitions="Auto,Auto,Auto,Auto" Background="{DynamicResource White}" Padding="10,5,10,5">
+                            <Label Grid.Row="0" Text="Từ" TextColor="#666" Margin="0,0,0,-10"/>
+                            <Entry Grid.Row="1" Placeholder="SGN(Tân Sơn Nhất)">
                                 <Entry.GestureRecognizers>
                                     <TapGestureRecognizer Tapped="SearchPlane"/>
                                 </Entry.GestureRecognizers>
                             </Entry>
-                        </StackLayout>
+                            <Label Grid.Row="2" Text="Đến" TextColor="#666" Margin="0,0,0,-10"/>
+                            <Entry Grid.Row="3" Placeholder="HAN(Nội Bài)">
+                                <Entry.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="SearchPlane"/>
+                                </Entry.GestureRecognizers>
+                            </Entry>
+                        </Grid>
                         <Grid RowDefinitions="*,35" ColumnDefinitions="*,*" 
                               Background="{DynamicResource White}" Padding="10,5,10,5">
                             <Label Text="Ngày đến" TextColor="#666" Grid.Column="0" Grid.Row="0"/>
@@ -38,24 +41,37 @@
                                         Date="{Binding SelectedDate}"
                                         Grid.Column="1" Grid.Row="1"/>
                         </Grid>
-                        <Grid ColumnDefinitions="*,100"  Background="{DynamicResource White}" Padding="10,5,10,5">
+                        <Grid ColumnDefinitions="*,*"  Background="{DynamicResource White}" Padding="10,5,10,5">
                             <StackLayout  Grid.Column="0">
                                 <StackLayout.GestureRecognizers>
                                     <TapGestureRecognizer Tapped="SelectGuest"/>
                                 </StackLayout.GestureRecognizers>
-                                <Label Text="Số phòng, số khách" 
+                                <Label Text="Số khách" 
                                        TextColor="#666"
                                        Margin="0,0,0,-10"/>
-                                <Entry Placeholder="1 phòng, 2 người lớn, 0 trẻ em">
+                                <Entry Placeholder="3 Khách">
                                     <Entry.GestureRecognizers>
                                         <TapGestureRecognizer Tapped="SelectGuest"/>
                                     </Entry.GestureRecognizers>
                                 </Entry>
                             </StackLayout>
-                            <Button Grid.Column="1" WidthRequest="50" HeightRequest="50" FontSize="16" Text="&#xf002;"
-                                    TextColor="#fff" FontFamily="FontSolid" HorizontalOptions="End"
-                                    Clicked="PlaneListing"/>
+                            <StackLayout  Grid.Column="1">
+                                <Label Text="Hạng vé" 
+                                       TextColor="#666"/>
+                                <Picker x:Name="picker" Title="Chọn hạng vé" Margin="0,-14,0,0">
+                                    <Picker.ItemsSource >
+                                        <x:Array Type="{x:Type x:String}" >
+                                            <x:String>Phổ thông tiết kiệm</x:String>
+                                            <x:String>Phổ thông</x:String>
+                                            <x:String>Thương gia</x:String>
+                                            <x:String>Hạng nhất</x:String>
+                                        </x:Array>
+                                    </Picker.ItemsSource>
+                                </Picker>
+                            </StackLayout>
+
                         </Grid>
+                        <Button HeightRequest="50" FontSize="16" Text="Tìm kiếm" TextColor="#fff" Clicked="PlaneListing" ImageSource="icon/search.png"/>
                     </StackLayout>
                 </Frame>
             </StackLayout>

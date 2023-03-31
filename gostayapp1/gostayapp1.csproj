@@ -77,6 +77,7 @@
 	  <None Remove="Resources\Images\icon\offer.png" />
 	  <None Remove="Resources\Images\icon\open.png" />
 	  <None Remove="Resources\Images\icon\pape.png" />
+	  <None Remove="Resources\Images\icon\search.png" />
 	  <None Remove="Resources\Images\icon\send.png" />
 	  <None Remove="Resources\Images\icon\setting.png" />
 	  <None Remove="Resources\Images\icon\settings2.png" />
@@ -123,6 +124,7 @@
 	  <MauiImage Include="Resources\Images\icon\offer.png" />
 	  <MauiImage Include="Resources\Images\icon\open.png" />
 	  <MauiImage Include="Resources\Images\icon\pape.png" />
+	  <MauiImage Include="Resources\Images\icon\search.png" />
 	  <MauiImage Include="Resources\Images\icon\send.png" />
 	  <MauiImage Include="Resources\Images\icon\setting.png" />
 	  <MauiImage Include="Resources\Images\icon\settings2.png" />
@@ -158,6 +160,12 @@
 	  </Compile>
 	  <Compile Update="Views\MainTours.xaml.cs">
 	    <DependentUpon>MainTours.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\SearchTours.xaml.cs">
+	    <DependentUpon>SearchTours.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\SelectTicket.xaml.cs">
+	    <DependentUpon>SelectTicket.xaml</DependentUpon>
 	  </Compile>
 	  <Compile Update="Welcome.xaml.cs">
 	    <DependentUpon>Welcome.xaml</DependentUpon>
@@ -303,6 +311,9 @@
 	  <MauiXaml Update="Views\PlaneListing.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\PromotionList.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\PullToRefresh\HorizontalPullToRefreshPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -327,10 +338,16 @@
 	  <MauiXaml Update="Views\Scrolling\SnapPointsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\SearchTours.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\SearchCollapse.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\SearchPlane.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\SelectTicket.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\SelectGuest.xaml">
@@ -349,6 +366,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\Swipe\HorizontalSwipeItemsPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\TourDetails.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\Verify_OTP.xaml">

@@ -581,6 +581,52 @@
                         <Label Text="{Binding Location}" HorizontalOptions="Center" FontSize="14"/>
                     </StackLayout>
             </DataTemplate>
+            <DataTemplate x:Key="SearchTourTemplate">
+                <Grid ColumnDefinitions="Auto,Auto" RowDefinitions="Auto,*,*" ColumnSpacing="15" Margin="0,15,0,0">
+                    <Image Grid.Column="0" Grid.Row="0" Grid.RowSpan="3" Source="{Binding ImageUrl}" Aspect="AspectFill" WidthRequest="50" HeightRequest="50"/>
+                    <Label Grid.Column="1" Grid.Row="1" Text="{Binding Location}" FontSize="16"/>
+                    <Label Grid.Column="1" Grid.Row="2" Text="{Binding Details}" FontSize="14"/>
+                </Grid>
+            </DataTemplate>
+            <DataTemplate x:Key="TourTemplate">
+               <StackLayout>
+                        <Grid RowDefinitions="*">
+                            <Border Grid.Row="0" Background="{DynamicResource Primary}" ZIndex="1" StrokeShape="RoundRectangle 5,5,5,5" StrokeThickness="0"
+                                        HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand" Padding="8,5,8,3" Margin="10" HeightRequest="30">
+                            <Label Text="{Binding Discount}" TextColor="{DynamicResource White}"/>
+                            </Border>
+                            <Image Grid.Row="0" Grid.RowSpan="2" Source="{Binding ImageUrl}" HorizontalOptions="FillAndExpand" Aspect="AspectFill" HeightRequest="160"/>
+                        </Grid>
+                    <Grid ColumnDefinitions="15,*" RowDefinitions="Auto,Auto,Auto,Auto,Auto">
+                            <Label Grid.ColumnSpan="2" Text="{Binding Name}" FontAttributes="Bold"/>
+                            <Label Grid.Row="1" Grid.Column="0" FontSize="12" Text="&#xf3c5;" TextColor="{DynamicResource Gray600}" FontFamily="FontSolid" />
+                        <Label Grid.Row="1" Grid.Column="1" FontSize="12" TextColor="{DynamicResource Gray600}" Text="{Binding Location}" Margin="0,-3,0,0"/>
+                        <Label Grid.Row="2" Grid.Column="0" FontSize="12" Text="&#xf017;" TextColor="{DynamicResource Gray600}" FontFamily="FontSolid" />
+                        <Label Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding Date}"  Margin="0,-5,0,0" TextColor="{DynamicResource Gray600}"/>
+                        <Label Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding ActualPrice}" FontSize="16" TextColor="{DynamicResource Gray600}"
+                                   FontAttributes="None" TextDecorations="Strikethrough"/>
+                            <Label Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding OriginalPrice}" FontSize="18" FontAttributes="Bold" TextColor="{StaticResource Primary}"/>
+                        </Grid>
+                    </StackLayout>
+            </DataTemplate>
+            <DataTemplate x:Key="PromotionListTemplate">
+                <StackLayout Spacing="20">
+                    <VerticalStackLayout Spacing="5">
+                        <Border  StrokeShape="RoundRectangle 5">
+                            <Image Source="{Binding ImageUrl}"/>
+                        </Border>
+                        <Label Text="{Binding Name}" FontAttributes="Bold"/>
+                        <HorizontalStackLayout>
+                            <Label Text="&#xf017;"
+                                           FontFamily="FontRegular"
+                                           Margin="0,3,5,0"
+                                           TextColor="#666"/>
+                            <Label Text="{Binding DateTime}"
+                                           TextColor="#666"/>
+                        </HorizontalStackLayout>
+                    </VerticalStackLayout>
+                </StackLayout>
+            </DataTemplate>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

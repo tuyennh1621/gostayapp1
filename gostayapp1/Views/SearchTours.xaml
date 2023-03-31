@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="gostayapp1.Views.SearchTours"
+             xmlns:controls="clr-namespace:gostayapp1.Controls"
+             xmlns:data="clr-namespace:gostayapp1.Data"
+             xmlns:views="clr-namespace:gostayapp1.Views"       
+             Title="Bạn muốn đi đâu?">
+    <ContentPage.Resources>
+        <Style TargetType="Grid">
+            <Setter Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal" />
+                        <VisualState x:Name="Selected">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" 
+                                        Value="{DynamicResource OrangeWarning}" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
+        </Style>
+    </ContentPage.Resources>
+
+    <Shell.SearchHandler>
+        <controls:AnimalSearchHandler Placeholder="Nhập từ khóa tìm kiếm"
+                                      ShowsResults="true"
+                                      ItemTemplate="{StaticResource AnimalSearchTemplate}"
+                                      Animals="{x:Static data:SearchHotelData.Hotels}"
+                                      SelectedItemNavigationTarget="{x:Type views:HotelDetail}"/>
+    </Shell.SearchHandler>
+     
+    <CollectionView Margin="20,0,20,20"
+                    ItemsSource="{x:Static data:TourData.Tour}"
+                    ItemTemplate="{StaticResource SearchTourTemplate}"
+                    SelectionMode="Single"
+                    SelectionChanged="OnCollectionViewSelectionChanged" >
+    </CollectionView>
+</ContentPage>

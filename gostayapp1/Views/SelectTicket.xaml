@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="gostayapp1.Views.SelectTicket"
+             Title="Chọn hạng ghế">
+
+    <VerticalStackLayout Margin="15,25,15,15">
+        <Grid RowDefinitions="20,Auto,20,Auto,20,Auto,20,Auto" VerticalOptions="Center">
+            <RadioButton Grid.Row="0" Content="Phổ thông" FontAttributes="Bold"/>
+            <Label Margin="30,0,0,0" Grid.Row="1" Text="Đã bao gồm 7kg hành lý" TextColor="{DynamicResource Gray600}"/>
+            <RadioButton Grid.Row="2" Content="Phổ thông tiết kiệm" FontAttributes="Bold" />
+            <Label Margin="30,0,0,0" Grid.Row="3" Text="Đã bao gồm 7kg hành lý" TextColor="{DynamicResource Gray600}"/>
+            <RadioButton Grid.Row="4" Content="Thương gia" FontAttributes="Bold" />
+            <Label Margin="30,0,0,0" Grid.Row="5" Text="Đã bao gồm 7kg hành lý" TextColor="{DynamicResource Gray600}"/>
+            <RadioButton Grid.Row="6" Content="Hạng nhất" FontAttributes="Bold"/>
+            <Label Margin="30,0,0,0" Grid.Row="7" Text="Xe đưa đón, phòng chờ VIP, sảnh đi riêng" TextColor="{DynamicResource Gray600}"/>
+        </Grid>
+        <Button Margin="0,20,0,0" Text="Xác nhận"
+                Background="{DynamicResource Primary}" BorderColor="White" TextColor="{DynamicResource White}"
+                SemanticProperties.Hint="Counts the number of times you click" Clicked="OnCounterClicked5"/>
+    </VerticalStackLayout>
+</ContentPage>
