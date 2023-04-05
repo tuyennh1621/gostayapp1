@@ -269,7 +269,7 @@
                             </Border>
                         </StackLayout>
                     </Grid>
-                    <Grid Margin="15,0,15,0" RowSpacing="10" ColumnSpacing="5" RowDefinitions="Auto,Auto,Auto" ColumnDefinitions="*,*">
+                    <Grid Margin="15,0,15,0" RowSpacing="10" ColumnSpacing="5" RowDefinitions="Auto,Auto" ColumnDefinitions="*,*">
                         <Label Grid.Row="0" Grid.Column="0" Margin="0,2,5,5"
                            FontSize="12"
                            Text="{Binding Rating}"
@@ -286,47 +286,6 @@
                                  TextColor="{StaticResource Primary}"
                                  FontSize="12"
                                  Text="{Binding Location}"/>
-                        <StackLayout  Grid.Row="2" Grid.ColumnSpan="2" Orientation="Vertical" Spacing="10" Margin="0,0,0,15" >
-                            <Image Source="hotel/img2.png" HorizontalOptions="Center"/>
-                            <Label 
-                               FontAttributes="Bold"
-                               Text="Các địa danh nổi tiếng"
-                               FontSize="18"
-                               TextColor="{StaticResource Black}"/>
-                            <StackLayout Orientation="Horizontal" Padding="0,0,5,0" >
-                                <Label 
-                                Text="Biển Mỹ Khê"
-                                FontSize="12"
-                                />
-                                <Label
-                                HorizontalOptions="EndAndExpand"
-                                Text="0.5km"
-                                FontSize="12"/>
-                            </StackLayout>
-                            <StackLayout Orientation="Horizontal" Padding="0,0,5,0">
-                                <Label 
-                                Text="Cầu Rồng"
-                                FontSize="12"
-                                />
-                                <Label
-                                HorizontalOptions="EndAndExpand"
-                                Text="0.7km"
-                                FontSize="12"/>
-                            </StackLayout>
-                            <StackLayout Orientation="Horizontal">
-                                <Label
-                                TextColor="{DynamicResource Blue100Accent}"
-                                Text="Xem thêm"
-                                FontSize="12"/>
-                                <Label 
-                                Padding="4,4,0,0"
-                                   Text="&#xf054;"
-                                   FontSize="12"
-                                   FontFamily="FontSolid" 
-                                   TextColor="{DynamicResource Blue100Accent}"/>
-                            </StackLayout>
-
-                        </StackLayout>
                     </Grid>
                 </VerticalStackLayout>
             </DataTemplate>
@@ -718,6 +677,34 @@
                     </Frame>
                     <Label Text="{Binding Location}" HorizontalOptions="Center" FontSize="14"/>
                 </StackLayout>
+            </DataTemplate>
+            <DataTemplate x:Key="TourDetailTemplate">
+                <VerticalStackLayout>
+                    <Grid Margin="15" ColumnDefinitions="*,Auto">
+                        <StackLayout Grid.Column="0" HeightRequest="40">
+                            <Label Text="{Binding Name}" FontSize="18" FontAttributes="Bold"/>
+                        </StackLayout>
+                        <StackLayout HorizontalOptions="EndAndExpand" Grid.Column="1">
+                            <Border StrokeShape="RoundRectangle 3,3,3,3" Stroke="{StaticResource OrangeWarning}" Padding="17,0,0,0"
+                                    HeightRequest="25" WidthRequest="50" BackgroundColor="{StaticResource OrangeWarning}">
+                                <StackLayout Orientation="Horizontal" WidthRequest="50" Padding="0,5,0,0">
+                                    <Label Text="&#xf0e9;" FontSize="12" TextColor="{StaticResource White}" FontFamily="FontSolid" ></Label>
+                                    <Label FontAttributes="Bold" Margin="0,-1,0,0" Text="9.6" FontSize="11" TextColor="{StaticResource White}"></Label>
+                                </StackLayout>
+                            </Border>
+                        </StackLayout>
+                    </Grid>
+                    <Grid Margin="15,0,15,0" RowSpacing="10" ColumnSpacing="5" RowDefinitions="Auto,Auto,Auto" ColumnDefinitions="*,*">
+                        <Label Grid.Row="0" Grid.Column="0" Margin="0,2,5,5"
+                           FontSize="12"
+                           Text="{Binding Rating}"
+                           TextColor="{StaticResource OrangeWarning}"
+                           FontFamily="FontSolid"/>
+                        <Label Grid.Column="0" Grid.Row="1" Text="&#xf3c5;" FontSize="15" TextColor="{StaticResource Primary}" FontFamily="FontSolid" />
+                        <Label Grid.Row="1" Grid.ColumnSpan="2" Margin="20,0,0,0" HorizontalOptions="Start" TextColor="{StaticResource Primary}"
+                               FontSize="12" Text="{Binding Location}"/>
+                    </Grid>
+                </VerticalStackLayout>
             </DataTemplate>
         </ResourceDictionary>
     </Application.Resources>

@@ -138,8 +138,6 @@
    }
 
 
-
-
     public class Comment
     {
         public string Name { get; set; }
@@ -165,7 +163,21 @@
         public string Discount1 { get; set; }
         public string Name1 { get; set; }
 
+        public override string ToString()
+        {
+            return Name;
+        }
+    }
 
+    public class TourSchedule
+    {
+        public string Name { get; set; }
+        public string Day1 { get; set; }
+        public string Date1 { get; set; }
+        public string FlightDeparture { get; set; }
+        public string FlightArrivals { get; set; }
+
+        public string SecheduleContentDate1 { get; set; }
 
 
         public override string ToString()

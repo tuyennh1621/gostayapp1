@@ -17,12 +17,11 @@ public partial class AppShell : Shell
 
     void RegisterRoutes()
     {
-        Routes.Add("monkeydetails", typeof(MonkeyDetailPage));
-        Routes.Add("beardetails", typeof(BearDetailPage));
         Routes.Add("catdetails", typeof(HotelDetail));
         Routes.Add("tourdetails", typeof(TourDetails));
-        Routes.Add("dogdetails", typeof(DogDetailPage));
-        Routes.Add("elephantdetails", typeof(ElephantDetailPage));
+        Routes.Add("promotionList", typeof(PromotionList));
+        Routes.Add("discovery", typeof(Discovery));
+        Routes.Add("orderlist", typeof(OrderList));
 
         foreach (var item in Routes)
         {

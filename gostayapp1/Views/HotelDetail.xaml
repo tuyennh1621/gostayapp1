@@ -4,7 +4,7 @@
              x:Class="gostayapp1.Views.HotelDetail"
              xmlns:views="clr-namespace:gostayapp1.Views"
              xmlns:data="clr-namespace:gostayapp1.Data"
-             Title="HotelDetail">
+             Title="Hotel Detail">
     <ScrollView>
         <VerticalStackLayout>
             <VerticalStackLayout Margin="0,0,0,10">
@@ -14,7 +14,29 @@
             </VerticalStackLayout>
             <CollectionView 
                 ItemsSource="{x:Static data:HotelInfoData.Hotels}" ItemTemplate="{StaticResource HotelDetailTemplate}">
-            </CollectionView>
+            </CollectionView> 
+            <Grid Margin="15" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto" ColumnDefinitions="*,Auto">
+                <Image Grid.Row="0" Grid.ColumnSpan="2" Source="hotel/img2.png" Aspect="AspectFill" HeightRequest="100"/>
+                <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" FontAttributes="Bold" Text="Các địa danh nổi tiếng" FontSize="18" TextColor="{StaticResource Black}"/>
+                <Label Grid.Row="2" Text="Phu Quoc Island" FontSize="12"/>
+                <Label Grid.Row="2" Grid.Column="1" HorizontalOptions="EndAndExpand" Text="7 km" FontSize="12"/>
+                <Label Grid.Row="3" Text="Coi Nguon Museum" FontSize="12"/>
+                <Label Grid.Row="3" Grid.Column="1" HorizontalOptions="EndAndExpand" Text="8 km" FontSize="12"/>
+                <Label Grid.Row="4" Text="Phu Quoc National Park" FontSize="12"/>
+                <Label Grid.Row="4" Grid.Column="1" HorizontalOptions="EndAndExpand" Text="12 km" FontSize="12"/>
+                <VerticalStackLayout Grid.Row="5" x:Name="listView" IsVisible="False">
+                    <StackLayout Orientation="Horizontal" Padding="0,0,5,0" >
+                        <Label Text="Phu Quoc Prison" FontSize="12"/>
+                        <Label HorizontalOptions="EndAndExpand" Text="16 km" FontSize="12"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" Padding="0,0,5,0">
+                        <Label Text="Mango Bay Restaurant" FontSize="12"/>
+                        <Label HorizontalOptions="EndAndExpand" Text="150 m" FontSize="12"/>
+                    </StackLayout>
+                </VerticalStackLayout>
+                <Button Grid.Row="6" Grid.Column="0" Padding="0,-31,0,0" HorizontalOptions="Start" TextColor="{DynamicResource Blue100Accent}"
+                        Text="Xem thêm" FontSize="12" Background="Transparent" x:Name="xemthem" Clicked="Button_Clicked"/>
+            </Grid>
             <Label HeightRequest="5" Background="{StaticResource Gray100}"/>
             <StackLayout Margin="15">
                 <Label  

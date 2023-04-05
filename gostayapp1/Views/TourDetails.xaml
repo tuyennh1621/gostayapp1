@@ -2,11 +2,393 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="gostayapp1.Views.TourDetails"
-             Title="TourDetails">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             xmlns:views="clr-namespace:gostayapp1.Views"
+             xmlns:data="clr-namespace:gostayapp1.Data"
+             Title="Tour Detail">
+    <ScrollView>
+        <VerticalStackLayout>
+            <VerticalStackLayout Margin="0,0,0,10">
+                <CarouselView IndicatorView="indicatorView" ItemsSource="{x:Static data:TourData.Tour}" ItemTemplate="{StaticResource CarouselTemplate}">
+                </CarouselView>
+                <IndicatorView x:Name="indicatorView" IndicatorColor="LightGray" SelectedIndicatorColor="{DynamicResource Primary}" HorizontalOptions="Center" Margin="0,-15,0,0"/>
+            </VerticalStackLayout >
+            <CollectionView ItemsSource="{x:Static data:TourInfoData.Tour}" ItemTemplate="{StaticResource TourDetailTemplate}"/>
+            <Border Margin="15" StrokeShape="RoundRectangle 5"
+                        StrokeDashArray="2 2"
+                        StrokeDashOffset="1"
+                        Stroke="{DynamicResource Primary}">
+                <Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto,Auto" Margin="15" >
+                    <Label Text="Thời lượng tour:" FontSize="14"/>
+                    <Label Grid.Column="1" Text="3 Ngày 2 Đêm" FontSize="14" FontAttributes="Bold"/>
+                    <Label Grid.Row="1" Grid.Column="0" Text="Loại tour:" FontSize="14"/>
+                    <Label Grid.Row="1" Grid.Column="1" Text="Trong nước" FontSize="14" FontAttributes="Bold"/>
+                    <Label Grid.Row="2" Grid.Column="0" Text="Quy mô tour:" FontSize="14"/>
+                    <Label Grid.Row="2" Grid.Column="1" Text="20 Người" FontSize="14" FontAttributes="Bold"/>
+                    <Label Grid.Row="3" Grid.Column="0" Text="Địa điểm:" FontSize="14"/>
+                    <Label Grid.Row="3" Grid.Column="1" Grid.RowSpan="2" Text="Đức ( Cologne - Fankfurt) - Hà Lan ( Zaanse Schans - Giethoorn) - Bỉ (Brussels) - Pháp (Paris) - Luxembourg" FontSize="14" FontAttributes="Bold"/>
+                </Grid>
+            </Border>
+            <Label HeightRequest="5" Background="{StaticResource Gray100}" />
+            <StackLayout Orientation="Vertical" Margin="15">
+                <Grid ColumnDefinitions="Auto,Auto,*" VerticalOptions="Center">
+                    <Label Margin="0,4,0,0" Text="Giá từ:"/>
+                    <Label Grid.Column="1" Text="73.900.000 VNĐ" FontSize="18" FontAttributes="Bold" TextColor="{DynamicResource Primary}"/>
+                    <Label Margin="0,4,0,0" Grid.Column="2" Text="76.900.000 VND" FontSize="14" TextColor="{DynamicResource Gray600}" TextDecorations="Strikethrough"/>
+                </Grid>
+                <Grid ColumnSpacing="20" ColumnDefinitions="Auto,*,*,*" RowDefinitions="*,*">
+                    <Label Grid.Row="0" Grid.Column="0"
+                               Text="Ngày khởi hành"
+                               TextColor="{StaticResource Gray500}"
+                               FontSize="12"/>
+                    <DatePicker Grid.Row="1" Grid.Column="0" Margin="0,-15,0,0"
+                                        MinimumDate="{Binding MinDate}"
+                                        MaximumDate="{Binding MaxDate}"
+                                        Date="{Binding SelectedDate}"
+                                        TextColor="{DynamicResource Primary}"/>
+                    <Label Grid.Row="0" Grid.Column="1"
+                                Text="Người lớn"
+                                TextColor="{StaticResource Gray500}"
+                                FontSize="12"/>
+                    <Border Grid.Row="1" Grid.Column="1" HeightRequest="30" Margin="0,-10,0,0">
+                        <Label FontSize="12" Text="1" TextColor="{StaticResource Primary}" HorizontalOptions="Center" VerticalOptions="Center">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="SelectGuest"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </Border>
+                    <Label Grid.Row="0" Grid.Column="2"
+                            Text="Trẻ em"
+                            TextColor="{StaticResource Gray500}"
+                            FontSize="12"/>
+                    <Border Grid.Row="1" Grid.Column="2" HeightRequest="30" Margin="0,-10,0,0">
+                        <Label FontSize="12" Text="1" TextColor="{StaticResource Primary}" HorizontalOptions="Center" VerticalOptions="Center">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="SelectGuest"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </Border>
+                    <Label Grid.Row="0" Grid.Column="3"
+                            Text="Em bé"
+                            TextColor="{StaticResource Gray500}"
+                            FontSize="12"/>
+                    <Border Grid.Row="1" Grid.Column="3" HeightRequest="30" Margin="0,-10,0,0">
+                        <Label FontSize="12" Text="1" TextColor="{StaticResource Primary}" HorizontalOptions="Center" VerticalOptions="Center">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="SelectGuest"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </Border>
+                </Grid>
+                <Button Margin="0,10,0,0" Text="Đặt Tour Ngay" ImageSource="icon/trend.png"/>
+            </StackLayout>
+            <Label HeightRequest="5" Background="{StaticResource Gray100}" />
+            <StackLayout Margin="15" Orientation="Vertical">
+                <Label Text="Giới thiệu tổng quan" FontSize="16" FontAttributes="Bold"/>
+                <Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto,Auto,Auto">
+                    <Label Grid.Column="0" Grid.Row="0" Text="&#xf111;" FontFamily="FontSolid" FontSize="4" TextColor="{DynamicResource Black}" VerticalOptions="Center"/>
+                    <Label Grid.Column="1" Grid.Row="0" Text="Ngày 01: Hà Nội - Frankfurt: Khách sạn: Tryp by Wyndham Frankfurt, Ăn sáng + trưa trên máy bay/ tối" FontSize="14" TextColor="{DynamicResource Gray600}"/>
+                    <Label Grid.Column="0" Grid.Row="1" Text="&#xf111;" FontFamily="FontSolid" FontSize="4" TextColor="{DynamicResource Black}" VerticalOptions="Center"/>
+                    <Label Grid.Column="1" Grid.Row="1" Text="Ngày 02: Frankfurt - Cologne - Ams, Khách sạn: Corendon Village - The Urban, Sáng/trưa/tối" FontSize="14" TextColor="{DynamicResource Gray600}"/>
+                    <Label Grid.Column="0" Grid.Row="2" Text="&#xf111;" FontFamily="FontSolid" FontSize="4" TextColor="{DynamicResource Black}" VerticalOptions="Center"/>
+                    <Label Grid.Column="1" Grid.Row="2" Text="Ngày 03:  Amsterdam - Giethoorn - Amsterdam, khách sạn: Corendon Village - The Urban, Sáng/trưa/tối" FontSize="14" TextColor="{DynamicResource Gray600}"/>
+                </Grid>
+                <Grid ColumnDefinitions ="Auto,*" RowDefinitions="Auto,Auto,Auto,Auto,Auto" x:Name="listView" IsVisible="False" Margin="0,-15,0,0">
+                            <Label Grid.Column="0" Grid.Row="0" Text="&#xf111;" FontFamily="FontSolid" FontSize="4" TextColor="{DynamicResource Black}" HorizontalOptions="Center" VerticalOptions="Center"/>
+                            <Label Grid.Column="1" Grid.Row="0" Text="Ngày 04:  Amsterdam - Zaanse Schans - Brussels, khách sạn: Ramada Brussels Woluwe 4**** , Sáng/trưa/tối" FontSize="14" TextColor="{DynamicResource Gray600}"/>
+                            <Label Grid.Column="0" Grid.Row="1" Text="&#xf111;" FontFamily="FontSolid" FontSize="4" TextColor="{DynamicResource Black}" HorizontalOptions="Center" VerticalOptions="Center"/>
+                            <Label Grid.Column="1" Grid.Row="1" Text="Ngày 05:  Brussels - Paris, Khách sạn: Novotel Est Paris, Sáng/trưa/tối" FontSize="14" TextColor="{DynamicResource Gray600}"/>
+                            <Label Grid.Column="0" Grid.Row="2" Text="&#xf111;" FontFamily="FontSolid" FontSize="4" TextColor="{DynamicResource Black}" HorizontalOptions="Center" VerticalOptions="Center"/>
+                            <Label Grid.Column="1" Grid.Row="2" Text="Ngày 06: Paris, Khách sạn: Novotel Paris Est, Sáng/trưa/tối" FontSize="14" TextColor="{DynamicResource Gray600}"/>
+                            <Label Grid.Column="0" Grid.Row="3" Text="&#xf111;" FontFamily="FontSolid" FontSize="4" TextColor="{DynamicResource Black}" HorizontalOptions="Center" VerticalOptions="Center"/>
+                            <Label Grid.Column="1" Grid.Row="3" Text="Ngày 07: Paris - Luxembourg, Khách sạn: NH Luxembourg 4****, Sáng/trưa/tối" FontSize="14" TextColor="{DynamicResource Gray600}"/>
+                            <Label Grid.Column="0" Grid.Row="4" Text="&#xf111;" FontFamily="FontSolid" FontSize="4" TextColor="{DynamicResource Black}" HorizontalOptions="Center" VerticalOptions="Center"/>
+                            <Label Grid.Column="1" Grid.Row="4" Text="Ngày 08: Frankfurt - Hà Nội Máy bay, Sáng/trưa/máy bay" FontSize="14" TextColor="{DynamicResource Gray600}"/>
+                </Grid>
+                <Button Padding="0,-31,0,0" HorizontalOptions="Start" TextColor="{DynamicResource Blue100Accent}"
+                        Text="Xem thêm" FontSize="12" Background="Transparent" x:Name="xemthem" Clicked="Button_Clicked"/>
+            </StackLayout>
+            <StackLayout Margin="15,-30,15,0">
+                <Label Text="Lịch trình Tour" FontSize="16" FontAttributes="Bold"/>
+                <Label HeightRequest="2" Background="{StaticResource Gray100}"/>
+                <Label Text="Ngày 01: Hà Nội - Frankfurt" FontSize="14" FontAttributes="Bold"/>
+                <VerticalStackLayout Margin="10,0,10,0" Spacing="5">
+                    <Label Text="Xe và hướng dẫn viên (HDV) đón Quý khách tại Nhà hát Lớn khởi hành ra sân bay quốc tế Nội Bài làm thủ tục đáp chuyến bay đi Frankfurt - Cộng hòa Liên Bang Đức."
+                       FontSize="14" TextColor="{DynamicResource Gray600}"/>
+                    <Label Text="Lịch bay dự kiến: QH  073 HANFRA DK1 0900 1715" FontAttributes="Bold" />
+                    <Label Text="Đoàn hạ cánh tại sân bay Quốc tế Frankfurt."
+                       FontSize="14" TextColor="{DynamicResource Gray600}"/>
+                </VerticalStackLayout>
+                <Label Text="Ngày 02: Frankfurt - Cologne - Amsterdam| (Ăn sáng, trưa, tối)" FontSize="14" FontAttributes="Bold"/>
+                <VerticalStackLayout Margin="10,0,10,0" Spacing="5">
+                    <Label Text="Đoàn ăn sáng buffet và trả phòng tại khách sạn."
+                       FontSize="14" TextColor="{DynamicResource Gray600}"/>
+                    <Label Text="Xe và HDV đưa Quý khách khởi hành từ Frankfurt đi Cologne (190 km, 2h30’ lái xe oto) tham quan thành phố." TextColor="{DynamicResource Gray600}" />
+
+                </VerticalStackLayout>
+            </StackLayout>
+            <StackLayout Margin="15">
+                <Label Text="Chính sách Tour" FontSize="16" FontAttributes="Bold"/>
+                <Label HeightRequest="2" Background="{StaticResource Gray100}" />
+                <VerticalStackLayout Margin="0,5,0,0" Spacing="10">
+                    <Border StrokeShape="RoundRectangle 5" >
+                        <Grid Padding="15" RowDefinitions="*" ColumnDefinitions="*,Auto">
+                            <Label Text="Tour bao gồm" Grid.Column="0"/>
+                            <Label Text="&#xf077;" x:Name="icon" Grid.Column="1" FontFamily="FontSolid" VerticalOptions="Center"/>
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                            </Grid.GestureRecognizers>
+                        </Grid>
+                    </Border>
+                    <VerticalStackLayout Spacing="10" x:Name="items" IsVisible="False">
+                        <Grid Padding="10" RowDefinitions="Auto,Auto,Auto,Auto" ColumnDefinitions="Auto,*">
+                            <Label Text="&#xf111;"
+                               FontFamily="FontSolid"
+                               FontSize="5"
+                               TextColor="#666"
+                               Margin="0,8,0,0"
+                               VerticalOptions="Start"/>
+                            <Label Grid.Column="1"
+                               Text="Khách sạn 4**** tiêu chuẩn Quốc tế, 2 người/phòng, trường hợp lẻ người bố trí phòng 3 người.."
+                               TextColor="#666"
+                               VerticalOptions="Start"
+                               HorizontalOptions="Start"/>
+                            <Label Text="&#xf111;"
+                               Grid.Row="1"
+                               FontFamily="FontSolid"
+                               FontSize="5"
+                               Margin="0,8,0,0"
+                               TextColor="#666"
+                               VerticalOptions="Start"/>
+                            <Label Grid.Column="1"
+                               Grid.Row="1"
+                               Text="Xe 49 chỗ đời mới, tiêu chuẩn châu Âu vận chuyển đoàn theo chương trình."
+                               TextColor="#666"
+                               VerticalOptions="Start"
+                               HorizontalOptions="Start"/>
+                            <Label Text="&#xf111;"
+                               Grid.Row="2"
+                               FontFamily="FontSolid"
+                               FontSize="5"
+                               Margin="0,8,0,0"
+                               TextColor="#666"
+                               VerticalOptions="Start"/>
+                            <Label Grid.Column="1"
+                               Grid.Row="2"
+                               Text="Vé máy bay khứ hồi từ Việt Nam bao gồm thuế, lệ phí sân bay, phụ phí xăng dầu hàng không."
+                               TextColor="#666"
+                               VerticalOptions="Start"
+                               HorizontalOptions="Start"/>
+                            <Label Text="&#xf111;"
+                               Grid.Row="3"
+                               FontFamily="FontSolid"
+                               FontSize="5"
+                               Margin="0,8,0,0"
+                               TextColor="#666"
+                               VerticalOptions="Start"/>
+                            <Label Grid.Column="1"
+                               Grid.Row="3"
+                               Text="Hành lý ký gửi và xách tay theo tiêu chuẩn quy định bởi hãng hàng không"
+                               TextColor="#666"
+                               VerticalOptions="Start"
+                               HorizontalOptions="Start"/>
+                        </Grid>
+                    </VerticalStackLayout>
+                    <Border StrokeShape="RoundRectangle 5" >
+                        <Grid Padding="15" RowDefinitions="*" ColumnDefinitions="*,Auto">
+                            <Label Text="Chính sách giá tour áp dụng cho trẻ em" Grid.Column="0"/>
+                            <Label Text="&#xf077;" x:Name="icon1" Grid.Column="1" FontFamily="FontSolid" VerticalOptions="Center"/>
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped1" />
+                            </Grid.GestureRecognizers>
+                        </Grid>
+                    </Border>
+                    <VerticalStackLayout Spacing="10" x:Name="items1" IsVisible="False">
+                        <Grid Padding="10" RowDefinitions="Auto,Auto,Auto,Auto" ColumnDefinitions="Auto,*">
+                            <Label Text="&#xf111;"
+                               FontFamily="FontSolid"
+                               FontSize="5"
+                               TextColor="#666"
+                               Margin="0,8,0,0"
+                               VerticalOptions="Start"/>
+                            <Label Grid.Column="1"
+                               Text="Trẻ em dưới 2 tuổi: 30% giá tour người lớn (ngủ chung giường với người lớn)"
+                               TextColor="#666"
+                               VerticalOptions="Start"
+                               HorizontalOptions="Start"/>
+                            <Label Text="&#xf111;"
+                               Grid.Row="1"
+                               FontFamily="FontSolid"
+                               FontSize="5"
+                               Margin="0,8,0,0"
+                               TextColor="#666"
+                               VerticalOptions="Start"/>
+                            <Label Grid.Column="1"
+                               Grid.Row="1"
+                               Text="Trẻ em 2-11 tuổi: 85% giá tour người lớn (ngủ chung giường với người lớn)"
+                               TextColor="#666"
+                               VerticalOptions="Start"
+                               HorizontalOptions="Start"/>
+                            <Label Text="&#xf111;"
+                               Grid.Row="2"
+                               FontFamily="FontSolid"
+                               FontSize="5"
+                               Margin="0,8,0,0"
+                               TextColor="#666"
+                               VerticalOptions="Start"/>
+                            <Label Grid.Column="1"
+                               Grid.Row="2"
+                               Text="Trẻ em 2-11 tuổi: 100 % giá tour người lớn (ngủ giường riêng như người lớn)"
+                               TextColor="#666"
+                               VerticalOptions="Start"
+                               HorizontalOptions="Start"/>
+                            <Label Text="&#xf111;"
+                               Grid.Row="3"
+                               FontFamily="FontSolid"
+                               FontSize="5"
+                               Margin="0,8,0,0"
+                               TextColor="#666"
+                               VerticalOptions="Start"/>
+                            <Label Grid.Column="1"
+                               Grid.Row="3"
+                               Text="Trẻ em 12 tuổi trở lên: 100% giá tour người lớn (ngủ giường riêng như người lớn)"
+                               TextColor="#666"
+                               VerticalOptions="Start"
+                               HorizontalOptions="Start"/>
+                        </Grid>
+                    </VerticalStackLayout>
+                </VerticalStackLayout>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Margin="15">
+                <Label Text="Đánh giá" FontSize="16" FontAttributes="Bold" Margin="0,10,0,0"/>
+                <Button HorizontalOptions="EndAndExpand" ImageSource="edit_white.png" FontSize="14" Text="Viết đánh giá" Clicked="Rating"/>
+            </StackLayout>
+            <Label Margin="15,0,15,0" HeightRequest="2" Background="{StaticResource Gray100}" />
+            <Border Background="{StaticResource White}" StrokeShape="RoundRectangle 5" Padding="15" Margin="15,15,15,15">
+                <VerticalStackLayout Margin="0,0,0,20">
+                    <Grid ColumnDefinitions="Auto,Auto">
+                        <Border Grid.Column="0"
+                                StrokeShape="RoundRectangle 5" 
+                                WidthRequest="50"
+                                HeightRequest="50" 
+                                Background="{StaticResource Primary}"
+                                StrokeThickness="0">
+                            <Grid RowDefinitions="*,*" HorizontalOptions="Center" VerticalOptions="Center">
+                                <Label                                
+                                    Text="&#xf0e9;" 
+                                    FontSize="16"
+                                    TextColor="{StaticResource White}" 
+                                    FontFamily="FontSolid"/>
+                                <Label Grid.Row="1" Margin="0,-8,0,0"
+                                     Text="9.6"
+                                    FontSize="18"
+                                    FontAttributes="Bold"
+                                    TextColor="{StaticResource White}"/>
+                            </Grid>
+                        </Border>
+                        <StackLayout Orientation="Vertical" Grid.Column="1">
+                            <Label
+                                FontAttributes="Bold"
+                                Margin="5,7,0,0"
+                                Text="Tuyệt vời" 
+                                FontSize="14"
+                                TextColor="{StaticResource Gray950}" 
+                                 ></Label>
+                            <Label
+                                Margin="5,0,0,0"
+                                Text="(1234) đánh giá" 
+                                FontSize="12"
+                                TextColor="{StaticResource Gray500}" 
+                                 ></Label>
+                        </StackLayout>
+                    </Grid>
+                    <StackLayout Margin="0,12,0,0">
+                        <StackLayout Orientation="Horizontal" >
+                            <Label FontSize="12" Text="Vị trí"/>
+                            <Label
+                                FontSize="12"
+                                Text="9.6 "
+                                HorizontalOptions="EndAndExpand"/>
+
+                        </StackLayout>
+                        <StackLayout>
+                            <ProgressBar Progress="0.8" ProgressColor="{StaticResource Primary}" />
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout Margin="0,0,0,0">
+                        <StackLayout Orientation="Horizontal" >
+                            <Label
+                                FontSize="12"
+                                Text="Giá cả "
+                                />
+                            <Label
+                                FontSize="12"
+                                Text="9.6 "
+                                HorizontalOptions="EndAndExpand"
+                                />
+                        </StackLayout>
+                        <StackLayout>
+                            <ProgressBar Progress="0.5" ProgressColor="{StaticResource Primary}" />
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout Margin="0,0,0,0">
+                        <StackLayout Orientation="Horizontal" >
+                            <Label
+                                FontSize="12"
+                                Text="Phục vụ "
+                                />
+                            <Label
+                                FontSize="12"
+                                Text="7.6 "
+                                HorizontalOptions="EndAndExpand"
+                                />
+                        </StackLayout>
+                        <StackLayout>
+                            <ProgressBar Progress="0.6" ProgressColor="{StaticResource Primary}" />
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout Margin="0,0,0,0">
+                        <StackLayout Orientation="Horizontal" >
+                            <Label
+                                FontSize="12"
+                                Text="Vệ sinh "
+                                />
+                            <Label
+                                FontSize="12"
+                                Text="8.6 "
+                                HorizontalOptions="EndAndExpand"
+                                />
+                        </StackLayout>
+                        <StackLayout>
+                            <ProgressBar Progress="0.7" ProgressColor="{StaticResource Primary}" />
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout Margin="0,0,0,0">
+                        <StackLayout Orientation="Horizontal" >
+                            <Label
+                                FontSize="12"
+                                Text="Tiện nghi "
+                                />
+                            <Label
+                                FontSize="12"
+                                Text="7.6 "
+                                HorizontalOptions="EndAndExpand"
+                                />
+                        </StackLayout>
+                        <StackLayout>
+                            <ProgressBar Progress="0.7" ProgressColor="{StaticResource Primary}" />
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout Margin="0,10,0,0">
+                        <Label Margin="0,0,0,10"
+                            FontAttributes="Bold"
+                            Text="Người dùng đánh giá"
+                            FontSize="14"/>
+                        <Label HeightRequest="1" Background="{StaticResource Gray100}"/>
+                    </StackLayout>
+                    <CollectionView ItemsSource="{x:Static data:CommentD.Rate}" ItemTemplate="{StaticResource CommentGuest}">
+                    </CollectionView>
+                </VerticalStackLayout>
+            </Border>
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>
