@@ -201,15 +201,6 @@ namespace gostayapp1.Data
                 });
 
             }
-        }
-
-        //void AddBears()
-        //{
-           
-        //  //  Hotels = new ObservableCollection<HotelHomePageDto>(source);
-        //}
-
-
-        
+        }       
     }
 }

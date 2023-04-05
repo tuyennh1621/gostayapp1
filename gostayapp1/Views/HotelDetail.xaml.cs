@@ -26,4 +26,20 @@ public partial class HotelDetail : ContentPage
         _collapsed = !_collapsed;
     }
 
+    private bool _collapsed1 = false;
+    void Button_Clicked1(System.Object sender, System.EventArgs e)
+    {
+        listView1.IsVisible = !_collapsed1;
+        xemthem1.Text = (listView1.IsVisible = !_collapsed1) ? "Thu gọn" : "Xem thêm";
+        _collapsed1 = !_collapsed1;
+    }
+
+    private bool _collapsed2 = false;
+    void Button_Clicked2(System.Object sender, System.EventArgs e)
+    {
+        listView2.IsVisible = !_collapsed2;
+        xemthem2.Text = (listView2.IsVisible = !_collapsed2) ? "Thu gọn" : "Xem thêm";
+        _collapsed2 = !_collapsed2;
+    }
+
 }
