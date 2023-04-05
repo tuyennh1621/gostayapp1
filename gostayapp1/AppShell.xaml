@@ -82,22 +82,21 @@
                           Title="Tour du lịch"
                           ContentTemplate="{DataTemplate views:MainTours}" />
         </Tab>
-        <ShellContent Route="monkeys"
+        <ShellContent Route="promotionList"
                       Style="{StaticResource DomesticShell}"
                       Title="Ưu đãi"
                       Icon="icon/offer.png"
                       ContentTemplate="{DataTemplate views:PromotionList}" />
-        <ShellContent Route="elephants"
+        <ShellContent Route="discovery"
                       Style="{StaticResource ElephantsShell}"
                       Title="Khám phá"
                       Icon="icon/discover.png"
-                      ContentTemplate="{DataTemplate views:ElephantsPage}" />
-
-        <ShellContent Route="bears"
+                      ContentTemplate="{DataTemplate views:Discovery}" />
+        <ShellContent Route="orderlist"
                       Style="{StaticResource BearsShell}"
                       Title="Đơn hàng"
                       Icon="icon/clipboard.png"
-                      ContentTemplate="{DataTemplate views:BearsPage}"/>
+                      ContentTemplate="{DataTemplate views:OrderList}"/>
         <ShellContent Route="bears"
                       Style="{StaticResource DomesticShell}"
                       Title="Tài khoản"

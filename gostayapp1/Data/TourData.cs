@@ -142,6 +142,22 @@ namespace gostayapp1.Data
            
         }
     }
+    public static class TourInfoData
+    {
+        public static IList<Animal> Tour { get; private set; }
+
+        static TourInfoData()
+        {
+            Tour = new List<Animal>();
+
+            Tour.Add(new Animal
+            {
+                Name = "Đức - Hà Lan - Bỉ - Pháp - Luxembourg",
+                Rating = "\uf005;\uf005;\uf005;",
+                Location = "Đức ( Cologne - Fankfurt) - Hà Lan ( Zaanse Schans - Giethoorn) - Bỉ (Brussels) - Pháp (Paris) - Luxembourg",
+            });
+        }
+    }
 
 
 }
