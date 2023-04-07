@@ -5,11 +5,7 @@
        xmlns:sys="clr-namespace:System;assembly=netstandard"
        xmlns:views="clr-namespace:gostayapp1.Views"
        x:Class="gostayapp1.AppShell"
-       
        x:Name="shell"
-       
-        FlyoutBackgroundImage="photo.jpg"
-       FlyoutBackgroundImageAspect="AspectFill"
        FlyoutHeaderBehavior="CollapseOnScroll"
 >
     <Shell.Resources>
@@ -69,50 +65,49 @@
     <FlyoutItem Route="animals" 
                 FlyoutDisplayOptions="AsMultipleItems" >
         
-        <Tab Title="Trang Chủ" Route="domestic" Icon="house_96.png">
-            
-            <ShellContent Route="cats" 
-                          Style="{StaticResource DomesticShell}"
-                          Title="Khách sạn"
-                          ContentTemplate="{DataTemplate views:MainHotels}"/>
-            <ShellContent Route="dogs"
-                          Style="{StaticResource DomesticShell}"
-                          Title="Vé máy bay"
-                          ContentTemplate="{DataTemplate views:MainAirPlane}" />
-            <ShellContent Route="dogs"
-                          Style="{StaticResource DomesticShell}"
-                          Title="Tour du lịch"
-                          ContentTemplate="{DataTemplate views:MainTours}" />
-        </Tab>
-        <ShellContent Route="promotionList"
+        <ShellContent Route="hotels" 
+                      Icon="https://cdn-icons-png.flaticon.com/512/3086/3086454.png"
                       Style="{StaticResource DomesticShell}"
-                      Title="Ưu đãi"
-                      Icon="icon/offer.png"
-                      ContentTemplate="{DataTemplate views:PromotionList}" />
+                      Title="Khách sạn"
+                      ContentTemplate="{DataTemplate views:MainHotels}"/>
+        <ShellContent Route="planes"
+                      Icon="https://cdn-icons-png.flaticon.com/512/8885/8885364.png"
+                      Style="{StaticResource DomesticShell}"
+                      Title="Vé máy bay"
+                      ContentTemplate="{DataTemplate views:MainAirPlane}" />
+        <ShellContent Route="tours"
+                       Icon="https://cdn-icons-png.flaticon.com/512/9610/9610500.png"
+                      Style="{StaticResource DomesticShell}"
+                      Title="Tour du lịch"
+                      ContentTemplate="{DataTemplate views:MainTours}" />
         <ShellContent Route="discovery"
                       Style="{StaticResource ElephantsShell}"
                       Title="Khám phá"
-                      Icon="icon/discover.png"
+                      Icon="https://cdn-icons-png.flaticon.com/512/3405/3405524.png"
                       ContentTemplate="{DataTemplate views:Discovery}" />
-        <ShellContent Route="orderlist"
-                      Style="{StaticResource BearsShell}"
-                      Title="Đơn hàng"
-                      Icon="icon/clipboard.png"
-                      ContentTemplate="{DataTemplate views:OrderList}"/>
-        <ShellContent Route="bears"
+        <ShellContent Route="users"
                       Style="{StaticResource DomesticShell}"
                       Title="Tài khoản"
-                      Icon="icon/user.png"
+                      Icon="https://cdn-icons-png.flaticon.com/512/1077/1077114.png"
                       ContentTemplate="{DataTemplate views:Login}"/>
     </FlyoutItem>
-       
+    <ShellContent Route="orderlist"
+                      Style="{StaticResource BearsShell}"
+                      Title="Đơn hàng"
+                      Icon="https://cdn-icons-png.flaticon.com/512/1368/1368593.png"
+                      ContentTemplate="{DataTemplate views:OrderList}"/>
+    <ShellContent Route="promotionList"
+                      Style="{StaticResource DomesticShell}"
+                      Title="Ưu đãi"
+                      Icon="https://cdn-icons-png.flaticon.com/512/879/879859.png"
+                      ContentTemplate="{DataTemplate views:PromotionList}" />
     <ShellContent Route="about"
                   Style="{StaticResource AboutShell}"
                   Title="About"
-                  Icon="info.png"
+                  Icon="https://cdn-icons-png.flaticon.com/512/1/1176.png"
                   ContentTemplate="{DataTemplate views:AboutPage}" />
     <MenuItem Text="Help"
-              IconImageSource="help.png"
+              IconImageSource="https://cdn-icons-png.flaticon.com/512/18/18436.png"
               Command="{Binding HelpCommand}"
               CommandParameter="https://docs.microsoft.com/dotnet/maui/fundamentals/shell" />
 </Shell>

@@ -2,11 +2,22 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="gostayapp1.Views.Discovery"
-             Title="Discovery">
+             xmlns:controls="clr-namespace:gostayapp1.Controls"
+             xmlns:data="clr-namespace:gostayapp1.Data"
+             xmlns:views="clr-namespace:gostayapp1.Views"
+             Title="Discovery"
+             xmlns:maps="clr-namespace:Microsoft.Maui.Controls.Maps;assembly=Microsoft.Maui.Controls.Maps"
+             xmlns:sensors="clr-namespace:Microsoft.Maui.Devices.Sensors;assembly=Microsoft.Maui.Essentials">
+
+    <Shell.SearchHandler>
+        <controls:AnimalSearchHandler Placeholder="Nhập từ khóa tìm kiếm"
+                                      ShowsResults="true"
+                                      ItemTemplate="{StaticResource AnimalSearchTemplate}"
+                                      Animals="{x:Static data:SearchHotelData.Hotels}"
+                                      SelectedItemNavigationTarget="{x:Type views:HotelDetail}" />
+    </Shell.SearchHandler>
     <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+        <Label Text="Test"/>
     </VerticalStackLayout>
+
 </ContentPage>
