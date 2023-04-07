@@ -15,7 +15,7 @@
             <CollectionView 
                 ItemsSource="{x:Static data:HotelInfoData.Hotels}" ItemTemplate="{StaticResource HotelDetailTemplate}">
             </CollectionView> 
-            <Grid Margin="15" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto" ColumnDefinitions="*,Auto">
+            <Grid Margin="15,15,15,0" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto" ColumnDefinitions="*,Auto">
                 <Image Grid.Row="0" Grid.ColumnSpan="2" Source="hotel/img2.png" Aspect="AspectFill" HeightRequest="100"/>
                 <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" FontAttributes="Bold" Text="Các địa danh nổi tiếng" FontSize="18" TextColor="{StaticResource Black}"/>
                 <Label Grid.Row="2" Text="Phu Quoc Island" FontSize="12"/>
@@ -24,16 +24,12 @@
                 <Label Grid.Row="3" Grid.Column="1" HorizontalOptions="EndAndExpand" Text="8 km" FontSize="12"/>
                 <Label Grid.Row="4" Text="Phu Quoc National Park" FontSize="12"/>
                 <Label Grid.Row="4" Grid.Column="1" HorizontalOptions="EndAndExpand" Text="12 km" FontSize="12"/>
-                <VerticalStackLayout Grid.Row="5" x:Name="listView" IsVisible="False">
-                    <StackLayout Orientation="Horizontal" Padding="0,0,5,0" >
-                        <Label Text="Phu Quoc Prison" FontSize="12"/>
-                        <Label HorizontalOptions="EndAndExpand" Text="16 km" FontSize="12"/>
-                    </StackLayout>
-                    <StackLayout Orientation="Horizontal" Padding="0,0,5,0">
-                        <Label Text="Mango Bay Restaurant" FontSize="12"/>
-                        <Label HorizontalOptions="EndAndExpand" Text="150 m" FontSize="12"/>
-                    </StackLayout>
-                </VerticalStackLayout>
+                <Grid Grid.Row="5" Grid.ColumnSpan="2" RowDefinitions="*,*" ColumnDefinitions="*,*" x:Name="listView" IsVisible="False">
+                    <Label Grid.Column="0" Grid.Row="0" Text="Phu Quoc Prison" FontSize="12"/>
+                    <Label Grid.Column="1" Grid.Row="0" HorizontalOptions="EndAndExpand" Text="16 km" FontSize="12"/>
+                    <Label Grid.Column="0" Grid.Row="1" Text="Mango Bay Restaurant" FontSize="12"/>
+                    <Label Grid.Column="1" Grid.Row="1" HorizontalOptions="EndAndExpand" Text="150 m" FontSize="12"/>
+                </Grid>
                 <Button Grid.Row="6" Grid.Column="0" Padding="0,-31,0,0" HorizontalOptions="Start" TextColor="{DynamicResource Blue100Accent}"
                         Text="Xem thêm" FontSize="12" Background="Transparent" x:Name="xemthem" Clicked="Button_Clicked"/>
             </Grid>
@@ -308,7 +304,7 @@
             </Border>
             <Label Margin="15,0,15,0" FontAttributes="Bold" Text="Chính sách khách sạn" FontSize="18" TextColor="{DynamicResource Black}"/>
             <Border Margin="15,10,15,0" StrokeShape="RoundRectangle 5" >
-                <StackLayout Orientation="Vertical" Padding="15">
+                <StackLayout Orientation="Vertical" Padding="15,15,15,0">
                     <StackLayout Orientation="Horizontal"  Spacing="10" >
                         <Border HorizontalOptions="FillAndExpand" StrokeShape="RoundRectangle 3,3,3,3" Stroke="{StaticResource Gray100}" 
                             HeightRequest="70" Background="{StaticResource Gray100}">
@@ -322,8 +318,7 @@
 
                             </StackLayout>
                         </Border>
-                        <Border 
-                            
+                        <Border                             
                             StrokeShape="RoundRectangle 3,3,3,3" 
                             HorizontalOptions="FillAndExpand"
                             Background="{StaticResource Gray100}"
@@ -342,13 +337,11 @@
                             </StackLayout>
                         </Border>
                     </StackLayout>
-
-                    <StackLayout Orientation="Vertical" Spacing="5" Padding="0,10,10,0">
+                    <StackLayout Orientation="Vertical" Spacing="5">
                         <Label 
                             Text="Chính sách trẻ em"
                             FontSize="12" 
-                             FontAttributes="Bold"/>
-
+                            FontAttributes="Bold"/>
                         <Label
                            TextColor="{StaticResource Gray500}"
                             Text="Trẻ em từ 12 tuổi sẽ được xem như người lớn."
@@ -357,80 +350,13 @@
                             TextColor="{StaticResource Gray500}"
                             Text="Quý khách hàng vui lòng nhập đúng số lượng khách và tuổi để có giá chính xác"
                             FontSize="12" />
-                        <StackLayout Orientation="Horizontal">
-                            <Label
-                                TextColor="{DynamicResource Blue100Accent}"
-                                Text="Xem thêm"
-                                FontSize="12"/>
-                            <Label 
-                                Padding="4,4,0,0"
-                                   Text="&#xf054;"
-                                   FontSize="12"
-                                   FontFamily="FontSolid" 
-                                   TextColor="{DynamicResource Blue100Accent}"/>
-                        </StackLayout>
+                        <Label x:Name="listView1" IsVisible="False"
+                            TextColor="{StaticResource Gray500}"
+                            Text="Các chính sách hủy và thanh toán trước có khác biệt dựa trên loại chỗ nghỉ. Vui lòng nhập ngày tháng lưu trú và kiểm tra các điều kiện của phòng bạn chọn."
+                            FontSize="12" />
+                        <Button Padding="0,-31,0,0" HorizontalOptions="Start" TextColor="{DynamicResource Blue100Accent}"
+                        Text="Xem thêm" FontSize="12" Background="Transparent" x:Name="xemthem1" Clicked="Button_Clicked1"/>
                     </StackLayout>
-                </StackLayout>
-            </Border>
-            <Label Margin="15,10,15,0" 
-                  FontAttributes="Bold"
-                  Text="Các địa danh nổi tiếng"
-                  FontSize="18"
-                  TextColor="{DynamicResource Black}"/>
-            <Border Margin="15,10,15,0"  StrokeShape="RoundRectangle 5">
-                <StackLayout Orientation="Vertical" Spacing="5" Padding="15">
-                    <StackLayout Orientation="Horizontal"  >
-                        <Label
-                         
-                          Text="Biển Mỹ Khê"
-                          FontSize="12"
-                          TextColor="{StaticResource Gray500}"/>
-                        <Label
-                          HorizontalOptions="EndAndExpand"
-                          Text="0.5km"
-                          FontSize="12"
-                          TextColor="{StaticResource Gray500}"/>
-                    </StackLayout>
-                    <StackLayout Orientation="Horizontal"  >
-                        <Label
-                          
-                          Text="Cầu Rồng"
-                          FontSize="12"
-                          TextColor="{StaticResource Gray500}"/>
-                        <Label
-                
-                          HorizontalOptions="EndAndExpand"
-                          Text="0.7km"
-                          FontSize="12"
-                          TextColor="{StaticResource Gray500}"/>
-                    </StackLayout>
-                    <StackLayout Orientation="Horizontal"  >
-                        <Label
-                          
-                          Text="Cầu Sông Hàn"
-                          FontSize="12"
-                          TextColor="{StaticResource Gray500}"/>
-                        <Label
-                          HorizontalOptions="EndAndExpand"
-                          Text="1.2km"
-                          FontSize="12"
-                          TextColor="{StaticResource Gray500}"/>
-                    </StackLayout>
-
-                    <StackLayout Orientation="Horizontal">
-                        <Label
-                                TextColor="{DynamicResource Blue100Accent}"
-                                Text="Xem thêm"
-                                FontSize="12"/>
-                        <Label  
-                               
-                                Padding="4,4,0,0"
-                                Text="&#xf054;"
-                                FontSize="12"
-                                FontFamily="FontSolid" 
-                                TextColor="{DynamicResource Blue100Accent}"/>
-                    </StackLayout>
-
                 </StackLayout>
             </Border>
             <Label Margin="15,10,15,0" 
@@ -438,26 +364,20 @@
                   Text="Thông tin khách sạn"
                   FontSize="18"
                   TextColor="{DynamicResource Black}"/>
-            <Border Margin="15,10,15,0" StrokeShape="RoundRectangle 5"  Padding="15" >
+            <Border Margin="15,10,15,0" StrokeShape="RoundRectangle 5" Padding="15,15,15,0" >
                 <StackLayout>
                     <Label
                         TextColor="{StaticResource Gray500}"
                         FontSize="12"
                         LineHeight="1.2"
                         Text="Altara Suites là nơi nghỉ chân cho du khách tuyệt vời được đón nhận nhiệt tình trong suốt thời gian hoạt động phát triển.  Dưới đây là thông tin chi tiết hơn về những đặc điểm nổi bật cũng như địa điểm tham quan cho du khách tham khảo."/>
-                    <StackLayout Orientation="Horizontal" >
-                        <Label
-                                TextColor="{DynamicResource Blue100Accent}"
-                                Text="Xem thêm"
-                                FontSize="12"/>
-                        <Label  
-                                
-                                Padding="4,4,0,0"
-                                Text="&#xf054;"
-                                FontSize="12"
-                                FontFamily="FontSolid" 
-                                TextColor="{DynamicResource Blue100Accent}"/>
-                    </StackLayout>
+                    <Label x:Name="listView2" IsVisible="False"
+                        TextColor="{StaticResource Gray500}"
+                        FontSize="12"
+                        LineHeight="1.2"
+                        Text="Altara Suites là nơi nghỉ chân cho du khách tuyệt vời được đón nhận nhiệt tình trong suốt thời gian hoạt động phát triển.  Dưới đây là thông tin chi tiết hơn về những đặc điểm nổi bật cũng như địa điểm tham quan cho du khách tham khảo."/>
+                    <Button Padding="0,-31,0,0" HorizontalOptions="Start" TextColor="{DynamicResource Blue100Accent}"
+                            Text="Xem thêm" FontSize="12" Background="Transparent" x:Name="xemthem2" Clicked="Button_Clicked2"/>
 
                 </StackLayout>
             </Border>

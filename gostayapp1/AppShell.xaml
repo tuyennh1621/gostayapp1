@@ -5,10 +5,13 @@
        xmlns:sys="clr-namespace:System;assembly=netstandard"
        xmlns:views="clr-namespace:gostayapp1.Views"
        x:Class="gostayapp1.AppShell"
+       
        x:Name="shell"
-       FlyoutBackgroundImage="photo.jpg"
+       
+        FlyoutBackgroundImage="photo.jpg"
        FlyoutBackgroundImageAspect="AspectFill"
-       FlyoutHeaderBehavior="CollapseOnScroll">
+       FlyoutHeaderBehavior="CollapseOnScroll"
+>
     <Shell.Resources>
         <Style x:Key="BaseStyle"
                TargetType="Element">
@@ -59,20 +62,19 @@
     <Shell.FlyoutHeader>
         <controls:FlyoutHeader />
     </Shell.FlyoutHeader>
-
     <Shell.FlyoutFooter>
         <controls:FlyoutFooter />
     </Shell.FlyoutFooter>
 
-    <FlyoutItem Route="animals"
-                FlyoutDisplayOptions="AsMultipleItems">
-        <Tab Title="Trang Chủ"
-             Route="domestic"
-             Icon="house_96.png">
-            <ShellContent Route="cats"
+    <FlyoutItem Route="animals" 
+                FlyoutDisplayOptions="AsMultipleItems" >
+        
+        <Tab Title="Trang Chủ" Route="domestic" Icon="house_96.png">
+            
+            <ShellContent Route="cats" 
                           Style="{StaticResource DomesticShell}"
                           Title="Khách sạn"
-                          ContentTemplate="{DataTemplate views:MainHotels}" />
+                          ContentTemplate="{DataTemplate views:MainHotels}"/>
             <ShellContent Route="dogs"
                           Style="{StaticResource DomesticShell}"
                           Title="Vé máy bay"
@@ -103,6 +105,7 @@
                       Icon="icon/user.png"
                       ContentTemplate="{DataTemplate views:Login}"/>
     </FlyoutItem>
+       
     <ShellContent Route="about"
                   Style="{StaticResource AboutShell}"
                   Title="About"
