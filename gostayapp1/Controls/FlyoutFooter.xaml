@@ -5,11 +5,12 @@
              x:Class="gostayapp1.Controls.FlyoutFooter">
     <StackLayout>
         <Label Text="goStay"
-               TextColor="GhostWhite"
+               TextColor="{DynamicResource Black}"
                FontAttributes="Bold"
                HorizontalOptions="Center" />
-        <Label Text="{Binding Source={x:Static sys:DateTime.Now}, StringFormat='{0:MMMM dd, yyyy}'}"
-               TextColor="GhostWhite"
+        <Label Margin="0,0,0,20"
+            Text="{Binding Source={x:Static sys:DateTime.Now}, StringFormat='{0:MMMM dd, yyyy}'}"
+               TextColor="{DynamicResource Black}"
                HorizontalOptions="Center" />
     </StackLayout>
 </ContentView>

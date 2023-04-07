@@ -7,6 +7,13 @@
              xmlns:viewModels="clr-namespace:gostayapp1.ViewModels" 
              xmlns:views="clr-namespace:gostayapp1.Views"
              Title="Danh sách chuyến bay">
+    <Shell.SearchHandler>
+        <controls:AnimalSearchHandler Placeholder="Nhập từ khóa tìm kiếm"
+                                      ShowsResults="true"
+                                      ItemTemplate="{StaticResource AnimalSearchTemplate}"
+                                      Animals="{x:Static data:SearchHotelData.Hotels}"
+                                      SelectedItemNavigationTarget="{x:Type views:HotelDetail}" />
+    </Shell.SearchHandler>
     <ScrollView>
         <VerticalStackLayout>
             <StackLayout Background="#f5f5f5">
