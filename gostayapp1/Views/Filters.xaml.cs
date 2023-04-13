@@ -14,8 +14,8 @@ public partial class Filters : ContentPage
         lbPrice.Text = "Khoảng giá: 0 - " + string.Format(new CultureInfo("vi-VN"), "{0:#,##0}", 100000 * Math.Round(e.NewValue, 0)) + " vnđ";
     }
 
-    private async void PlaneListing(object sender, EventArgs e)
+    private async void SelectDeparture(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new PlaneListing());
+        await Navigation.PushAsync(new Departure());
     }
 }

@@ -72,7 +72,7 @@
                     </StackLayout>
                 </Frame>
             </StackLayout>
-            <CarouselView ItemsSource="{x:Static data:HotelNearYourData.Hotels}" ZIndex="1000" ItemTemplate="{StaticResource HotelNearYourData}" PeekAreaInsets="100"/>
+            <CarouselView ItemsSource="{x:Static data:HotelNearYourData.Hotels}" ZIndex="1000" ItemTemplate="{StaticResource HotelNearYourData}" Margin="10,15,0,0"/>
             <StackLayout Padding="15" x:Name="Sale">
                 <Grid Margin="0,0,0,5">
                     <Grid.ColumnDefinitions>

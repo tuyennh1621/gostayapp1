@@ -22,6 +22,10 @@ public partial class AppShell : Shell
         Routes.Add("promotionList", typeof(PromotionList));
         Routes.Add("discovery", typeof(Discovery));
         Routes.Add("orderlist", typeof(OrderList));
+        Routes.Add("departure", typeof(Departure));
+        Routes.Add("PlaneListing", typeof(PlaneListing));
+
+
 
         foreach (var item in Routes)
         {

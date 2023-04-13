@@ -62,37 +62,32 @@ namespace gostayapp1.Data
             {
                 Location = "Gần tôi",
                 ImageUrl = "icon/location1.png",
+
+                Location1 = "Đà Nẵng",
+                ImageUrl1 = "https://gostay.realtech.com.vn/assets/images/location/da-nang.jpg",
+
+                Location2 = "Nha Trang",
+                ImageUrl2 = "https://gostay.realtech.com.vn/assets/images/location/nha-trang.jpg",
+
+                Location3 = "Huế",
+                ImageUrl3 = "https://gostay.realtech.com.vn/assets/images/location/hue.jpg",
+
             });
             Hotels.Add(new NearYour
             {
                 Location = "Đà Nẵng",
                 ImageUrl = "https://gostay.realtech.com.vn/assets/images/location/da-nang.jpg",
+
+                Location1 = "Nha Trang",
+                ImageUrl1 = "https://gostay.realtech.com.vn/assets/images/location/nha-trang.jpg",
+
+                Location2 = "Huế",
+                ImageUrl2 = "https://gostay.realtech.com.vn/assets/images/location/hue.jpg",
+
+                Location3 = "Đà Nẵng",
+                ImageUrl3 = "https://gostay.realtech.com.vn/assets/images/location/da-nang.jpg",
             });
-            Hotels.Add(new NearYour
-            {
-                Location = "Nha Trang",
-                ImageUrl = "https://gostay.realtech.com.vn/assets/images/location/nha-trang.jpg",
-            });
-            Hotels.Add(new NearYour
-            {
-                Location = "Huế",
-                ImageUrl = "https://gostay.realtech.com.vn/assets/images/location/hue.jpg",
-            });
-            Hotels.Add(new NearYour
-            {
-                Location = "Đà Nẵng",
-                ImageUrl = "https://gostay.realtech.com.vn/assets/images/location/da-nang.jpg",
-            });
-            Hotels.Add(new NearYour
-            {
-                Location = "Nha Trang",
-                ImageUrl = "https://gostay.realtech.com.vn/assets/images/location/nha-trang.jpg",
-            });
-            Hotels.Add(new NearYour
-            {
-                Location = "Huế",
-                ImageUrl = "https://gostay.realtech.com.vn/assets/images/location/hue.jpg",
-            });
+
 
         }
     }

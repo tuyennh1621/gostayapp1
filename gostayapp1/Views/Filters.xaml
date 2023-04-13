@@ -48,7 +48,7 @@
                 <CheckBox Grid.Column="0" Grid.Row="1"/>
                 <Label Grid.Column="1" Grid.Row="1" VerticalOptions="Center" Text="Nối chuyến" TextColor="{DynamicResource Gray600}"/>
             </Grid>
-            <Button FontSize="14" Text="Lọc" Clicked="PlaneListing"/>
+            <Button FontSize="14" Text="Lọc" Clicked="SelectDeparture"/>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

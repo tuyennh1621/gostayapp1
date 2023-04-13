@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="gostayapp1.Views.TourBookingSuccess"
+             Title="TourBookingSuccess">
+    <ScrollView>
+        <VerticalStackLayout Padding="15" Spacing="10">
+            <Label Text="&#xf058;"
+               FontFamily="FontRegular"
+               FontSize="30"
+               HorizontalOptions="Center"
+               TextColor="{DynamicResource Primary}"/>
+            <Label Text="Gửi yêu cầu đặt Tour thành công"
+                   HorizontalOptions="Center"
+                   FontAttributes="Bold"
+                   FontSize="18"/>
+            <Label Text="goStay sẽ chủ động liên hệ với quý khách trong vòng 30 phút để xác nhận tour và hướng dẫn thanh toán."
+               HorizontalOptions="Center"
+               TextColor="#666"/>
+            <Border Stroke="{DynamicResource Primary}"
+                StrokeShape="RoundRectangle 5"
+                StrokeThickness="1"
+                StrokeDashArray="1 2"
+                StrokeDashOffset="1"
+                Padding="10">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label 
+                            Grid.Row="0" Grid.Column="0"
+                            Text="Mã đặt Tour"
+                            TextColor="{DynamicResource Gray600}"
+                            />
+                    <Label Grid.Row="1" Grid.Column="0"
+                            Text="MT272658555"
+                             FontAttributes="Bold"
+                           FontSize="14"/>
+                    <Label Grid.Row="0" Grid.Column="1"
+                               Text="Ngày đặt"
+                               TextColor="{DynamicResource Gray600}"/>
+                    <Label Grid.Row="1" Grid.Column="1" 
+                           Text="05 Tháng 10, 2022"
+                           FontAttributes="Bold"
+                           FontSize="14"/>
+                    <Label Grid.Row="2" Grid.Column="0"
+                               Text="Tổng thanh toán"
+                               Margin="0,10,0,0"
+                               TextColor="{DynamicResource Gray600}"/>
+                    <Label Grid.Row="3" Grid.Column="0"
+                           Text="6.066.666đ"
+                           FontAttributes="Bold"
+                           FontSize="16"/>
+                    <Label Grid.Row="2" Grid.Column="1" 
+                               Text="Phương thức thanh toán"
+                               Margin="0,10,0,0"
+                               TextColor="{DynamicResource Gray600}"/>
+                    <Label Grid.Row="3" Grid.Column="1"
+                            Text="Chuyển khoản trực tiếp"
+                           FontAttributes="Bold"
+                           FontSize="14"/>
+                </Grid>
+            </Border>
+            <Label HeightRequest="5"
+                     BackgroundColor="#edf2f7" Margin="0,10,0,0"/>
+            <Label Text="Thông tin Tour"
+               FontAttributes="Bold"
+                   FontSize="16"/>
+            <Grid ColumnSpacing="20">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Border StrokeShape="RoundRectangle 10,10,10,10"
+                        StrokeThickness="0">
+                    <Image Source="https://cdn.realtech.com.vn//uploads/tour/112/215202324704AM001.jpg"/>
+                </Border>
+                <VerticalStackLayout Grid.Column="1" Spacing="5">
+                    <Label Text="Đức - Hà Lan - Bỉ - Pháp - Luxembourg"
+                               FontAttributes="Bold"/>
+                    <Label Text="&#xf005; &#xf005; &#xf005; &#xf005; &#xf005;"
+                               FontFamily="FontSolid"
+                               TextColor="#ff8900"/>
+                </VerticalStackLayout>
+            </Grid>
+            <Label HeightRequest="1" Background="{DynamicResource Gray100}"/>
+            <Grid ColumnDefinitions="Auto,Auto,Auto" ColumnSpacing="20">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <VerticalStackLayout>
+                    <Label Text="Ngày đi"
+                           FontSize="12"
+                           TextColor="#666"/>
+                    <Label Text="Thứ 6, 21 Tháng 10" />
+                    <Label Text="Giờ đi - 08:00"
+                           FontSize="12"
+                           TextColor="#666"/>
+                </VerticalStackLayout>
+                <VerticalStackLayout Grid.Column="1"
+                                     HorizontalOptions="Start">
+                    <Label Text="Nơi đi"
+                           FontSize="12"
+                           TextColor="#666"/>
+                    <Label Text="Hà Nội" />
+                </VerticalStackLayout>
+                <VerticalStackLayout Grid.Column="2"
+                                     HorizontalOptions="Start">
+                    <Label Text="Số đêm"
+                           FontSize="12"
+                           TextColor="#666"/>
+                    <Label Text="10 Ngày 9 Đêm" />
+                </VerticalStackLayout>
+            </Grid>
+            <Label HeightRequest="1" Background="{DynamicResource Gray100}"/>
+            <VerticalStackLayout>
+                <Label Text="Tour bạn chọn:"/>
+                <Label Text="Đức - Hà Lan - Bỉ - Pháp - Luxembourg" FontAttributes="Bold"/>
+                <Label Text="Thông tin khách:"/>
+                <Label Text="10 Người lớn, 4 trẻ em, 2 em bé" FontAttributes="Bold"/>
+            </VerticalStackLayout>
+            <Label HeightRequest="5"
+                     BackgroundColor="#edf2f7" Margin="0,10,0,0"/>
+            <Label Text="Thông tin liên hệ"
+               FontAttributes="Bold"
+                   FontSize="16"/>
+            <HorizontalStackLayout>
+                <Label Text="Trần Trung Linh/"
+                       FontAttributes="Bold"
+                       FontSize="12"/>
+                <Label Text=" 0969626123/"
+                       TextColor="{DynamicResource Gray600}"/>
+                <Label Text=" linhtt@sgotravel.com.vn"
+                       TextColor="{DynamicResource Gray600}"/>
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

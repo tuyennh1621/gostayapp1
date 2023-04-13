@@ -59,6 +59,7 @@
 	  <None Remove="Resources\Images\flight\bamboo.jpg" />
 	  <None Remove="Resources\Images\flight\jestar.jpg" />
 	  <None Remove="Resources\Images\flight\vietjet.jpg" />
+	  <None Remove="Resources\Images\flight\vietjet1.png" />
 	  <None Remove="Resources\Images\flight\vna.jpg" />
 	  <None Remove="Resources\Images\hotel\img1.jpg" />
 	  <None Remove="Resources\Images\hotel\img12.jpg" />
@@ -106,6 +107,7 @@
 	  <MauiImage Include="Resources\Images\flight\bamboo.jpg" />
 	  <MauiImage Include="Resources\Images\flight\jestar.jpg" />
 	  <MauiImage Include="Resources\Images\flight\vietjet.jpg" />
+	  <MauiImage Include="Resources\Images\flight\vietjet1.png" />
 	  <MauiImage Include="Resources\Images\flight\vna.jpg" />
 	  <MauiImage Include="Resources\Images\hotel\img1.jpg" />
 	  <MauiImage Include="Resources\Images\hotel\img12.jpg" />
@@ -159,6 +161,21 @@
 	  <Compile Update="Views\FiltersHotel.xaml.cs">
 	    <DependentUpon>FiltersHotel.xaml</DependentUpon>
 	  </Compile>
+	  <Compile Update="Views\FlightBooking.xaml.cs">
+	    <DependentUpon>FlightBooking.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\Departure.xaml.cs">
+	    <DependentUpon>Departure.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\TourBookingSuccess.xaml.cs">
+	    <DependentUpon>TourBookingSuccess.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\TourBookingPayment.xaml.cs">
+	    <DependentUpon>TourBookingPayment.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\TourBooking.xaml.cs">
+	    <DependentUpon>TourBooking.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="Views\TourDetails.xaml.cs">
 	    <DependentUpon>TourDetails.xaml</DependentUpon>
 	  </Compile>
@@ -190,6 +207,21 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\Discovery.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\FlightBooking.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Departure.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\TourBookingSuccess.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\TourBookingPayment.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\TourBooking.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\HotelBooking.xaml">
