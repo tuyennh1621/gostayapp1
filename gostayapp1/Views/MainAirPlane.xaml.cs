@@ -27,10 +27,6 @@ public partial class MainAirPlane : ContentPage
     {
         Navigation.PushAsync(new SelectGuest());
     }
-    private void ItemDetail(object sender, TappedEventArgs e)
-    {
-        Navigation.PushAsync(new Welcome()); ;
-    }
     private async void SearchPlane(object sender, TappedEventArgs e)
     {
         await Navigation.PushAsync(new SearchPlane());
@@ -47,7 +43,7 @@ public partial class MainAirPlane : ContentPage
     async void OnCollectionViewSelectionChanged(object sender, SelectionChangedEventArgs e)
     {
         string catName = (e.CurrentSelection.FirstOrDefault() as Plane).Name;
-        await Shell.Current.GoToAsync($"catdetails?name={catName}");
+        await Shell.Current.GoToAsync($"PlaneListing?name={catName}");
     }
 
 }

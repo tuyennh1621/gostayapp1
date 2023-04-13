@@ -14,6 +14,10 @@ public partial class TourDetails : ContentPage
     {
         await Navigation.PushAsync(new Rating());
     }
+    private async void TourBooking(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new TourBooking());
+    }
     private async void HotelBooking(object sender, EventArgs e)
     {
         await Navigation.PushAsync(new HotelBooking());

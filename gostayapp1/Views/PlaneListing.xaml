@@ -1,10 +1,12 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="gostayapp1.Views.PlaneListing"
              xmlns:data="clr-namespace:gostayapp1.Data"
              xmlns:views="clr-namespace:gostayapp1.Views"
-             Title="Danh sách chuyến bay">
+             xmlns:controls="clr-namespace:gostayapp1.Controls"
+             xmlns:viewModels="clr-namespace:gostayapp1.ViewModels" 
+             Title="Hà Nội - Đà Nẵng">
     <ScrollView>
         <VerticalStackLayout>
             <Grid ColumnDefinitions="*,Auto" Margin="15,15,15,0">
@@ -17,8 +19,8 @@
             <CollectionView Margin="15,0,15,15"
                     ItemsSource="{x:Static data:MyPlaneData.Planes}"
                     ItemTemplate="{StaticResource ListingPlaneData}"
-                    SelectionMode="Single"
-                    SelectionChanged="OnCollectionViewSelectionChanged"/>
+                    SelectionMode="None">
+             </CollectionView>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

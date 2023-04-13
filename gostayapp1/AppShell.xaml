@@ -6,8 +6,7 @@
        xmlns:views="clr-namespace:gostayapp1.Views"
        x:Class="gostayapp1.AppShell"
        x:Name="shell"
-       FlyoutHeaderBehavior="CollapseOnScroll"
->
+       FlyoutHeaderBehavior="CollapseOnScroll">
     <Shell.Resources>
         <Style x:Key="BaseStyle"
                TargetType="Element">

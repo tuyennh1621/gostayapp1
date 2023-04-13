@@ -79,7 +79,7 @@
                         </Label>
                     </Border>
                 </Grid>
-                <Button Margin="0,10,0,0" Text="Đặt Tour Ngay" ImageSource="icon/trend.png"/>
+                <Button Margin="0,10,0,0" Text="Đặt Tour Ngay" ImageSource="icon/trend.png" Clicked="TourBooking"/>
             </StackLayout>
             <Label HeightRequest="5" Background="{StaticResource Gray100}" />
             <StackLayout Margin="15" Orientation="Vertical">
