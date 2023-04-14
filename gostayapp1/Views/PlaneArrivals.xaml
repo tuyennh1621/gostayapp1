@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="gostayapp1.Views.PlaneArrivals"
+             xmlns:data="clr-namespace:gostayapp1.Data"
+             xmlns:views="clr-namespace:gostayapp1.Views"
+             xmlns:controls="clr-namespace:gostayapp1.Controls"
+             xmlns:viewModels="clr-namespace:gostayapp1.ViewModels" 
+             Title="Đà Nẵng - Hà Nội">
+    <ScrollView>
+        <VerticalStackLayout>
+            <CarouselView ItemsSource="{x:Static data:DaylyTimeData.Planes}" ZIndex="1000" ItemTemplate="{StaticResource CarouselTime}" BackgroundColor="{DynamicResource GrayF5}"/>
+            <Border Margin="15" StrokeShape="RoundRectangle 10">
+                <Grid RowDefinitions="*,*" ColumnDefinitions="*,Auto" Padding="15">
+                    <HorizontalStackLayout Grid.Row="0" Grid.Column="0" Spacing="10">
+                        <Label Text="HAN - DAD" FontSize="12" TextColor="{DynamicResource Gray600}"/>
+                        <Line Y2="15" Stroke="{DynamicResource Gray100}" VerticalOptions="Center" />
+                        <Label Text="CN, 23 thg 4" FontSize="12" TextColor="{DynamicResource Gray600}"/>
+                        <Label Text="&#xf111;" FontSize="5" FontFamily="FontSolid" TextColor="{DynamicResource Gray600}" VerticalOptions="Center"/>
+                        <Label Text="05:35 - 06:55" FontSize="12" TextColor="{DynamicResource Gray600}"/>
+                    </HorizontalStackLayout>
+                    <Button  Grid.RowSpan="2" Grid.Column="1" FontSize="12" Text="Thay đổi" BackgroundColor="Transparent" Clicked="PlaneListing" TextColor="{DynamicResource Blue100}" VerticalOptions="Center"/>
+                    <HorizontalStackLayout Grid.Row="1" Grid.Column="0" Spacing="10">
+                        <Label Text="VietJet Air" FontSize="12" FontAttributes="Bold"/>
+                        <Label Text="&#xf111;" FontSize="5" FontFamily="FontSolid" TextColor="{DynamicResource Gray600}" VerticalOptions="Center"/>
+                        <Label Text="797.000 VNĐ /1 Khách" FontSize="14" TextColor="{DynamicResource Black}" HorizontalOptions="End"/>
+                    </HorizontalStackLayout>
+                </Grid>
+            </Border>
+            <Grid ColumnDefinitions="*,Auto" Margin="15,15,15,0">
+                <Label Text="36 Chuyến bay đến Đà Nẵng" HorizontalOptions="Start" VerticalOptions="Center" FontSize="16" FontAttributes="Bold"/>
+                <Button Grid.Column="1" Text="Bộ Lọc" Margin="-10,-4,0,0" Background="{DynamicResource White}"
+                    BorderColor="{DynamicResource Gray100}" BorderWidth="1" TextColor="#212529" VerticalOptions="Center"
+                    ImageSource="icon/settings2.png" Clicked="Filters">
+                </Button>
+            </Grid>
+            <CollectionView Margin="15,0,15,15"
+                    ItemsSource="{x:Static data:MyPlaneData.Planes}"
+                    ItemTemplate="{StaticResource ListingPlaneData}"
+                    SelectionMode="Single"
+                    SelectionChanged="OnCollectionViewSelectionChanged">
+             </CollectionView>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

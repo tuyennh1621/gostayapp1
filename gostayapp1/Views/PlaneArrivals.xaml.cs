@@ -3,9 +3,9 @@ using Microsoft.Maui.Controls;
 
 namespace gostayapp1.Views;
 
-public partial class PlaneListing : ContentPage
+public partial class PlaneArrivals : ContentPage
 {
-    public PlaneListing()
+    public PlaneArrivals()
     {
         InitializeComponent();
     }
@@ -18,7 +18,12 @@ public partial class PlaneListing : ContentPage
     async void OnCollectionViewSelectionChanged(object sender, SelectionChangedEventArgs e)
     {
         string catName = (e.CurrentSelection.FirstOrDefault() as Plane).Name;
-        await Shell.Current.GoToAsync($"TabFlight?name={catName}");
+        await Shell.Current.GoToAsync($"FlightBooking?name={catName}");
+    }
+
+    private void PlaneListing(object sender, EventArgs e)
+    {
+        Navigation.PushAsync(new PlaneListing());
     }
 
 }

@@ -11,4 +11,11 @@ public partial class TourBookingPayment : ContentPage
     {
         await Navigation.PushAsync(new TourBookingSuccess());
     }
+
+    private bool _collapsed = false;
+    private void TapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
+    {
+        items.IsVisible = !_collapsed;
+        _collapsed = !_collapsed;
+    }
 }

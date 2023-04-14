@@ -1,7 +1,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="gostayapp1.Views.TourBookingPayment"
-             Title="Phương Thức thanh toán">
+             Title="Phương thức thanh toán">
     <ContentPage.Resources>
         <ControlTemplate x:Key="RadioButtonTemplate">
             <Border Stroke="#ebebeb"
@@ -67,7 +67,74 @@
                             <Label Text="Thanh toán qua momo" HorizontalOptions="Center" VerticalOptions="Center" />
                         </StackLayout>
                     </RadioButton.Content>
+                    <RadioButton.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                    </RadioButton.GestureRecognizers>
                 </RadioButton>
+                <VerticalStackLayout Spacing="10" x:Name="items" IsVisible="False" >
+                    <Grid Padding="10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="40"/>
+                            <RowDefinition Height="40"/>
+                            <RowDefinition Height="80"/>
+                            <RowDefinition Height="60"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="20"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="&#xf111;"
+                               FontFamily="FontSolid"
+                               FontSize="5"
+                               TextColor="#666"
+                               Margin="0,8,0,0"
+                               VerticalOptions="Start"/>
+                        <Label Grid.Column="1"
+                               Text="Quý khách có thể thanh toán nhanh chóng bằng mã QR."
+                               TextColor="#666"
+                               VerticalOptions="Start"
+                               HorizontalOptions="Start"/>
+                        <Label Text="&#xf111;"
+                               Grid.Row="1"
+                               FontFamily="FontSolid"
+                               FontSize="5"
+                               Margin="0,8,0,0"
+                               TextColor="#666"
+                               VerticalOptions="Start"/>
+                        <Label Grid.Column="1"
+                               Grid.Row="1"
+                               Text="Tất cả các giao dịch trong Momo hoàn toàn không mất phí."
+                               TextColor="#666"
+                               VerticalOptions="Start"
+                               HorizontalOptions="Start"/>
+                        <Label Text="&#xf111;"
+                               Grid.Row="2"
+                               FontFamily="FontSolid"
+                               FontSize="5"
+                               Margin="0,8,0,0"
+                               TextColor="#666"
+                               VerticalOptions="Start"/>
+                        <Label Grid.Column="1"
+                               Grid.Row="2"
+                               Text="Đối tác thanh toán: VISA, Master Card, JCB, Vietcombank, Vietinbank, Sacombank, ACB, SCB, Techcombank ... (Thẻ phát hành trong nước)."
+                               TextColor="#666"
+                               VerticalOptions="Start"
+                               HorizontalOptions="Start"/>
+                        <Label Text="&#xf111;"
+                               Grid.Row="3"
+                               FontFamily="FontSolid"
+                               FontSize="5"
+                               Margin="0,8,0,0"
+                               TextColor="#666"
+                               VerticalOptions="Start"/>
+                        <Label Grid.Column="1"
+                               Grid.Row="3"
+                               Text="Lưu ý: Kiểm tra kỹ tất cả thông tin ở màn hình thanh toán cuối cùng rồi chọn thanh toán. Mọi chi tiết liên hệ: 1900 506 999."
+                               TextColor="#666"
+                               VerticalOptions="Start"
+                               HorizontalOptions="Start"/>
+                    </Grid>
+                </VerticalStackLayout>
                 <RadioButton>
                     <RadioButton.Content>
                         <StackLayout Orientation="Horizontal" Padding="15">

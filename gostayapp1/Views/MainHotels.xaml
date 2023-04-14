@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="gostayapp1.Views.MainHotels"
              xmlns:controls="clr-namespace:gostayapp1.Controls"
-             xmlns:data="clr-namespace:gostayapp1.Data" ZIndex="0"
+             xmlns:data="clr-namespace:gostayapp1.Data"
              xmlns:views="clr-namespace:gostayapp1.Views">
     <Shell.SearchHandler>
         <controls:AnimalSearchHandler Placeholder="Nhập từ khóa tìm kiếm"

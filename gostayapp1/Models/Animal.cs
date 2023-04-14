@@ -195,5 +195,23 @@
         }
     }
 
+    public class CarouselDaylyTime
+    {
+        public string DaylyTime { get; set; }
+        public string Day { get; set; }
+        public string Price { get; set; }
 
+        public string DaylyTime1 { get; set; }
+        public string Day1 { get; set; }
+        public string Price1 { get; set; }
+
+        public string DaylyTime2 { get; set; }
+        public string Day2 { get; set; }
+        public string Price2 { get; set; }
+
+        public string DaylyTime3 { get; set; }
+        public string Day3{ get; set; }
+        public string Price3 { get; set; }
+
+    }
 }

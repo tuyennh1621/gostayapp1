@@ -728,6 +728,20 @@
                     </Grid>
                 </VerticalStackLayout>
             </DataTemplate>
+            <DataTemplate x:Key="CarouselTime">
+                <Grid ColumnDefinitions="*,*,*" RowDefinitions="Auto,Auto,Auto,Auto" Padding="10" RowSpacing="0">
+                    <Label Grid.Column="0" Grid.Row="0" Text="{Binding DaylyTime}" FontSize="14" HorizontalOptions="Center"/>
+                    <Label Grid.Column="0" Grid.Row="1" Text="{Binding Day}" FontSize="12" TextColor="{DynamicResource Gray600}" HorizontalOptions="Center"/>
+                    <Label Grid.Column="0" Grid.Row="2" Text="{Binding Price}" FontSize="12" TextColor="{DynamicResource Gray600}" HorizontalOptions="Center"/>
+                    <Label Grid.Column="1" Grid.Row="0" Text="{Binding DaylyTime1}" FontSize="14" FontAttributes="Bold" TextColor="{DynamicResource Black}" HorizontalOptions="Center"/>
+                    <Label Grid.Column="1" Grid.Row="1" Text="{Binding Day1}" FontSize="12" TextColor="{DynamicResource Gray600}" HorizontalOptions="Center"/>
+                    <Label Grid.Column="1" Grid.Row="2" Text="{Binding Price1}" FontSize="12" TextColor="{DynamicResource Primary}" HorizontalOptions="Center"/>
+                    <Label Grid.Column="1" Grid.Row="3" BackgroundColor="{DynamicResource Primary}" HeightRequest="2"/>
+                    <Label Grid.Column="2" Grid.Row="0" Text="{Binding DaylyTime2}" FontSize="14" HorizontalOptions="Center"/>
+                    <Label Grid.Column="2" Grid.Row="1" Text="{Binding Day2}" FontSize="12" TextColor="{DynamicResource Gray600}" HorizontalOptions="Center"/>
+                    <Label Grid.Column="2" Grid.Row="2" Text="{Binding Price2}" FontSize="12" TextColor="{DynamicResource Gray600}" HorizontalOptions="Center"/>
+                </Grid>
+            </DataTemplate>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

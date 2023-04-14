@@ -1,17 +1,13 @@
 ﻿using gostayapp1.Models;
 namespace gostayapp1.Views;
 
-public partial class Departure : ContentPage
+public partial class TabFlight : ContentPage
 {
-	public Departure()
+	public TabFlight()
 	{
 		InitializeComponent();
 	}
-    async void OnCollectionViewSelectionChanged(object sender, SelectionChangedEventArgs e)
-    {
-        string catName = (e.CurrentSelection.FirstOrDefault() as Plane).Name;
-        await Shell.Current.GoToAsync($"catdetails?name={catName}");
-    }
+
     private bool _collapsed = false;
 
     void Button_Clicked(System.Object sender, System.EventArgs e)
@@ -19,5 +15,10 @@ public partial class Departure : ContentPage
         listView.IsVisible = !_collapsed;
         xemthem.Text = (listView.IsVisible = !_collapsed) ? "Thu gọn" : "Xem thêm";
         _collapsed = !_collapsed;
+    }
+
+    private void PlaneListing(object sender, EventArgs e)
+    {
+        Navigation.PushAsync(new PlaneArrivals());
     }
 }

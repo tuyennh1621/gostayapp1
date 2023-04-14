@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="gostayapp1.Views.TabPlanePrice"
+             Title="Giá vé và Quyền lợi">
+    <VerticalStackLayout Padding="15">
+        <Label Text="Chi tiết giá" FontSize="16" />
+        <Grid ColumnDefinitions="*,*,Auto" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto" RowSpacing="15" BackgroundColor="{DynamicResource GrayF5}" Padding="15" Margin="0,15,0,0">
+            <Label Grid.Row="0" Grid.Column="0" Text="Giá vé Người lớn" FontSize="14" TextColor="{DynamicResource Gray600}"/>
+            <Label Grid.Row="0" Grid.Column="1" Text="x 2" FontSize="14" TextColor="{DynamicResource Gray600}"/>
+            <Label Grid.Row="0" Grid.Column="2" Text="1.674.000 VNĐ" FontSize="14" TextColor="{DynamicResource Black}" HorizontalOptions="End"/>
+            <Label Grid.Row="1" Grid.Column="0" Text="Giá vé Trẻ em" FontSize="14" TextColor="{DynamicResource Gray600}"/>
+            <Label Grid.Row="1" Grid.Column="1" Text="x 1" FontSize="14" TextColor="{DynamicResource Gray600}"/>
+            <Label Grid.Row="1" Grid.Column="2" Text="797.000 VNĐ" FontSize="14" TextColor="{DynamicResource Black}" HorizontalOptions="End"/>
+            <Label Grid.Row="2" Grid.Column="0" Text="Giá vé Em bé" FontSize="14" TextColor="{DynamicResource Gray600}"/>
+            <Label Grid.Row="2" Grid.Column="1" Text="x 1" FontSize="14" TextColor="{DynamicResource Gray600}"/>
+            <Label Grid.Row="2" Grid.Column="2" Text="110.000 VNĐ" FontSize="14" TextColor="{DynamicResource Black}" HorizontalOptions="End"/>
+            <Label Grid.Row="3" Grid.Column="0" Text="Thuế" FontSize="14" TextColor="{DynamicResource Gray600}"/>
+            <Label Grid.Row="3" Grid.Column="2" Text="Đã bao gồm" FontSize="14" TextColor="{DynamicResource Black}" HorizontalOptions="End"/>
+            <Label Grid.Row="4" Grid.ColumnSpan="3" BackgroundColor="{DynamicResource Gray100}" HeightRequest="1"/>
+            <Label Grid.Row="5" Grid.Column="0" Text="Tổng" FontSize="14" FontAttributes="Bold" TextColor="{DynamicResource Black}" />
+            <Label Grid.Row="5" Grid.Column="2" Text="2.581.000 VNĐ" FontSize="16" FontAttributes="Bold" TextColor="{DynamicResource Black}" HorizontalOptions="End"/>
+        </Grid>
+        <Label Text="Giá hành lý" FontSize="16" Margin="0,15,0,15" />
+        <VerticalStackLayout>
+            <Border StrokeShape="RoundRectangle 5" >
+                <Grid Padding="10,15,15,0" RowDefinitions="*,*,Auto" ColumnDefinitions="*,*,*">
+                    <Image Grid.Column="1" Source="flight/vietjet.png" WidthRequest="50" HorizontalOptions="Start"/>
+                    <Label Text="VietJet Air" Grid.Column="0" VerticalOptions="Center"/>
+                    <HorizontalStackLayout Grid.Row="1" Spacing="10" Margin="0,-20,0,0">
+                        <Label Text="TP HCM" FontSize="12" TextColor="{DynamicResource Gray600}" VerticalOptions="Center"/>
+                        <Label Text="&#xf178;" FontSize="12" FontFamily="FontSolid" TextColor="{DynamicResource Gray600}" VerticalOptions="Center"/>
+                        <Label Text="Đà Nẵng" FontSize="12" TextColor="{DynamicResource Gray600}" VerticalOptions="Center"/>
+                        <Label Text="&#xf111;" FontSize="5" FontFamily="FontSolid" TextColor="{DynamicResource Gray600}" VerticalOptions="Center"/>
+                        <Label Text="Promotion" FontSize="12" TextColor="{DynamicResource Gray600}" VerticalOptions="Center"/>
+                    </HorizontalStackLayout>
+                    <Label Text="&#xf077;" x:Name="icon" Grid.Column="4" Grid.Row="0" Grid.RowSpan="2" FontFamily="FontSolid" VerticalOptions="Center" HorizontalOptions="End"/>
+                    <VerticalStackLayout Grid.Row="2" Grid.ColumnSpan="3" Spacing="10" x:Name="items" IsVisible="False" Margin="0,0,0,20">
+                        <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto,Auto,Auto,Auto" RowSpacing="15">
+                            <Label Grid.Row="0" Grid.ColumnSpan="3" BackgroundColor="{DynamicResource Gray100}" HeightRequest="1"/>
+                            <Label Grid.Row="1" Grid.Column="0" Text="Hành lý xách tay 7kg" FontSize="14" TextColor="{DynamicResource Gray600}"/>
+                            <Label Grid.Row="1" Grid.Column="2" Text="Miễn phí" FontSize="14" TextColor="{DynamicResource Black}" HorizontalOptions="End"/>
+                            <Label Grid.Row="2" Grid.Column="0" Text="+ 20kg hành lý" FontSize="14" TextColor="{DynamicResource Gray600}"/>
+                            <Label Grid.Row="2" Grid.Column="2" Text="198.000 VNĐ" FontSize="14" TextColor="{DynamicResource Black}" HorizontalOptions="End"/>
+                            <Label Grid.Row="3" Grid.Column="0" Text="+ 30kg hành lý" FontSize="14" TextColor="{DynamicResource Gray600}"/>
+                            <Label Grid.Row="3" Grid.Column="2" Text="297.000 VNĐ" FontSize="14" TextColor="{DynamicResource Black}" HorizontalOptions="End"/>
+                            <Label Grid.Row="4" Grid.Column="0" Text="+ 40kg hành lý" FontSize="14" TextColor="{DynamicResource Gray600}"/>
+                            <Label Grid.Row="4" Grid.Column="2" Text="396.000 VNĐ" FontSize="14" TextColor="{DynamicResource Black}" HorizontalOptions="End"/>
+                        </Grid>
+                    </VerticalStackLayout>
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                    </Grid.GestureRecognizers>
+                </Grid>
+            </Border>
+
+        </VerticalStackLayout>
+
+
+
+    </VerticalStackLayout>
+</ContentPage>

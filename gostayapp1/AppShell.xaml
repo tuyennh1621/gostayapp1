@@ -68,7 +68,7 @@
                       Icon="https://cdn-icons-png.flaticon.com/512/3086/3086454.png"
                       Style="{StaticResource DomesticShell}"
                       Title="Khách sạn"
-                      ContentTemplate="{DataTemplate views:MainHotels}"/>
+                      ContentTemplate="{DataTemplate views:PlaneArrivals}"/>
         <ShellContent Route="planes"
                       Icon="https://cdn-icons-png.flaticon.com/512/8885/8885364.png"
                       Style="{StaticResource DomesticShell}"
