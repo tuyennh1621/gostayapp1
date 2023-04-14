@@ -16,6 +16,6 @@ public partial class Filters : ContentPage
 
     private async void SelectDeparture(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new Departure());
+        await Navigation.PushAsync(new TabFlight());
     }
 }

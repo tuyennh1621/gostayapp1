@@ -9,6 +9,7 @@
              Title="Hà Nội - Đà Nẵng">
     <ScrollView>
         <VerticalStackLayout>
+            <CarouselView ItemsSource="{x:Static data:DaylyTimeData.Planes}" ZIndex="1000" ItemTemplate="{StaticResource CarouselTime}" BackgroundColor="{DynamicResource GrayF5}"/>
             <Grid ColumnDefinitions="*,Auto" Margin="15,15,15,0">
                 <Label Text="36 Chuyến bay đến Đà Nẵng" HorizontalOptions="Start" VerticalOptions="Center" FontSize="16" FontAttributes="Bold"/>
                 <Button Grid.Column="1" Text="Bộ Lọc" Margin="-10,-4,0,0" Background="{DynamicResource White}"
@@ -19,7 +20,8 @@
             <CollectionView Margin="15,0,15,15"
                     ItemsSource="{x:Static data:MyPlaneData.Planes}"
                     ItemTemplate="{StaticResource ListingPlaneData}"
-                    SelectionMode="None">
+                    SelectionMode="Single"
+                    SelectionChanged="OnCollectionViewSelectionChanged">
              </CollectionView>
         </VerticalStackLayout>
     </ScrollView>

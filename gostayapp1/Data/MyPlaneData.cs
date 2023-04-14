@@ -10,9 +10,9 @@ namespace gostayapp1.Data
     class MyPlaneData
     {
 
-       public static IList<Plane> Planes { get; private set; }
+        public static IList<Plane> Planes { get; private set; }
 
-       
+
         static MyPlaneData()
         {
             Planes = new List<Plane>();
@@ -27,11 +27,11 @@ namespace gostayapp1.Data
                 OriginalPrice = "1.003.468đ",
                 PriceAfterTax = "Giá sau thuế: 1.280.000đ",
                 ImageUrl = "flight/bamboo.jpg",
-                HourDeparture="05:45",
-                HourArrivals="07:45",
-                CodePlaneDeparture="HAN",
-                CodePlaneArrivals= "DAD",
-                FlightTime= "1h20 phút, bay thẳng",
+                HourDeparture = "05:45",
+                HourArrivals = "07:45",
+                CodePlaneDeparture = "HAN",
+                CodePlaneArrivals = "DAD",
+                FlightTime = "1h20 phút, bay thẳng",
             });
             Planes.Add(new Plane
             {
@@ -101,6 +101,32 @@ namespace gostayapp1.Data
 
         }
 
-        
+
     }
+
+    class DaylyTimeData
+    {
+        public static IList<CarouselDaylyTime> Planes { get; private set; }
+        static DaylyTimeData()
+        {
+            Planes = new List<CarouselDaylyTime>();
+
+            Planes.Add(new CarouselDaylyTime
+            {
+                DaylyTime ="Chủ Nhật",
+                Day = "16.04.2023",
+                Price ="Từ 576.000 VNĐ",
+
+                DaylyTime1 = "Thứ Hai",
+                Day1 = "17.04.2023",
+                Price1 = "Từ 693.000 VNĐ",
+
+                DaylyTime2 = "Thứ Ba",
+                Day2 = "18.04.2023",
+                Price2 = "Từ 333.000 VNĐ",
+            });
+
+        }
+    } 
+
 }

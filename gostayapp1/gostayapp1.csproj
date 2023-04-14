@@ -164,8 +164,11 @@
 	  <Compile Update="Views\FlightBooking.xaml.cs">
 	    <DependentUpon>FlightBooking.xaml</DependentUpon>
 	  </Compile>
-	  <Compile Update="Views\Departure.xaml.cs">
-	    <DependentUpon>Departure.xaml</DependentUpon>
+	  <Compile Update="Views\PlaneArrivals.xaml.cs">
+	    <DependentUpon>PlaneArrivals.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\TabFlight.xaml.cs">
+	    <DependentUpon>TabFlight.xaml</DependentUpon>
 	  </Compile>
 	  <Compile Update="Views\TourBookingSuccess.xaml.cs">
 	    <DependentUpon>TourBookingSuccess.xaml</DependentUpon>
@@ -203,6 +206,9 @@
 	  <MauiXaml Update="Controls\SpacingModifier.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="MainPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\AboutPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -212,7 +218,13 @@
 	  <MauiXaml Update="Views\FlightBooking.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\Departure.xaml">
+	  <MauiXaml Update="Views\PlaneArrivals.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\TabFlight.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\TabPlanePrice.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\TourBookingSuccess.xaml">
