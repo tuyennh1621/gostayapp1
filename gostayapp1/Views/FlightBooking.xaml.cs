@@ -15,30 +15,30 @@ public partial class FlightBooking : ContentPage
         await Navigation.PushAsync(new TourBookingPayment());
     }
 
+    private async void TabFlight(object sender, TappedEventArgs e)
+    {
+        await Navigation.PushAsync(new TabFlight());
+    }
+
     void OnPickerSelectedIndexChanged(object sender, EventArgs e)
     {
         Picker picker = new Picker { Title = "Select a monkey" };
         picker.SetBinding(Picker.ItemsSourceProperty, "Monkeys");
         picker.ItemDisplayBinding = new Binding("Name");
     }
-    void OnStepper(object sender, ValueChangedEventArgs e)
+    private async void SelectPriceDetail(object sender, TappedEventArgs e)
     {
-        double value = e.NewValue;
-        _displayLabel.Text = string.Format("{0}", value);
+        await Navigation.PushAsync(new SelectPriceDetail());
     }
-    void OnStepper1(object sender, ValueChangedEventArgs e)
+    private async void TicketInformation(object sender, EventArgs e)
     {
-        double value = e.NewValue;
-        _displayLabel1.Text = string.Format("{0}", value);
+        await Navigation.PushAsync(new TicketInformation());
     }
-    void OnStepper2(object sender, ValueChangedEventArgs e)
+
+    private bool _collapsed = false;
+    private void TapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
     {
-        double value = e.NewValue;
-        _displayLabel2.Text = string.Format("{0}", value);
-    }
-    void OnStepper3(object sender, ValueChangedEventArgs e)
-    {
-        double value = e.NewValue;
-        _displayLabel3.Text = string.Format("{0}", value);
+        items.IsVisible = !_collapsed;
+        _collapsed = !_collapsed;
     }
 }

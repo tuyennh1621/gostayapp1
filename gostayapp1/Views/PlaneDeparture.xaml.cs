@@ -3,9 +3,9 @@ using Microsoft.Maui.Controls;
 
 namespace gostayapp1.Views;
 
-public partial class PlaneListing : ContentPage
+public partial class PlaneDeparture : ContentPage
 {
-    public PlaneListing()
+    public PlaneDeparture()
     {
         InitializeComponent();
     }

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="gostayapp1.Views.PersonInfo"
+             Title="Thông tin khách hàng">
+    <VerticalStackLayout Margin="15" Spacing="20">
+        <Label TextColor="{DynamicResource Gray600}"
+            Text="Hãy chắc chắn rằng tên của hành khách khớp với tên trên CMTND/CCCD/Hộ chiếu/Giấy phép lái xe do chính phủ cấp. Bạn nên tránh sai sót vì một số hãng không cho bạn sửa tên sau khi đặt vé"/>
+        <Grid RowDefinitions="Auto,Auto,Auto" RowSpacing="0">
+            <Label Text="Danh xưng" FontSize="10" TextColor="{DynamicResource Gray600}"/>
+            <Picker Title="Danh xưng" TitleColor="{StaticResource Gray600}" FontSize="14" HeightRequest="40">
+                <Picker.Items>
+                    <x:String>Ông</x:String>
+                    <x:String>Bà</x:String>
+                    <x:String>Cô</x:String>
+                </Picker.Items>
+            </Picker>
+        </Grid>
+        <Grid RowDefinitions="Auto,Auto,Auto" RowSpacing="0">
+            <Label Text="Họ (vd: Nguyen)" FontSize="10" TextColor="{DynamicResource Gray600}"/>
+            <Entry Grid.Row="1" Placeholder="Nguyen" FontSize="14" HeightRequest="35"/>
+            <Label Grid.Row="2" Text="như trên CCCD(không dấu)" FontSize="10" TextColor="{DynamicResource Gray600}"/>
+        </Grid>
+        <Grid RowDefinitions="Auto,Auto,Auto" RowSpacing="0">
+            <Label Text="Tên đệm (vd: Thi Ngoc Linh)" FontSize="10" TextColor="{DynamicResource Gray600}"/>
+            <Entry Grid.Row="1" Placeholder="Thi Ngoc Linh" FontSize="14"/>
+            <Label Grid.Row="2" Text="như trên CCCD(không dấu)" FontSize="10" TextColor="{DynamicResource Gray600}"/>
+        </Grid>
+        <Grid RowDefinitions="Auto,Auto" RowSpacing="0">
+            <DatePicker Margin="0,-15,0,0"
+                                        MinimumDate="{Binding MinDate}"
+                                        MaximumDate="{Binding MaxDate}"
+                                        Date="{Binding SelectedDate}"
+                                        Grid.Column="0" Grid.Row="1"/>
+            <Label Text="Ngày sinh" FontSize="10" TextColor="{DynamicResource Gray600}"/>
+            <Label Margin="0,0,5,10" Grid.Row="1" Text="&#xf274;" FontFamily="FontSolid" TextColor="{DynamicResource Gray600}" VerticalOptions="Center" HorizontalOptions="End"/>
+        </Grid>
+        <Grid RowDefinitions="Auto,Auto" RowSpacing="0">
+            <Label Text="Quốc tịch" FontSize="10" TextColor="{DynamicResource Gray600}"/>
+            <Entry Grid.Row="1" Placeholder="Quốc tịch" FontSize="14">
+                <Entry.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="SelectNationality"/>
+                </Entry.GestureRecognizers>
+            </Entry>
+        </Grid>
+        <Button Text="Lưu" Clicked="TicketInfo"></Button>
+    </VerticalStackLayout>
+</ContentPage>

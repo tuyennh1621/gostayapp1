@@ -15,6 +15,7 @@ public static class MauiProgram
                 fonts.AddFont("Lexend-Medium.ttf", "LexendMedium");
                 fonts.AddFont("Lexend-Bold.ttf", "LexendBold");
                 fonts.AddFont("OpenSans-Bold.ttf", "OpenSansBold");
+                fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                 fonts.AddFont("FontAwesome6BrandsRegular400.otf", "FontBrandsRegular");
                 fonts.AddFont("FontAwesome6FreeRegular400.otf", "FontRegular");
                 fonts.AddFont("FontAwesome6FreeSolid900.otf", "FontSolid");

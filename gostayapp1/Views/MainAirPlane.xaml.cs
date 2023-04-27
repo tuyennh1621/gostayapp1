@@ -33,7 +33,7 @@ public partial class MainAirPlane : ContentPage
     }
     private async void PlaneListing(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new PlaneListing());
+        await Navigation.PushAsync(new PlaneDeparture());
     }
     private async void SelectTicket(object sender, EventArgs e)
     {

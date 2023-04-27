@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="gostayapp1.Views.TicketInformation"
+             Title="Thông tin đặt vé">
+    <ScrollView>
+        <VerticalStackLayout Padding="15" Spacing="10" Background="{DynamicResource GrayF5}">
+            <Label Text="Thông tin liên hệ" FontAttributes="Bold" FontSize="16"/>
+            <HorizontalStackLayout Spacing="5">
+                    <Label Text="&#xf2bd;" 
+                               VerticalOptions="Center"
+                               FontFamily="FontRegular"
+                               TextColor="{DynamicResource Blue100Accent}"/>
+                    <Label Text="Đăng nhập"
+                               VerticalOptions="Center"
+                               TextColor="{DynamicResource Blue100Accent}"/>
+                    <Label Text="để đặt phòng nhanh hơn"
+                               TextColor="#666"/>
+             </HorizontalStackLayout>
+            <Border StrokeShape="RoundRectangle 5" StrokeThickness="0" Padding="10,15,10,15" >
+                <Grid ColumnDefinitions="Auto,*,Auto">
+                    <Label Grid.Column="0" Text="&#xf007;" FontFamily="FontSolid" TextColor="{DynamicResource Gray600}" VerticalOptions="Center"/>
+                    <Label Grid.Column="1" Text="Thông tin liên hệ" />
+                    <Label Grid.Column="2" Text="&#xf054;" FontFamily="FontSolid" TextColor="{DynamicResource Gray600}" VerticalOptions="Center"/>
+                </Grid>
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="ContactInformation"/>
+                </Border.GestureRecognizers>
+            </Border>
+            <Label Text="Thông tin hành khách" FontAttributes="Bold" FontSize="16"/>
+            <Border StrokeShape="RoundRectangle 5" StrokeThickness="0" Padding="10,15,10,15" >
+                <Grid ColumnDefinitions="*,Auto" RowDefinitions="Auto,Auto,Auto">
+                    <Label Grid.Column="0" Grid.Row="0" Text="Ông Nguyen Minh Tam"/>
+                    <Label Grid.Column="1" Grid.Row="0" Text="&#xf00c;" FontFamily="FontSolid" TextColor="{DynamicResource GreenSuccess}" VerticalOptions="Center" HorizontalOptions="End"/>
+                    <Label Grid.Column="0" Grid.Row="1" Text="Ngày sinh" FontSize="12" TextColor="{DynamicResource Gray600}"/>
+                    <Label Grid.Column="1" Grid.Row="1" Text="25 thg 12 1985" FontSize="12" TextColor="{DynamicResource Gray600}" HorizontalOptions="End"/>
+                    <Label Grid.Column="0" Grid.Row="2" Text="Quốc tịch" FontSize="12" TextColor="{DynamicResource Gray600}"/>
+                    <Label Grid.Column="1" Grid.Row="2" Text="Thái Lan" FontSize="12" TextColor="{DynamicResource Gray600}" HorizontalOptions="End"/>
+                </Grid>
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="PersonInfo"/>
+                </Border.GestureRecognizers>
+            </Border>
+            <Border StrokeShape="RoundRectangle 5" StrokeThickness="0" Padding="10,15,10,15" >
+                <Grid ColumnDefinitions="Auto,*,Auto">
+                    <Label Grid.Column="0" Text="&#xf007;" FontFamily="FontSolid" TextColor="{DynamicResource Gray600}" VerticalOptions="Center"/>
+                    <Label Grid.Column="1" Text="Người lớn 2" />
+                    <Label Grid.Column="2" Text="&#xf054;" FontFamily="FontSolid" TextColor="{DynamicResource Gray600}" VerticalOptions="Center"/>
+                </Grid>
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="PersonInfo"/>
+                </Border.GestureRecognizers>
+            </Border>
+            <Border StrokeShape="RoundRectangle 5" StrokeThickness="0" Padding="10,15,10,15" >
+                <Grid ColumnDefinitions="Auto,*,Auto">
+                    <Label Grid.Column="0" Text="&#xf007;" FontFamily="FontSolid" TextColor="{DynamicResource Gray600}" VerticalOptions="Center"/>
+                    <Label Grid.Column="1" Text="Trẻ em 1" />
+                    <Label Grid.Column="2" Text="&#xf054;" FontFamily="FontSolid" TextColor="{DynamicResource Gray600}" VerticalOptions="Center"/>
+                </Grid>
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="PersonInfo"/>
+                </Border.GestureRecognizers>
+            </Border>
+            <Border StrokeShape="RoundRectangle 5" StrokeThickness="0" Padding="10,15,10,15" >
+                <Grid ColumnDefinitions="Auto,*,Auto">
+                    <Label Grid.Column="0" Text="&#xf007;" FontFamily="FontSolid" TextColor="{DynamicResource Gray600}" VerticalOptions="Center"/>
+                    <Label Grid.Column="1" Text="Em bé 1" />
+                    <Label Grid.Column="2" Text="&#xf054;" FontFamily="FontSolid" TextColor="{DynamicResource Gray600}" VerticalOptions="Center"/>
+                </Grid>
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="PersonInfo"/>
+                </Border.GestureRecognizers>
+            </Border>
+            <Label Text="Tiện nghi chuyến bay" FontAttributes="Bold" FontSize="16"/>
+            <Border StrokeShape="RoundRectangle 5" StrokeThickness="0" Padding="10,15,10,15">
+                <Grid ColumnDefinitions="Auto,Auto,*" RowDefinitions="Auto,*">
+                    <Label Grid.Column="0" Text="&#xf0f2;" FontFamily="FontSolid" TextColor="{DynamicResource Gray600}" VerticalOptions="Center"/>
+                    <Label Grid.Column="1" Text="Hành lý"/>
+                    <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" FontSize="12" TextColor="{DynamicResource Gray600}" Text="Xếp đồ thôi! Bạn có thể mang 20 kg hành lý / 1 khách"/>
+                </Grid>
+            </Border>
+            <Border StrokeShape="RoundRectangle 5" StrokeThickness="0" Padding="10,15,10,15">
+                <VerticalStackLayout>
+                    <HorizontalStackLayout Spacing="5">
+                        <Image Source="Flight/Seat0.png" VerticalOptions="Center" HeightRequest="15"/>
+                        <Label Text="Số ghế"/>
+                    </HorizontalStackLayout>
+                    <Label FontSize="12" TextColor="{DynamicResource Gray600}" Text="Chọn chỗ ngồi tốt nhất giúp bạn thoải mái suốt chuyến đi nhé bạn hiền"/>
+                </VerticalStackLayout>
+            </Border>
+            <Button Text="Tiếp tục"></Button>
+        </VerticalStackLayout>
+
+    </ScrollView>
+</ContentPage>

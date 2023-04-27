@@ -58,6 +58,11 @@
 	  <None Remove="Resources\Fonts\OpenSans-Bold.ttf" />
 	  <None Remove="Resources\Images\flight\bamboo.jpg" />
 	  <None Remove="Resources\Images\flight\jestar.jpg" />
+	  <None Remove="Resources\Images\flight\seat.png" />
+	  <None Remove="Resources\Images\flight\seat0.png" />
+	  <None Remove="Resources\Images\flight\seat1.png" />
+	  <None Remove="Resources\Images\flight\seat2.png" />
+	  <None Remove="Resources\Images\flight\seat3.png" />
 	  <None Remove="Resources\Images\flight\vietjet.jpg" />
 	  <None Remove="Resources\Images\flight\vietjet1.png" />
 	  <None Remove="Resources\Images\flight\vna.jpg" />
@@ -106,6 +111,10 @@
 	<ItemGroup>
 	  <MauiImage Include="Resources\Images\flight\bamboo.jpg" />
 	  <MauiImage Include="Resources\Images\flight\jestar.jpg" />
+	  <MauiImage Include="Resources\Images\flight\seat0.png" />
+	  <MauiImage Include="Resources\Images\flight\seat1.png" />
+	  <MauiImage Include="Resources\Images\flight\seat2.png" />
+	  <MauiImage Include="Resources\Images\flight\seat3.png" />
 	  <MauiImage Include="Resources\Images\flight\vietjet.jpg" />
 	  <MauiImage Include="Resources\Images\flight\vietjet1.png" />
 	  <MauiImage Include="Resources\Images\flight\vna.jpg" />
@@ -155,20 +164,21 @@
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
 		<PackageReference Include="Microsoft.Maui.Controls.Maps" Version="7.0.59" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+		<PackageReference Include="Unikey" Version="1.1.0" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <Compile Update="Views\FiltersHotel.xaml.cs">
 	    <DependentUpon>FiltersHotel.xaml</DependentUpon>
 	  </Compile>
-	  <Compile Update="Views\FlightBooking.xaml.cs">
-	    <DependentUpon>FlightBooking.xaml</DependentUpon>
+	  <Compile Update="Views\PlaneDeparture.xaml.cs">
+	    <DependentUpon>PlaneDeparture.xaml</DependentUpon>
 	  </Compile>
-	  <Compile Update="Views\PlaneArrivals.xaml.cs">
-	    <DependentUpon>PlaneArrivals.xaml</DependentUpon>
+	  <Compile Update="Views\SelectPriceDetail.xaml.cs">
+	    <DependentUpon>SelectPriceDetail.xaml</DependentUpon>
 	  </Compile>
-	  <Compile Update="Views\TabFlight.xaml.cs">
-	    <DependentUpon>TabFlight.xaml</DependentUpon>
+	  <Compile Update="Views\TabFlightArrivals.xaml.cs">
+	    <DependentUpon>TabFlightArrivals.xaml</DependentUpon>
 	  </Compile>
 	  <Compile Update="Views\TourBookingSuccess.xaml.cs">
 	    <DependentUpon>TourBookingSuccess.xaml</DependentUpon>
@@ -188,9 +198,6 @@
 	  <Compile Update="Views\SearchTours.xaml.cs">
 	    <DependentUpon>SearchTours.xaml</DependentUpon>
 	  </Compile>
-	  <Compile Update="Views\SelectTicket.xaml.cs">
-	    <DependentUpon>SelectTicket.xaml</DependentUpon>
-	  </Compile>
 	  <Compile Update="Welcome.xaml.cs">
 	    <DependentUpon>Welcome.xaml</DependentUpon>
 	  </Compile>
@@ -206,25 +213,31 @@
 	  <MauiXaml Update="Controls\SpacingModifier.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="MainPage.xaml">
+	  <MauiXaml Update="CustomControls\OutlinedEntryControl.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\AboutPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\ContactInformation.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\Discovery.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\FlightBooking.xaml">
+	  <MauiXaml Update="Views\PersonInfo.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\PlaneArrivals.xaml">
+	  <MauiXaml Update="Views\SelectNationality.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\TabFlight.xaml">
+	  <MauiXaml Update="Views\SelectPriceDetail.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\TabPlanePrice.xaml">
+	  <MauiXaml Update="Views\TabFlightArrivals.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\TicketInformation.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\TourBookingSuccess.xaml">
@@ -240,9 +253,6 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\FiltersHotel.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Views\Filters.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\HotelBookingPayment.xaml">
@@ -275,9 +285,6 @@
 	  <MauiXaml Update="Views\MainHotels.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\PlaneListing.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
 	  <MauiXaml Update="Views\PromotionList.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -291,12 +298,6 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\SearchCollapse.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Views\SearchPlane.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Views\SelectTicket.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\SelectGuest.xaml">
