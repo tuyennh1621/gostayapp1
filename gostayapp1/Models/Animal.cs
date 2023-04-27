@@ -214,4 +214,8 @@
         public string Price3 { get; set; }
 
     }
+    public class SelectNation
+    {
+        public string Name { get; set; }
+    }
 }

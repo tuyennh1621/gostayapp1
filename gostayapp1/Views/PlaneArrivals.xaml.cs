@@ -18,12 +18,12 @@ public partial class PlaneArrivals : ContentPage
     async void OnCollectionViewSelectionChanged(object sender, SelectionChangedEventArgs e)
     {
         string catName = (e.CurrentSelection.FirstOrDefault() as Plane).Name;
-        await Shell.Current.GoToAsync($"FlightBooking?name={catName}");
+        await Shell.Current.GoToAsync($"TabFlightArrivals?name={catName}");
     }
 
     private void PlaneListing(object sender, EventArgs e)
     {
-        Navigation.PushAsync(new PlaneListing());
+        Navigation.PushAsync(new PlaneDeparture());
     }
 
 }

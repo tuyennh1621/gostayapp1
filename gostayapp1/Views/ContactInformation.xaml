@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="gostayapp1.Views.ContactInformation"
+             Title="Thông tin liên hệ">
+    <VerticalStackLayout Margin="15" Spacing="20">
+        <Grid RowDefinitions="Auto,Auto,Auto" RowSpacing="0">
+            <Label Text="Họ (vd: Nguyen)" FontSize="10" TextColor="{DynamicResource Gray600}"/>
+            <Entry Grid.Row="1" Placeholder="Nguyen" FontSize="14" HeightRequest="35"/>
+            <Label Grid.Row="2" Text="như trên CCCD(không dấu)" FontSize="10" TextColor="{DynamicResource Gray600}"/>
+        </Grid>
+        <Grid RowDefinitions="Auto,Auto,Auto" RowSpacing="0">
+            <Label Text="Tên đệm (vd: Thi Ngoc Linh)" FontSize="10" TextColor="{DynamicResource Gray600}"/>
+            <Entry Grid.Row="1" Placeholder="Thi Ngoc Linh" FontSize="14"/>
+            <Label Grid.Row="2" Text="như trên CCCD(không dấu)" FontSize="10" TextColor="{DynamicResource Gray600}"/>
+        </Grid>
+        <Grid RowDefinitions="Auto,Auto" RowSpacing="0" ColumnDefinitions="*,*">
+            <Label Text="Mã quốc gia" FontSize="10" TextColor="{DynamicResource Gray600}"/>
+            <Entry Grid.Row="1" Placeholder="+84" FontSize="14" PlaceholderColor="{DynamicResource Black}"/>
+            <Label Grid.Column="1" Text="Số điện thoại" FontSize="10" TextColor="{DynamicResource Gray600}"/>
+            <Entry Grid.Column="1" Grid.Row="1" Placeholder="987265886" FontSize="14"/>
+        </Grid>
+        <Grid RowDefinitions="Auto,Auto,Auto" RowSpacing="0">
+            <Label Text="Email" FontSize="10" TextColor="{DynamicResource Gray600}"/>
+            <Entry Grid.Row="1" Placeholder="ducvm" FontSize="14"/>
+            <Label Grid.Row="2" Text="vd: email@domain.com" FontSize="10" TextColor="{DynamicResource Gray600}"/>
+        </Grid>
+        <Grid ColumnDefinitions="Auto,*">
+            <Label Grid.Column="0" Text="&#xf05a;" FontFamily="FontSolid" TextColor="{DynamicResource Blue100}" VerticalOptions="Center"/>
+            <Label Grid.Column="1" Text="Thông tin liên hệ bên trên được sử dụng để xác nhận đặt vé, hoàn tiền và đổi lịch bay" FontSize="12" TextColor="{DynamicResource Gray600}"/>
+        </Grid>
+        <Button Text="Lưu" Clicked="TicketInfo"></Button>
+    </VerticalStackLayout>
+</ContentPage>

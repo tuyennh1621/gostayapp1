@@ -53,10 +53,6 @@
                     </Grid.GestureRecognizers>
                 </Grid>
             </Border>
-
         </VerticalStackLayout>
-
-
-
     </VerticalStackLayout>
 </ContentPage>
