@@ -65,7 +65,6 @@
                 FlyoutDisplayOptions="AsMultipleItems" >
         
         <ShellContent Route="hotels" 
-                      Icon="https://cdn-icons-png.flaticon.com/512/3086/3086454.png"
                       Style="{StaticResource DomesticShell}"
                       Title="Khách sạn"
                       ContentTemplate="{DataTemplate views:MainHotels}"/>
@@ -75,7 +74,7 @@
                       Title="Vé máy bay"
                       ContentTemplate="{DataTemplate views:MainAirPlane}" />
         <ShellContent Route="tours"
-                       Icon="https://cdn-icons-png.flaticon.com/512/9610/9610500.png"
+                      Icon="https://cdn-icons-png.flaticon.com/512/9610/9610500.png"
                       Style="{StaticResource DomesticShell}"
                       Title="Tour du lịch"
                       ContentTemplate="{DataTemplate views:MainTours}" />

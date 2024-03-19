@@ -8,7 +8,6 @@
              Title="Discovery"
              xmlns:maps="clr-namespace:Microsoft.Maui.Controls.Maps;assembly=Microsoft.Maui.Controls.Maps"
              xmlns:sensors="clr-namespace:Microsoft.Maui.Devices.Sensors;assembly=Microsoft.Maui.Essentials">
-
     <Shell.SearchHandler>
         <controls:AnimalSearchHandler Placeholder="Nhập từ khóa tìm kiếm"
                                       ShowsResults="true"
@@ -16,8 +15,8 @@
                                       Animals="{x:Static data:SearchHotelData.Hotels}"
                                       SelectedItemNavigationTarget="{x:Type views:HotelDetail}" />
     </Shell.SearchHandler>
-    <VerticalStackLayout>
-        <Label Text="Test"/>
-    </VerticalStackLayout>
+    <StackLayout Margin="10">
+        <maps:Map x:Name="map"/>
+    </StackLayout>
 
 </ContentPage>
