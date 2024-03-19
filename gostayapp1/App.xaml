@@ -206,10 +206,10 @@
             </DataTemplate>
             <DataTemplate x:Key="MyPlane">
                 <Grid ColumnDefinitions="Auto,Auto,*" Padding="0,5,0,5">
-                    <Frame Grid.Column="0" CornerRadius="50" BorderColor="{DynamicResource Gray100}" WidthRequest="30" HeightRequest="30">
+                    <Frame Grid.Column="0" CornerRadius="5" BorderColor="{DynamicResource Gray100}" WidthRequest="30" HeightRequest="30">
                         <Image Source="{Binding ImageUrl}" WidthRequest="25" HeightRequest="25"/>
                     </Frame>
-                    <Label Grid.Column="1"  Text="{Binding Name}" FontSize="14" VerticalOptions="Center" TextColor="{DynamicResource Gray600}"/>
+                    <Label Grid.Column="1" Text="{Binding Name}" FontSize="14" VerticalOptions="Center" TextColor="{DynamicResource Gray600}"/>
                     <CheckBox Grid.Column="2" HorizontalOptions="EndAndExpand"/>
                 </Grid>
             </DataTemplate>
